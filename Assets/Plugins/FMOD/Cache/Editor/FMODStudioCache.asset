@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: ../../Fmod/Tryout/Build/Desktop/Ambiance.bank
   Name: Ambiance
   StudioPath: bank:/Ambiance
-  lastModified: 638425952095202664
+  lastModified: 638425957476566092
   FileSizes:
   - Name: Desktop
-    Value: 682496
+    Value: 621792
   Exists: 1
 --- !u!114 &-6519660236473214686
 MonoBehaviour:
@@ -62,7 +62,7 @@ MonoBehaviour:
   Path: ../../Fmod/Tryout/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638425952094414716
+  lastModified: 638425957844414370
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -82,38 +82,11 @@ MonoBehaviour:
   Path: ../../Fmod/Tryout/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638425952094431537
+  lastModified: 638425957844424378
   FileSizes:
   - Name: Desktop
     Value: 988
   Exists: 1
---- !u!114 &-3014305030992296180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/PlayerRunGrass
-  m_EditorClassIdentifier: 
-  Path: event:/PlayerRunGrass
-  Guid:
-    Data1: -1250537639
-    Data2: 1127330443
-    Data3: -1593323844
-    Data4: -1445319557
-  Banks:
-  - {fileID: -7995960107619706606}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 800
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,13 +108,13 @@ MonoBehaviour:
   - {fileID: -6519660236473214686}
   - {fileID: 4479910274188989052}
   - {fileID: 1301987430008331349}
-  - {fileID: -3014305030992296180}
+  - {fileID: 3182351474428377144}
   EditorParameters: []
   MasterBanks:
   - {fileID: -6374985843886719895}
   StringsBanks:
   - {fileID: -6063200131512059321}
-  cacheTime: 638425952095202664
+  cacheTime: 638425957844730664
   cacheVersion: 131616
 --- !u!114 &1301987430008331349
 MonoBehaviour:
@@ -185,11 +158,38 @@ MonoBehaviour:
   Path: ../../Fmod/Tryout/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638425945221262551
+  lastModified: 638425957844730664
   FileSizes:
   - Name: Desktop
-    Value: 95520
+    Value: 97632
   Exists: 1
+--- !u!114 &3182351474428377144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PlayerRunGrass
+  m_EditorClassIdentifier: 
+  Path: event:/PlayerRunGrass
+  Guid:
+    Data1: 392846351
+    Data2: 1208328065
+    Data3: 276583816
+    Data4: 1212099282
+  Banks:
+  - {fileID: 1977329599238187879}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 850
 --- !u!114 &4479910274188989052
 MonoBehaviour:
   m_ObjectHideFlags: 0

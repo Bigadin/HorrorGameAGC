@@ -21,6 +21,7 @@ public class ControlPlayer : MonoBehaviour
     private EventInstance footsteps;
     private EventInstance runningSound;
     private bool isWalking;
+    private bool isRunning;
 
     // Added missing variables
     private float CM_Noise_Amplitude = 0.5f;
@@ -37,7 +38,7 @@ public class ControlPlayer : MonoBehaviour
 
         // FMOD Footsteps Initialization
         footsteps = AudioManager.Instance.CreateInstance(FmodEvents.Instance.footstepsWalkGrass);
-        runningSound = AudioManager.Instance.CreatInstance(FmodEvents.Instance.runningSound);
+        runningSound = AudioManager.Instance.CreateInstance(FmodEvents.Instance.footstepsRunGrass);
         Debug.Log("Footsteps EventInstance: " + footsteps.isValid());
     }
 
@@ -55,7 +56,7 @@ public class ControlPlayer : MonoBehaviour
 
         Vector3 forward = playerCamera.transform.TransformDirection(Vector3.forward);
         Vector3 right = playerCamera.transform.TransformDirection(Vector3.right);
-        bool isRunning = Input.GetKey(KeyCode.LeftShift);
+        isRunning = Input.GetKey(KeyCode.LeftShift);
         float curSpeedX = (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Vertical");
         float curSpeedY = (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Horizontal");
         float movementDirectionY = moveDirection.y;
@@ -136,4 +137,6 @@ public class ControlPlayer : MonoBehaviour
             footsteps.stop(STOP_MODE.ALLOWFADEOUT);
         }
     }
+
+
 }
