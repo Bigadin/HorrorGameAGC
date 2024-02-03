@@ -2,14 +2,16 @@ using FMOD.Studio;
 using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance { get; private set; }
 
+    private List<EventInstance> eventInstances;
+
     private EventInstance ambianceEventInstance;
-    private EventInstance rainEventInstance;  // Add this line
 
     private void Awake()
     {
@@ -18,12 +20,12 @@ public class AudioManager : MonoBehaviour
             Debug.Log("There is more than one instance of the AudioManger");
         }
         Instance = this;
+        eventInstances = new List<EventInstance>();
     }
 
     private void Start()
     {
         InitializeAmbiance(FmodEvents.Instance.rain);
-        InitializeRain();  // Add this line
     }
 
     public void PlayOneShot(EventReference sound, Vector3 position)
@@ -35,6 +37,7 @@ public class AudioManager : MonoBehaviour
     {
         EventInstance eventInstance = RuntimeManager.CreateInstance(sound);
         Debug.Log(sound.ToString());
+        eventInstances.Add(eventInstance);
         return eventInstance;
     }
 
@@ -52,19 +55,21 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    private void InitializeRain()
+    private void CleanUp()
     {
-        rainEventInstance = CreateInstance(FmodEvents.Instance.rain);  // Adjust the event reference
-        if (rainEventInstance.isValid())
-        {
-            Debug.Log("Rain EventInstance created successfully");
-            rainEventInstance.start();
+        foreach (var eventInstance in eventInstances) {
+            eventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            eventInstance.release();
+        
         }
-        else
-        {
-            Debug.LogError("Failed to create Rain EventInstance");
-        }
+
     }
+
+    private void OnDestroy()
+    {
+        CleanUp();
+    }
+
 }
 
 
