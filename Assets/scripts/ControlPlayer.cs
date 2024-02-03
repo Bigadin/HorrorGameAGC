@@ -1,8 +1,6 @@
 using Cinemachine;
-using System.Collections;
-using System.Collections.Generic;
+using FMOD.Studio;
 using UnityEngine;
-
 
 public class ControlPlayer : MonoBehaviour
 {
@@ -15,9 +13,18 @@ public class ControlPlayer : MonoBehaviour
     public float lookSpeed = 2.0f;
     public float lookXLimit = 45.0f;
 
-    CharacterController characterController;
-    Vector3 moveDirection = Vector3.zero;
-    float rotationX = 0;
+    private CharacterController characterController;
+    private Vector3 moveDirection = Vector3.zero;
+    private float rotationX = 0;
+
+    // FMOD Footsteps
+    private EventInstance footsteps;
+    private EventInstance runningSound;
+    private bool isWalking;
+
+    // Added missing variables
+    private float CM_Noise_Amplitude = 0.5f;
+    private float CM_Noise_Frequency = 0.01f;
 
     [HideInInspector]
     public bool canMove = true;
@@ -25,27 +32,46 @@ public class ControlPlayer : MonoBehaviour
     void Start()
     {
         characterController = GetComponent<CharacterController>();
-
-        // Lock cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        // FMOD Footsteps Initialization
+        footsteps = AudioManager.Instance.CreateInstance(FmodEvents.Instance.footstepsWalkGrass);
+        runningSound = AudioManager.Instance.CreatInstance(FmodEvents.Instance.runningSound);
+        Debug.Log("Footsteps EventInstance: " + footsteps.isValid());
     }
 
-    float CM_Noise_Amplitude = .5f;
-    float CM_Noise_Frequency = .01f;
     void Update()
     {
-        // We are grounded, so recalculate move direction based on axes
+        HandleMovement();
+        HandleMouseLook();
+        HandleCameraNoise();
+        UpdateSound();
+    }
+
+    void HandleMovement()
+    {
+        if (!canMove) return;
+
         Vector3 forward = playerCamera.transform.TransformDirection(Vector3.forward);
         Vector3 right = playerCamera.transform.TransformDirection(Vector3.right);
-        // Press Left Shift to run
         bool isRunning = Input.GetKey(KeyCode.LeftShift);
-        float curSpeedX = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Vertical") : 0;
-        float curSpeedY = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Horizontal") : 0;
+        float curSpeedX = (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Vertical");
+        float curSpeedY = (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Horizontal");
         float movementDirectionY = moveDirection.y;
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
 
-        if (Input.GetButton("Jump") && canMove && characterController.isGrounded)
+        // Check if walking
+        if (Mathf.Abs(curSpeedX) > 0 || Mathf.Abs(curSpeedY) > 0)
+        {
+            isWalking = true;
+        }
+        else
+        {
+            isWalking = false;
+        }
+
+        if (Input.GetButton("Jump") && characterController.isGrounded)
         {
             moveDirection.y = jumpSpeed;
         }
@@ -54,36 +80,60 @@ public class ControlPlayer : MonoBehaviour
             moveDirection.y = movementDirectionY;
         }
 
-        
         if (!characterController.isGrounded)
         {
             moveDirection.y -= gravity * Time.deltaTime;
         }
 
-        // Move the controller
         characterController.Move(moveDirection * Time.deltaTime);
+    }
 
-        // Player and Camera rotation
-        if (canMove)
-        {
-            rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
-            rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
-            playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-            transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
-        }
+    void HandleMouseLook()
+    {
+        if (!canMove) return;
+
+        rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
+        rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
+        playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
+        transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+    }
+
+    void HandleCameraNoise()
+    {
         CM_cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = CM_Noise_Frequency;
         CM_cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = CM_Noise_Amplitude;
-        if (curSpeedX > 0 || curSpeedY > 0)
-        {
-           CM_Noise_Amplitude = CM_Noise_Amplitude >= 1.5f ? CM_Noise_Amplitude = 1.5f : CM_Noise_Amplitude+= 1f * Time.deltaTime;
-           CM_Noise_Frequency = CM_Noise_Frequency >= 0.02f ? CM_Noise_Frequency = 0.02f : CM_Noise_Frequency+=0.01f * Time.deltaTime;
 
+        // Adjust amplitude and frequency based on movement
+        if (moveDirection.magnitude > 0)
+        {
+            CM_Noise_Amplitude = Mathf.Clamp(CM_Noise_Amplitude + 1f * Time.deltaTime, 0.5f, 1.5f);
+            CM_Noise_Frequency = Mathf.Clamp(CM_Noise_Frequency + 0.01f * Time.deltaTime, 0.01f, 0.02f);
         }
         else
         {
-            CM_Noise_Amplitude = CM_Noise_Amplitude <= 0.5f ? CM_Noise_Amplitude =0.5f : CM_Noise_Amplitude -= 1f * Time.deltaTime;
-            CM_Noise_Frequency = CM_Noise_Frequency <= 0.01f ? CM_Noise_Frequency = 0.01f : CM_Noise_Frequency -= 0.01f * Time.deltaTime;
+            CM_Noise_Amplitude = Mathf.Clamp(CM_Noise_Amplitude - 1f * Time.deltaTime, 0.5f, 1.5f);
+            CM_Noise_Frequency = Mathf.Clamp(CM_Noise_Frequency - 0.01f * Time.deltaTime, 0.01f, 0.02f);
         }
-        print(CM_cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain);
+    }
+
+    void UpdateSound()
+    {
+        if (isWalking)
+        {
+            PLAYBACK_STATE playbackstate;
+            footsteps.getPlaybackState(out playbackstate);
+            Debug.Log("Playback State: " + playbackstate);
+
+            if (playbackstate.Equals(PLAYBACK_STATE.STOPPED))
+            {
+                Debug.Log("Starting Sound");
+                footsteps.start();
+            }
+        }
+        else
+        {
+            Debug.Log("Stopping Sound");
+            footsteps.stop(STOP_MODE.ALLOWFADEOUT);
+        }
     }
 }
