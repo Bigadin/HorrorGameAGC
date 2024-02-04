@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8676111360117360071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/PlayerRunWood
+  m_EditorClassIdentifier: 
+  Path: event:/Player/PlayerRunWood
+  Guid:
+    Data1: -1031942700
+    Data2: 1126554622
+    Data3: 821657993
+    Data4: -473525171
+  Banks:
+  - {fileID: 1977329599238187879}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1300
 --- !u!114 &-8478359504134318372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,7 +143,7 @@ MonoBehaviour:
   Path: ../../Fmod/Tryout/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638426821888861849
+  lastModified: 638426848086317638
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -136,10 +163,10 @@ MonoBehaviour:
   Path: ../../Fmod/Tryout/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638426821888881822
+  lastModified: 638426848086337659
   FileSizes:
   - Name: Desktop
-    Value: 1140
+    Value: 1234
   Exists: 1
 --- !u!114 &-4932999742689365114
 MonoBehaviour:
@@ -188,6 +215,33 @@ MonoBehaviour:
   - Name: Desktop
     Value: 905280
   Exists: 1
+--- !u!114 &-4091073597106070340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/PlayerWalkWood
+  m_EditorClassIdentifier: 
+  Path: event:/Player/PlayerWalkWood
+  Guid:
+    Data1: 661197551
+    Data2: 1150575365
+    Data3: 714803378
+    Data4: 1260036973
+  Banks:
+  - {fileID: 1977329599238187879}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1300
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,12 +267,14 @@ MonoBehaviour:
   - {fileID: -7904839939091584625}
   - {fileID: -4932999742689365114}
   - {fileID: -8478359504134318372}
+  - {fileID: -8676111360117360071}
+  - {fileID: -4091073597106070340}
   EditorParameters: []
   MasterBanks:
   - {fileID: -6374985843886719895}
   StringsBanks:
   - {fileID: -6063200131512059321}
-  cacheTime: 638426828700024038
+  cacheTime: 638426848087889104
   cacheVersion: 131616
 --- !u!114 &1977329599238187879
 MonoBehaviour:
@@ -235,10 +291,10 @@ MonoBehaviour:
   Path: ../../Fmod/Tryout/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638426828700024038
+  lastModified: 638426848087889104
   FileSizes:
   - Name: Desktop
-    Value: 97632
+    Value: 117376
   Exists: 1
 --- !u!114 &4479910274188989052
 MonoBehaviour:
