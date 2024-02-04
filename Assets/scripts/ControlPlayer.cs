@@ -63,9 +63,13 @@ public class ControlPlayer : MonoBehaviour
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
 
         // Check if walking
-        if (Mathf.Abs(curSpeedX) > 0 || Mathf.Abs(curSpeedY) > 0)
+        if (Mathf.Abs(curSpeedX) > 0 || Mathf.Abs(curSpeedY) > 0 && !isRunning)
         {
             isWalking = true;
+        }
+        else if(isRunning)
+        {
+            isWalking = false;
         }
         else
         {
@@ -135,6 +139,24 @@ public class ControlPlayer : MonoBehaviour
         {
             Debug.Log("Stopping Sound");
             footsteps.stop(STOP_MODE.ALLOWFADEOUT);
+        }
+        if (isRunning)
+        {
+            PLAYBACK_STATE playbackstate;
+            runningSound.getPlaybackState(out playbackstate);
+            Debug.Log("Playback State: " + playbackstate);
+
+            if (playbackstate.Equals(PLAYBACK_STATE.STOPPED))
+            {
+                Debug.Log("Starting Sound");
+                runningSound.start();
+            }
+
+        }
+        else
+        {
+            Debug.Log("Stopping Sound");
+            runningSound.stop(STOP_MODE.ALLOWFADEOUT);
         }
     }
 

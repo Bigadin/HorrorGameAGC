@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
     private List<EventInstance> eventInstances;
 
     private EventInstance ambianceEventInstance;
+    private EventInstance musicEventInstance;
 
     private void Awake()
     {
@@ -26,6 +27,7 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         InitializeAmbiance(FmodEvents.Instance.rain);
+        InitializeMusic(FmodEvents.Instance.music);
     }
 
     public void PlayOneShot(EventReference sound, Vector3 position)
@@ -48,6 +50,20 @@ public class AudioManager : MonoBehaviour
         {
             Debug.Log("Ambiance EventInstance created successfully");
             ambianceEventInstance.start();
+        }
+        else
+        {
+            Debug.LogError("Failed to create Ambiance EventInstance");
+        }
+    }
+
+    private void InitializeMusic(EventReference ambianceEventReference)
+    {
+        musicEventInstance = CreateInstance(ambianceEventReference);
+        if (musicEventInstance.isValid())
+        {
+            Debug.Log("Ambiance EventInstance created successfully");
+            musicEventInstance.start();
         }
         else
         {
