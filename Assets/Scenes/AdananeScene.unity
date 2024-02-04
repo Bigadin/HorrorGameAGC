@@ -6940,21 +6940,28 @@ MonoBehaviour:
       Data2: 1292269837
       Data3: -166274886
       Data4: 1088129068
-    Path: event:/Rain
+    Path: event:/Ambiant/Rain
   <footstepsWalkGrass>k__BackingField:
     Guid:
       Data1: -1177795505
       Data2: 1341560217
       Data3: -2017008503
       Data4: 1979994243
-    Path: event:/PlayerWalkGrass
+    Path: event:/Player/PlayerWalkGrass
   <footstepsRunGrass>k__BackingField:
     Guid:
       Data1: 392846351
       Data2: 1208328065
       Data3: 276583816
       Data4: 1212099282
-    Path: event:/PlayerRunGrass
+    Path: event:/Player/PlayerRunGrass
+  <music>k__BackingField:
+    Guid:
+      Data1: -967434554
+      Data2: 1273718269
+      Data3: -1387473771
+      Data4: -2079248095
+    Path: event:/Music/Music1
 --- !u!1001 &629495336
 PrefabInstance:
   m_ObjectHideFlags: 0

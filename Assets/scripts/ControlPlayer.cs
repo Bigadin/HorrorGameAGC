@@ -63,13 +63,17 @@ public class ControlPlayer : MonoBehaviour
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
 
         // Check if walking
-        if (Mathf.Abs(curSpeedX) > 0 || Mathf.Abs(curSpeedY) > 0)
+        if (Mathf.Abs(curSpeedX) > 0 || Mathf.Abs(curSpeedY) > 0 && !isRunning)
         {
             isWalking = true;
         }
-        else
+        else if(isRunning)
         {
             isWalking = false;
+        }
+        else
+        {
+            isWalking=false;
         }
 
         if (Input.GetButton("Jump") && characterController.isGrounded)
@@ -124,11 +128,13 @@ public class ControlPlayer : MonoBehaviour
             PLAYBACK_STATE playbackstate;
             footsteps.getPlaybackState(out playbackstate);
             Debug.Log("Playback State: " + playbackstate);
+            Debug.Log("i am playing walk sound");
 
             if (playbackstate.Equals(PLAYBACK_STATE.STOPPED))
             {
                 Debug.Log("Starting Sound");
                 footsteps.start();
+                
             }
         }
         else
@@ -136,7 +142,27 @@ public class ControlPlayer : MonoBehaviour
             Debug.Log("Stopping Sound");
             footsteps.stop(STOP_MODE.ALLOWFADEOUT);
         }
+        if (isRunning)
+        {
+            PLAYBACK_STATE playbackstate;
+            runningSound.getPlaybackState(out playbackstate);
+            Debug.Log("Playback State: " + playbackstate);
+            Debug.Log("i am playing run sound");
+
+            if (playbackstate.Equals(PLAYBACK_STATE.STOPPED))
+            {
+                Debug.Log("Starting Sound");
+                runningSound.start();
+                
+            }
+        }
+        else
+        {
+            Debug.Log("Stopping Sound");
+            runningSound.stop(STOP_MODE.ALLOWFADEOUT);
+        }
+
+    }
     }
 
 
-}

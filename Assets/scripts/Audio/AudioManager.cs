@@ -13,6 +13,8 @@ public class AudioManager : MonoBehaviour
 
     private EventInstance ambianceEventInstance;
 
+    private EventInstance musicEventInstance;
+
     private void Awake()
     {
         if (Instance != null)
@@ -26,6 +28,7 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         InitializeAmbiance(FmodEvents.Instance.rain);
+        InitializeMusic(FmodEvents.Instance.music);
     }
 
     public void PlayOneShot(EventReference sound, Vector3 position)
@@ -54,7 +57,19 @@ public class AudioManager : MonoBehaviour
             Debug.LogError("Failed to create Ambiance EventInstance");
         }
     }
-
+    private void InitializeMusic(EventReference ambianceEventReference)
+    {
+        musicEventInstance = CreateInstance(ambianceEventReference);
+        if (ambianceEventInstance.isValid())
+        {
+            Debug.Log("Ambiance EventInstance created successfully");
+            musicEventInstance.start();
+        }
+        else
+        {
+            Debug.LogError("Failed to create Ambiance EventInstance");
+        }
+    }
     private void CleanUp()
     {
         foreach (var eventInstance in eventInstances) {
