@@ -5,16 +5,49 @@ using UnityEngine;
 public class LightBatterieManager : MonoBehaviour
 {
     int batterieSlot = 5;// 5+1 bcz list
-    float BatterieSlotTimer = 5f;
+    float BatterieSlotTimer;
     [SerializeField] List<GameObject> batterieslots = new List<GameObject>();
     [SerializeField] Light flashLight;
     bool hasChanged;
     [SerializeField] Animator LightAnime;
+    private bool lightTorchOn;
+    [SerializeField] float LightTorcheBatteriePerSlot = 10;
 
-    public static LightBatterieManager instance {  get; private set; }
+    public static LightBatterieManager instance { get; private set; }
+
+    private void Start()
+    {
+        instance = this;
+        BatterieSlotTimer = LightTorcheBatteriePerSlot;
+    }
     private void Update()
     {
-        if(batterieSlot >= 0)
+
+        BatterieSlotTimerCounter();
+        if (batterieSlot < 0)
+        {
+            flashLight.gameObject.SetActive(false);
+        }
+        InputManager();
+
+
+    }
+    void InputManager()
+    {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            TriggerLightHorrorAction();
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            // sound for torche tiktak
+            lightTorchOn = !lightTorchOn;
+            flashLight.gameObject.SetActive(lightTorchOn);
+        }
+    }
+    void BatterieSlotTimerCounter()
+    {
+        if (batterieSlot >= 0 && lightTorchOn)
         {
             BatterieSlotTimer -= Time.deltaTime;
 
@@ -23,23 +56,17 @@ public class LightBatterieManager : MonoBehaviour
                 hasChanged = true;
                 batterieSlot--;
                 UpdateBatterieLvl();
-                flashLight.intensity -= 2;
-                BatterieSlotTimer = 5f;
+                flashLight.intensity -= 20;
+                BatterieSlotTimer = LightTorcheBatteriePerSlot;
             }
         }
-
-        if(batterieSlot < 0)
-        {
-            flashLight.gameObject.SetActive(false);
-        }
-      
     }
-    public void TriggerLightHorrorAction() // 1 -> 5
+    public void TriggerLightHorrorAction() // .2 -> 2
     {
         LightAnime.SetTrigger("onOff");
-        
+
     }
-    public void UpdateBatterieLvl() 
+    public void UpdateBatterieLvl()
     {
         for (int i = 0; i < batterieslots.Count; i++)
         {
@@ -58,7 +85,7 @@ public class LightBatterieManager : MonoBehaviour
     }
     public void addBattery()
     {
-        if(batterieSlot <= 0)
+        if (batterieSlot <= 0)
         {
             flashLight.gameObject.SetActive(true);
         }
