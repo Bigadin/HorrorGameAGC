@@ -61,7 +61,7 @@ public class ControlPlayer : MonoBehaviour
         RaycastHit hit;
 
         // Perform raycast to check the floor type
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, 1.0f))
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 3f))
         {
             Debug.Log("hit" + hit.collider.gameObject.layer);
             CheckFloorType(hit.collider.gameObject.layer);
