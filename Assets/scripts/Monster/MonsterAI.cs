@@ -17,15 +17,19 @@ public class MonsterAI : MonoBehaviour
     private int currentWaypointIndex;
     private bool isChasingPlayer;
     private float chaseTimer;
-
+    Animator animator;
     void Start()
     {
+        animator = GetComponent<Animator>();
+
         navMeshAgent = GetComponent<NavMeshAgent>();
         SetPatrolDestination();
     }
 
     void Update()
     {
+        animator.SetBool("isRunning", true);
+
         if (!isChasingPlayer)
         {
             Patrol();
@@ -61,6 +65,7 @@ public class MonsterAI : MonoBehaviour
 
     void CheckForPlayer()
     {
+       
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
         if (distanceToPlayer < detectionRange)
@@ -74,14 +79,18 @@ public class MonsterAI : MonoBehaviour
 
     void ChasePlayer()
     {
-        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+        print("Im chassing");
 
         // You can add additional behavior for chasing the player here
 
-        if (distanceToPlayer > detectionRange * 1.5f || chaseTimer >= chaseDuration)
+        if ( chaseTimer >= chaseDuration)
         {
             isChasingPlayer = false;
             SetPatrolDestination();
+        }
+        else
+        {
+            navMeshAgent.SetDestination(player.position);
         }
     }
 
