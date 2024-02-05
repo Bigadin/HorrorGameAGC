@@ -89,7 +89,7 @@ MonoBehaviour:
   Path: ../../Fmod/Tryout/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638426848086317638
+  lastModified: 638426874377101411
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -109,10 +109,10 @@ MonoBehaviour:
   Path: ../../Fmod/Tryout/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638426848086337659
+  lastModified: 638426874377131424
   FileSizes:
   - Name: Desktop
-    Value: 1234
+    Value: 1286
   Exists: 1
 --- !u!114 &-2561977777562482928
 MonoBehaviour:
@@ -187,7 +187,6 @@ MonoBehaviour:
   - {fileID: 1977329599238187879}
   - {fileID: 3537597108735440392}
   EditorEvents:
-  - {fileID: 4479910274188989052}
   - {fileID: 4924582001415410049}
   - {fileID: -497767173607211221}
   - {fileID: -2561977777562482928}
@@ -195,12 +194,14 @@ MonoBehaviour:
   - {fileID: 5433740127331163221}
   - {fileID: -7376957312418587748}
   - {fileID: -6498342728215025016}
+  - {fileID: 4467914607120435944}
+  - {fileID: 3151669984865351779}
   EditorParameters: []
   MasterBanks:
   - {fileID: -6374985843886719895}
   StringsBanks:
   - {fileID: -6063200131512059321}
-  cacheTime: 638426864901532878
+  cacheTime: 638426874379055039
   cacheVersion: 131616
 --- !u!114 &1977329599238187879
 MonoBehaviour:
@@ -217,11 +218,38 @@ MonoBehaviour:
   Path: ../../Fmod/Tryout/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638426864901532878
+  lastModified: 638426874379055039
   FileSizes:
   - Name: Desktop
-    Value: 117376
+    Value: 182368
   Exists: 1
+--- !u!114 &3151669984865351779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Door
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Door
+  Guid:
+    Data1: -1581861947
+    Data2: 1327026937
+    Data3: -979358833
+    Data4: 638287604
+  Banks:
+  - {fileID: 1977329599238187879}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
 --- !u!114 &3537597108735440392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,7 +270,7 @@ MonoBehaviour:
   - Name: Desktop
     Value: 905280
   Exists: 1
---- !u!114 &4479910274188989052
+--- !u!114 &4467914607120435944
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -252,9 +280,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/FlashLight
+  m_Name: event:/SFX/FlashLight
   m_EditorClassIdentifier: 
-  Path: event:/FlashLight
+  Path: event:/SFX/FlashLight
   Guid:
     Data1: -1183138672
     Data2: 1171855336
