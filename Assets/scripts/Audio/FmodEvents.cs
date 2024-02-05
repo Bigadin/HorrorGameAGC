@@ -17,6 +17,14 @@ public class FmodEvents : MonoBehaviour
     public EventReference music { get; private set; }
     [field: SerializeField]
     public EventReference flashlight { get; private set; }
+    [field: SerializeField]
+    public EventReference footstepsRunWood { get; private set; }
+    [field: SerializeField]
+    public EventReference footstepsWalkWood { get; private set; }
+
+
+
+
     private void Awake()
     {
         if (Instance != null)

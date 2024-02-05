@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class ControlPlayer : MonoBehaviour
 {
-    public float walkingSpeed = 7.5f;
-    public float runningSpeed = 11.5f;
-    public float jumpSpeed = 8.0f;
-    public float gravity = 20.0f;
+    [SerializeField]
+    private float walkingSpeed = 7.5f, runningSpeed = 11.5f,jumpSpeed = 8.0f,gravity = 20.0f ,lookSpeed = 2.0f, lookXLimit = 45.0f;
     public Camera playerCamera;
     public CinemachineVirtualCamera CM_cam;
-    public float lookSpeed = 2.0f;
-    public float lookXLimit = 45.0f;
+
+ 
 
     private CharacterController characterController;
     private Vector3 moveDirection = Vector3.zero;
@@ -20,6 +18,8 @@ public class ControlPlayer : MonoBehaviour
     // FMOD Footsteps
     private EventInstance footsteps;
     private EventInstance runningSound;
+    private EventInstance walkwood;
+    private EventInstance runningwood;
     private bool isWalking;
     private bool isRunning;
 
@@ -30,6 +30,17 @@ public class ControlPlayer : MonoBehaviour
     [HideInInspector]
     public bool canMove = true;
 
+    public enum FLoorType {
+    Default,
+    Grass,
+    Wood
+    
+    
+    }
+    private FLoorType curentfloor =FLoorType.Default;
+
+
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -39,15 +50,50 @@ public class ControlPlayer : MonoBehaviour
         // FMOD Footsteps Initialization
         footsteps = AudioManager.Instance.CreateInstance(FmodEvents.Instance.footstepsWalkGrass);
         runningSound = AudioManager.Instance.CreateInstance(FmodEvents.Instance.footstepsRunGrass);
+        walkwood = AudioManager.Instance.CreateInstance(FmodEvents.Instance.footstepsWalkWood);
+        runningwood = AudioManager.Instance.CreateInstance(FmodEvents.Instance.footstepsRunWood);
         Debug.Log("Footsteps EventInstance: " + footsteps.isValid());
     }
 
     void Update()
     {
+
+        RaycastHit hit;
+
+        // Perform raycast to check the floor type
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 1.0f))
+        {
+            Debug.Log("hit" + hit.collider.gameObject.layer);
+            CheckFloorType(hit.collider.gameObject.layer);
+        }
+        else
+        {
+            Debug.Log("no hit");
+        }
         HandleMovement();
         HandleMouseLook();
         HandleCameraNoise();
         UpdateSound();
+    }
+
+    private void CheckFloorType(int layer)
+    {
+        // Compare the layer to determine the floor type
+        switch (layer)
+        {
+            case 6: // Layer for Grass
+                curentfloor=FLoorType.Grass;
+                break;
+
+            case 7: // Layer for Wood
+                curentfloor = FLoorType.Wood;
+                break;
+
+            // Add more cases for other floor types as needed
+
+            default:
+                break;
+        }
     }
 
     void HandleMovement()
@@ -123,42 +169,98 @@ public class ControlPlayer : MonoBehaviour
 
     void UpdateSound()
     {
-        if (isWalking)
-        {
-            PLAYBACK_STATE playbackstate;
-            footsteps.getPlaybackState(out playbackstate);
-            Debug.Log("Playback State: " + playbackstate);
 
-            if (playbackstate.Equals(PLAYBACK_STATE.STOPPED))
-            {
-                Debug.Log("Starting Sound");
-                footsteps.start();
-            }
-        }
-        else
-        {
-            Debug.Log("Stopping Sound");
-            footsteps.stop(STOP_MODE.ALLOWFADEOUT);
-        }
-        if (isRunning)
-        {
-            PLAYBACK_STATE playbackstate;
-            runningSound.getPlaybackState(out playbackstate);
-            Debug.Log("Playback State: " + playbackstate);
+        switch (curentfloor) {
+            case FLoorType.Grass:
+                {
 
-            if (playbackstate.Equals(PLAYBACK_STATE.STOPPED))
-            {
-                Debug.Log("Starting Sound");
-                runningSound.start();
-            }
+                    if (isWalking)
+                    {
+                        PLAYBACK_STATE playbackstate;
+                        footsteps.getPlaybackState(out playbackstate);
+                        Debug.Log("Playback State: " + playbackstate);
 
+                        if (playbackstate.Equals(PLAYBACK_STATE.STOPPED))
+                        {
+                            Debug.Log("Starting Sound");
+                            footsteps.start();
+                        }
+                    }
+                    else
+                    {
+                        Debug.Log("Stopping Sound");
+                        footsteps.stop(STOP_MODE.ALLOWFADEOUT);
+                    }
+                    if (isRunning)
+                    {
+                        PLAYBACK_STATE playbackstate;
+                        runningSound.getPlaybackState(out playbackstate);
+                        Debug.Log("Playback State: " + playbackstate);
+
+                        if (playbackstate.Equals(PLAYBACK_STATE.STOPPED))
+                        {
+                            Debug.Log("Starting Sound");
+                            runningSound.start();
+                        }
+
+                    }
+                    else
+                    {
+                        Debug.Log("Stopping Sound");
+                        runningSound.stop(STOP_MODE.ALLOWFADEOUT);
+                    }
+                }
+                break;
+            case FLoorType.Wood:
+                {
+                    if (isWalking)
+                    {
+                        PLAYBACK_STATE playbackstate;
+                        walkwood.getPlaybackState(out playbackstate);
+                        Debug.Log("Playback State: " + playbackstate);
+
+                        if (playbackstate.Equals(PLAYBACK_STATE.STOPPED))
+                        {
+                            Debug.Log("Starting Sound");
+                            walkwood.start();
+                        }
+                    }
+                    else
+                    {
+                        Debug.Log("Stopping Sound");
+                        walkwood.stop(STOP_MODE.ALLOWFADEOUT);
+                    }
+                    if (isRunning)
+                    {
+                        PLAYBACK_STATE playbackstate;
+                        runningwood.getPlaybackState(out playbackstate);
+                        Debug.Log("Playback State: " + playbackstate);
+
+                        if (playbackstate.Equals(PLAYBACK_STATE.STOPPED))
+                        {
+                            Debug.Log("Starting Sound");
+                            runningwood.start();
+                        }
+
+                    }
+                    else
+                    {
+                        Debug.Log("Stopping Sound");
+                        runningwood.stop(STOP_MODE.ALLOWFADEOUT);
+                    }
+
+                }
+                break;
+            default:
+                {
+
+                }
+                break;
         }
-        else
-        {
-            Debug.Log("Stopping Sound");
-            runningSound.stop(STOP_MODE.ALLOWFADEOUT);
-        }
+
+
+        
     }
-
+    
 
 }
