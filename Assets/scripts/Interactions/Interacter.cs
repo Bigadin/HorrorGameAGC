@@ -1,22 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 using TMPro;
 
-interface IInteractable {
-    public void interact();
+// Define the interactable interface
+public interface IInteractable
+{
+    void Interact();
 }
-
 
 public class Interacter : MonoBehaviour
 {
-    [SerializeField]
-    private Transform interactionSource;
-    [SerializeField]
-    private float interactionDistance;
-    [SerializeField]
-    private TextMeshProUGUI pressE;
+    [SerializeField] private Transform interactionSource;
+    [SerializeField] private float interactionDistance;
+    [SerializeField] private TextMeshProUGUI pressE;
+    [SerializeField] private float sphereRadius = 0.1f;
+    private Color raycolor = Color.red;   
 
     private void Start()
     {
@@ -25,26 +22,37 @@ public class Interacter : MonoBehaviour
 
     private void Update()
     {
+        // Ensure the raycast direction is normalized
+        Vector3 rayDirection = interactionSource.forward.normalized;
 
-        Ray hit = new Ray(interactionSource.position, interactionSource.forward);
-        if (Physics.Raycast(hit, out RaycastHit hitInfo, interactionDistance))
+        // Perform the SphereCast
+        if (Physics.SphereCast(interactionSource.position, sphereRadius, rayDirection, out RaycastHit hitInfo, interactionDistance))
         {
-            
-            if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interacobj))
+            // Check if the hit object has a component that implements the IInteractable interface
+            if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactable))
             {
-                 pressE.text = "press E";
+                // Display the interaction prompt
+                pressE.text = "Press E";
+
+                // Check for input to interact
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    // Call the Interact method on the interactable object
+                    interactable.Interact();
                     Debug.Log("Interact");
-                    interacobj.interact();
                 }
-                
+            }
+            else
+            {
+                // Hide the interaction prompt if no interactable object is hit
+                pressE.text = "";
             }
         }
         else
         {
+            // Hide the interaction prompt if no object is hit
             pressE.text = "";
         }
-        
+        Debug.DrawRay(interactionSource.position, rayDirection * interactionDistance, raycolor);
     }
 }

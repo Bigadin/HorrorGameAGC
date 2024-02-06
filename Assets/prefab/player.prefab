@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 123143643126434739}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.99946797, z: -0, w: -0.032614585}
+  m_LocalRotation: {x: 0, y: 0.999468, z: -0, w: -0.032614335}
   m_LocalPosition: {x: 12, y: 1, z: 77}
   m_LocalScale: {x: 1.6, y: 1.6, z: 1.6}
   m_ConstrainProportionsScale: 0
@@ -52,8 +52,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70346fff779ab5d4eb134e298c028118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkingSpeed: 3
-  runningSpeed: 5
+  walkingSpeed: 4
+  runningSpeed: 8
   jumpSpeed: 10
   gravity: 20
   lookSpeed: 2
@@ -344,6 +344,7 @@ GameObject:
   - component: {fileID: 1569871480508923588}
   - component: {fileID: 5634238810305466795}
   - component: {fileID: 7819010958427656256}
+  - component: {fileID: 192473548686946160}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -359,7 +360,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5470379913011289729}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0017453284, y: -0.0000000037252907, z: -0, w: 0.9999985}
+  m_LocalRotation: {x: -0.0017453283, y: -0, z: -0, w: 0.99999845}
   m_LocalPosition: {x: 0, y: 1.1000001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -510,6 +511,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attenuationObject: {fileID: 123143643126434739}
+--- !u!114 &192473548686946160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5470379913011289729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e725bc12be7b1944be72c62ad604c8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionSource: {fileID: 1189678517095692041}
+  interactionDistance: 6
+  pressE: {fileID: 0}
 --- !u!1 &6225701995995758647
 GameObject:
   m_ObjectHideFlags: 0
@@ -5622,7 +5638,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5659905348662120511
 Transform:
   m_ObjectHideFlags: 0

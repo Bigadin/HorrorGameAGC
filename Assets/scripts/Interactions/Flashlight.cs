@@ -6,7 +6,7 @@ public class Flashlight : MonoBehaviour,IInteractable
 {
     [SerializeField]
     private GameObject flashlight;
-    public void interact()
+    public void Interact()
     {
         flashlight.SetActive(true);
         Debug.Log("sa marche");
