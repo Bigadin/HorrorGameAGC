@@ -27,6 +27,11 @@ public class Door : MonoBehaviour,IInteractable
         if (state == DoorState.Locked)
         {
 
+            foreach (GameObject item in Inventory.Instance.GetGameObjects()) { 
+            
+            
+            }
+
             isOpen=false;
             AudioManager.Instance.PlayOneShot(FmodEvents.Instance.lockedDoor, this.transform.position);
         }
