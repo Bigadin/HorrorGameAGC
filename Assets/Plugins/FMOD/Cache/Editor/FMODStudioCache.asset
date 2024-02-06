@@ -89,7 +89,7 @@ MonoBehaviour:
   Path: ../../Fmod/Tryout/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638428357970736446
+  lastModified: 638428492913329660
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -109,10 +109,10 @@ MonoBehaviour:
   Path: ../../Fmod/Tryout/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638428357970756434
+  lastModified: 638428492913359674
   FileSizes:
   - Name: Desktop
-    Value: 1458
+    Value: 1492
   Exists: 1
 --- !u!114 &-6019986061827020657
 MonoBehaviour:
@@ -254,12 +254,13 @@ MonoBehaviour:
   - {fileID: -6019986061827020657}
   - {fileID: -1839113807735924063}
   - {fileID: 3133236886009555201}
+  - {fileID: 4858079004330132053}
   EditorParameters: []
   MasterBanks:
   - {fileID: -6374985843886719895}
   StringsBanks:
   - {fileID: -6063200131512059321}
-  cacheTime: 638428357996631982
+  cacheTime: 638428492919122280
   cacheVersion: 131616
 --- !u!114 &1977329599238187879
 MonoBehaviour:
@@ -276,10 +277,10 @@ MonoBehaviour:
   Path: ../../Fmod/Tryout/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638428357996631982
+  lastModified: 638428492919122280
   FileSizes:
   - Name: Desktop
-    Value: 2487104
+    Value: 2495968
   Exists: 1
 --- !u!114 &3133236886009555201
 MonoBehaviour:
@@ -373,6 +374,33 @@ MonoBehaviour:
     Data2: 1171855336
     Data3: 12769186
     Data4: -450486446
+  Banks:
+  - {fileID: 1977329599238187879}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &4858079004330132053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Key
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Key
+  Guid:
+    Data1: -708738791
+    Data2: 1216303544
+    Data3: -186369394
+    Data4: 1866978862
   Banks:
   - {fileID: 1977329599238187879}
   IsStream: 0
