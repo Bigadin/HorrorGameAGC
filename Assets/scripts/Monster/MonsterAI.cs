@@ -13,7 +13,7 @@ public class MonsterAI : MonoBehaviour
     public float patrolWaitTime = 2f;
     public float detectionRange = 10f;
     public float chaseDuration = 15f;
-    public float criticalDistance = 3.2f; // player dead
+    public float criticalDistance = 6f; // player dead
 
     private NavMeshAgent navMeshAgent;
     private int currentWaypointIndex;
