@@ -28,7 +28,7 @@ public class Door : MonoBehaviour,IInteractable
         {
 
             foreach (GameObject item in Inventory.Instance.GetGameObjects()) { 
-            
+            if()
             
             }
 
