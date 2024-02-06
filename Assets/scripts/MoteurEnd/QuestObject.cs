@@ -14,7 +14,7 @@ public class QuestObject : MonoBehaviour
             pickup_indicator.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E))
             {
-                playerInventory.addObject(transform.GetComponent<QuestObject>());
+                
                 pickup_indicator.SetActive(false);
                 gameObject.SetActive(false);
             }

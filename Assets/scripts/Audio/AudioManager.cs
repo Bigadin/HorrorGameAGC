@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class AudioManager : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class AudioManager : MonoBehaviour
 
     private EventInstance ambianceEventInstance;
     private EventInstance musicEventInstance;
+    private EventInstance carEventInstance;
+
+    [SerializeField]
+    private Transform carPosition;
 
     private void Awake()
     {
@@ -28,6 +33,7 @@ public class AudioManager : MonoBehaviour
     {
         InitializeAmbiance(FmodEvents.Instance.rain);
         InitializeMusic(FmodEvents.Instance.music);
+        InitializeCarHonking(FmodEvents.Instance.carEngine);
     }
 
     public void PlayOneShot(EventReference sound, Vector3 position)
@@ -71,15 +77,33 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    private void InitializeCarHonking(EventReference carEventReference)
+    {
+        carEventInstance = CreateInstance(carEventReference);
+        if (carEventInstance.isValid())
+        {
+            Debug.Log("Ambiance EventInstance created successfully");
+            carEventInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(carPosition, Vector3.zero));
+            carEventInstance.start();
+        }
+        else
+        {
+            Debug.LogError("Failed to create Ambiance EventInstance");
+        }
+    }
+
     private void CleanUp()
     {
-        foreach (var eventInstance in eventInstances) {
+        foreach (var eventInstance in eventInstances)
+        {
             eventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             eventInstance.release();
-        
         }
 
+        // Clear the list after cleanup
+        eventInstances.Clear();
     }
+
 
     private void OnDestroy()
     {

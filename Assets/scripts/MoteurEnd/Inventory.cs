@@ -4,15 +4,35 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public List<QuestObject> QuestObjects = new List<QuestObject>();
+    [SerializeField]
+    private List<GameObject> Items;
 
-    public void addObject(QuestObject obj)
+    public static Inventory Instance { get; private set; }
+
+    private void Awake()
     {
-        QuestObjects.Add(obj);
+        if (Instance != null)
+        {
+
+            Debug.Log("there is more than one inventory");
+        }
+        Instance = this;
     }
-    public bool checkListObject()
+
+    public void AddObjects(GameObject gameObject)
     {
-        if (QuestObjects.Count > 0) return true;
-        return false;
+
+        Items.Add(gameObject);
     }
+
+    public void RemoveObjects(GameObject gameGameObject)
+    {
+        Items.Remove(gameObject);
+    }
+    public List<GameObject> GetGameObjects()
+    {
+
+        return Items;
+    }
+
 }

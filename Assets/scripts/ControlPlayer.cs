@@ -9,7 +9,8 @@ public class ControlPlayer : MonoBehaviour
     public Camera playerCamera;
     public CinemachineVirtualCamera CM_cam;
 
- 
+    [SerializeField]
+    private Animator flashlightAnimator;
 
     private CharacterController characterController;
     private Vector3 moveDirection = Vector3.zero;
@@ -65,25 +66,13 @@ public class ControlPlayer : MonoBehaviour
     void Update()
     {
 
-        RaycastHit hit;
-
-        // Perform raycast to check the floor type
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, 3f))
-        {
-            Debug.Log("hit" + hit.collider.gameObject.layer);
-            CheckFloorType(hit.collider.gameObject.layer);
-        }
-        else
-        {
-            Debug.Log("no hit");
-        }
         HandleMovement();
         HandleMouseLook();
         HandleCameraNoise();
         UpdateSound();
     }
 
-    private void CheckFloorType(int layer)
+    /*private void CheckFloorType(int layer)
     {
         // Compare the layer to determine the floor type
         switch (layer)
@@ -101,7 +90,7 @@ public class ControlPlayer : MonoBehaviour
             default:
                 break;
         }
-    }
+    }*/
 
     void HandleMovement()
     {
@@ -119,14 +108,21 @@ public class ControlPlayer : MonoBehaviour
         if (Mathf.Abs(curSpeedX) > 0 || Mathf.Abs(curSpeedY) > 0 && !isRunning)
         {
             isWalking = true;
+            flashlightAnimator.SetBool("IsMoving", true);
         }
-        else if(isRunning)
+        else if (isRunning)
         {
             isWalking = false;
+            flashlightAnimator.SetBool("IsMoving", true);
         }
         else
         {
             isWalking = false;
+
+        }
+        if(Mathf.Abs(curSpeedX) <0|| Mathf.Abs(curSpeedY) < 0)
+        {
+            flashlightAnimator.SetBool("IsMoving", false);
         }
 
         if (Input.GetButton("Jump") && characterController.isGrounded)
@@ -177,96 +173,41 @@ public class ControlPlayer : MonoBehaviour
     void UpdateSound()
     {
 
-        switch (curentfloor) {
-            case FLoorType.Grass:
-                {
+        if (isWalking)
+        {
+            PLAYBACK_STATE playbackstate;
+            footsteps.getPlaybackState(out playbackstate);
+            Debug.Log("Playback State: " + playbackstate);
 
-                    if (isWalking)
-                    {
-                        PLAYBACK_STATE playbackstate;
-                        footsteps.getPlaybackState(out playbackstate);
-                        Debug.Log("Playback State: " + playbackstate);
-
-                        if (playbackstate.Equals(PLAYBACK_STATE.STOPPED))
-                        {
-                            Debug.Log("Starting Sound");
-                            footsteps.start();
-                        }
-                    }
-                    else
-                    {
-                        Debug.Log("Stopping Sound");
-                        footsteps.stop(STOP_MODE.ALLOWFADEOUT);
-                    }
-                    if (isRunning)
-                    {
-                        PLAYBACK_STATE playbackstate;
-                        runningSound.getPlaybackState(out playbackstate);
-                        Debug.Log("Playback State: " + playbackstate);
-
-                        if (playbackstate.Equals(PLAYBACK_STATE.STOPPED))
-                        {
-                            Debug.Log("Starting Sound");
-                            runningSound.start();
-                        }
-
-                    }
-                    else
-                    {
-                        Debug.Log("Stopping Sound");
-                        runningSound.stop(STOP_MODE.ALLOWFADEOUT);
-                    }
-                }
-                break;
-            case FLoorType.Wood:
-                {
-                    if (isWalking)
-                    {
-                        PLAYBACK_STATE playbackstate;
-                        walkwood.getPlaybackState(out playbackstate);
-                        Debug.Log("Playback State: " + playbackstate);
-
-                        if (playbackstate.Equals(PLAYBACK_STATE.STOPPED))
-                        {
-                            Debug.Log("Starting Sound");
-                            walkwood.start();
-                        }
-                    }
-                    else
-                    {
-                        Debug.Log("Stopping Sound");
-                        walkwood.stop(STOP_MODE.ALLOWFADEOUT);
-                    }
-                    if (isRunning)
-                    {
-                        PLAYBACK_STATE playbackstate;
-                        runningwood.getPlaybackState(out playbackstate);
-                        Debug.Log("Playback State: " + playbackstate);
-
-                        if (playbackstate.Equals(PLAYBACK_STATE.STOPPED))
-                        {
-                            Debug.Log("Starting Sound");
-                            runningwood.start();
-                        }
-
-                    }
-                    else
-                    {
-                        Debug.Log("Stopping Sound");
-                        runningwood.stop(STOP_MODE.ALLOWFADEOUT);
-                    }
-
-                }
-                break;
-            default:
-                {
-
-                }
-                break;
+            if (playbackstate.Equals(PLAYBACK_STATE.STOPPED))
+            {
+                Debug.Log("Starting Sound");
+                footsteps.start();
+            }
         }
+        else
+        {
+            Debug.Log("Stopping Sound");
+            footsteps.stop(STOP_MODE.ALLOWFADEOUT);
+        }
+        if (isRunning)
+        {
+            PLAYBACK_STATE playbackstate;
+            runningSound.getPlaybackState(out playbackstate);
+            Debug.Log("Playback State: " + playbackstate);
 
+            if (playbackstate.Equals(PLAYBACK_STATE.STOPPED))
+            {
+                Debug.Log("Starting Sound");
+                runningSound.start();
+            }
 
-        
+        }
+        else
+        {
+            Debug.Log("Stopping Sound");
+            runningSound.stop(STOP_MODE.ALLOWFADEOUT);
+        }
     }
     
 
