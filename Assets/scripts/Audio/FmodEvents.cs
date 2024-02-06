@@ -21,6 +21,8 @@ public class FmodEvents : MonoBehaviour
     public EventReference footstepsRunWood { get; private set; }
     [field: SerializeField]
     public EventReference footstepsWalkWood { get; private set; }
+    [field: SerializeField]
+    public EventReference carEngine { get; private set; }
 
 
 
