@@ -25,6 +25,10 @@ public class FmodEvents : MonoBehaviour
     public EventReference carEngine { get; private set; }
     [field: SerializeField]
     public EventReference doorOpenClose { get; private set; }
+    [field: SerializeField]
+    public EventReference lightSwitch { get; private set; }
+    [field: SerializeField]
+    public EventReference lockedDoor { get; private set; }
 
 
 

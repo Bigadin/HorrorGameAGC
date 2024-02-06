@@ -146,3 +146,24 @@ MonoBehaviour:
       Data3: 858661042
       Data4: -1473754791
     Path: event:/Car
+  <doorOpenClose>k__BackingField:
+    Guid:
+      Data1: -1581861947
+      Data2: 1327026937
+      Data3: -979358833
+      Data4: 638287604
+    Path: event:/SFX/Door
+  <lightSwitch>k__BackingField:
+    Guid:
+      Data1: 1377862512
+      Data2: 1141379167
+      Data3: 636352954
+      Data4: -1234413224
+    Path: event:/SFX/LightSwitch
+  <lockedDoor>k__BackingField:
+    Guid:
+      Data1: 1814020022
+      Data2: 1131102803
+      Data3: -386283370
+      Data4: 956783455
+    Path: event:/SFX/LockedDoor

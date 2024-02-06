@@ -89,7 +89,7 @@ MonoBehaviour:
   Path: ../../Fmod/Tryout/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638427732123078678
+  lastModified: 638428357970736446
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -109,10 +109,10 @@ MonoBehaviour:
   Path: ../../Fmod/Tryout/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638427732123108682
+  lastModified: 638428357970756434
   FileSizes:
   - Name: Desktop
-    Value: 1364
+    Value: 1458
   Exists: 1
 --- !u!114 &-6019986061827020657
 MonoBehaviour:
@@ -168,6 +168,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 75258
+--- !u!114 &-1839113807735924063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/LightSwitch
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/LightSwitch
+  Guid:
+    Data1: 1377862512
+    Data2: 1141379167
+    Data3: 636352954
+    Data4: -1234413224
+  Banks:
+  - {fileID: 1977329599238187879}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-497767173607211221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,12 +252,14 @@ MonoBehaviour:
   - {fileID: 3151669984865351779}
   - {fileID: 6753826300063957995}
   - {fileID: -6019986061827020657}
+  - {fileID: -1839113807735924063}
+  - {fileID: 3133236886009555201}
   EditorParameters: []
   MasterBanks:
   - {fileID: -6374985843886719895}
   StringsBanks:
   - {fileID: -6063200131512059321}
-  cacheTime: 638427757726405852
+  cacheTime: 638428357996631982
   cacheVersion: 131616
 --- !u!114 &1977329599238187879
 MonoBehaviour:
@@ -247,11 +276,38 @@ MonoBehaviour:
   Path: ../../Fmod/Tryout/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638427757726405852
+  lastModified: 638428357996631982
   FileSizes:
   - Name: Desktop
-    Value: 2412736
+    Value: 2487104
   Exists: 1
+--- !u!114 &3133236886009555201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/LockedDoor
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/LockedDoor
+  Guid:
+    Data1: 1814020022
+    Data2: 1131102803
+    Data3: -386283370
+    Data4: 956783455
+  Banks:
+  - {fileID: 1977329599238187879}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1000
 --- !u!114 &3151669984865351779
 MonoBehaviour:
   m_ObjectHideFlags: 0

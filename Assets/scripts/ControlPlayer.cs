@@ -9,7 +9,8 @@ public class ControlPlayer : MonoBehaviour
     public Camera playerCamera;
     public CinemachineVirtualCamera CM_cam;
 
- 
+    [SerializeField]
+    private Animator flashlightAnimator;
 
     private CharacterController characterController;
     private Vector3 moveDirection = Vector3.zero;
@@ -64,7 +65,7 @@ public class ControlPlayer : MonoBehaviour
         UpdateSound();
     }
 
-    private void CheckFloorType(int layer)
+    /*private void CheckFloorType(int layer)
     {
         // Compare the layer to determine the floor type
         switch (layer)
@@ -82,7 +83,7 @@ public class ControlPlayer : MonoBehaviour
             default:
                 break;
         }
-    }
+    }*/
 
     void HandleMovement()
     {
@@ -100,14 +101,21 @@ public class ControlPlayer : MonoBehaviour
         if (Mathf.Abs(curSpeedX) > 0 || Mathf.Abs(curSpeedY) > 0 && !isRunning)
         {
             isWalking = true;
+            flashlightAnimator.SetBool("IsMoving", true);
         }
-        else if(isRunning)
+        else if (isRunning)
         {
             isWalking = false;
+            flashlightAnimator.SetBool("IsMoving", true);
         }
         else
         {
             isWalking = false;
+
+        }
+        if(Mathf.Abs(curSpeedX) <0|| Mathf.Abs(curSpeedY) < 0)
+        {
+            flashlightAnimator.SetBool("IsMoving", false);
         }
 
         if (Input.GetButton("Jump") && characterController.isGrounded)

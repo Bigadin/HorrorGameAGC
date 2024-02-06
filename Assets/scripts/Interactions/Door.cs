@@ -6,7 +6,16 @@ public class Door : MonoBehaviour,IInteractable
 {
 
     private Animator animator;
-    private bool isOpen=false;
+    private bool isOpen= false;
+
+    private enum DoorState {
+    Locked,
+    Unlocked
+    }
+
+    [SerializeField]
+    private DoorState state;    
+
 
     private void Awake()
     {
@@ -14,13 +23,23 @@ public class Door : MonoBehaviour,IInteractable
     }
     public void Interact()
     {
-        if (!isOpen)
+
+        if (state == DoorState.Locked)
         {
+
+            isOpen=false;
+            AudioManager.Instance.PlayOneShot(FmodEvents.Instance.lockedDoor, this.transform.position);
+        }
+
+        if (!isOpen && state == DoorState.Unlocked)
+        {
+            isOpen = true;
             animator.SetBool("Open", true);
             animator.SetBool("CLose", false);
             AudioManager.Instance.PlayOneShot(FmodEvents.Instance.doorOpenClose, this.transform.position);
-        }else if(isOpen)
+        }else if(isOpen && state == DoorState.Unlocked)
         {
+            isOpen=false;
             animator.SetBool("Close", true);
             animator.SetBool("Open", false);
             AudioManager.Instance.PlayOneShot(FmodEvents.Instance.doorOpenClose, this.transform.position);
