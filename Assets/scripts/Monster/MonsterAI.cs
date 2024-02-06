@@ -13,7 +13,7 @@ public class MonsterAI : MonoBehaviour
     public float patrolWaitTime = 2f;
     public float detectionRange = 10f;
     public float chaseDuration = 15f;
-    public float criticalDistance = 2f; // player dead
+    public float criticalDistance = 3.2f; // player dead
 
     private NavMeshAgent navMeshAgent;
     private int currentWaypointIndex;
@@ -22,15 +22,26 @@ public class MonsterAI : MonoBehaviour
     private float chaseTimer;
     Animator animator;
 
+    [Header("Dead")]
+    [SerializeField] Animator ImageDeadAnimator;
+    [SerializeField] GameObject screamer;
+
     public UnityEvent player_dead;
     void Start()
     {
         animator = GetComponent<Animator>();
-
+        player_dead.AddListener(dead);
         navMeshAgent = GetComponent<NavMeshAgent>();
         SetPatrolDestination();
     }
-
+    void dead()
+    {
+        ImageDeadAnimator.Play("Dead_transition");
+        screamer.SetActive(true);
+        transform.GetChild(0).GetComponent<Renderer>().enabled = false;
+        // diro restart StartCoroutine(RestartGame())
+    }
+    
     void Update()
     {
         animator.SetBool("isRunning", true);

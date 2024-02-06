@@ -9407,17 +9407,22 @@ PrefabInstance:
     - target: {fileID: 1189678517095692041, guid: 6af2abdc1d82fe34a89b5804f6e5bedf,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1000001
+      value: 1.7000002
       objectReference: {fileID: 0}
     - target: {fileID: 3140681170971971347, guid: 6af2abdc1d82fe34a89b5804f6e5bedf,
         type: 3}
       propertyPath: m_AmplitudeGain
-      value: 0.54
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3140681170971971347, guid: 6af2abdc1d82fe34a89b5804f6e5bedf,
         type: 3}
       propertyPath: m_FrequencyGain
-      value: 0.0104
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 3254310000014207009, guid: 6af2abdc1d82fe34a89b5804f6e5bedf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 4222164475010110446, guid: 6af2abdc1d82fe34a89b5804f6e5bedf,
         type: 3}
