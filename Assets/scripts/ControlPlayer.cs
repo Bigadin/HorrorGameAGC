@@ -36,7 +36,14 @@ public class ControlPlayer : MonoBehaviour
     Wood
     
     
+
     }
+    public enum PlayerStat
+    {
+        normal,
+        hiding,
+    }
+    public static PlayerStat playerStat;
     private FLoorType curentfloor =FLoorType.Default;
 
 

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class MonsterAI : MonoBehaviour
 {
@@ -12,12 +13,16 @@ public class MonsterAI : MonoBehaviour
     public float patrolWaitTime = 2f;
     public float detectionRange = 10f;
     public float chaseDuration = 15f;
+    public float criticalDistance = 2f; // player dead
 
     private NavMeshAgent navMeshAgent;
     private int currentWaypointIndex;
     private bool isChasingPlayer;
+    private bool endChassing;
     private float chaseTimer;
     Animator animator;
+
+    public UnityEvent player_dead;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -53,6 +58,7 @@ public class MonsterAI : MonoBehaviour
     IEnumerator PatrolWait()
     {
         yield return new WaitForSeconds(patrolWaitTime);
+        isChasingPlayer = false;
         SetPatrolDestination();
     }
 
@@ -68,7 +74,7 @@ public class MonsterAI : MonoBehaviour
        
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
-        if (distanceToPlayer < detectionRange)
+        if (distanceToPlayer < detectionRange && !endChassing)
         {
             isChasingPlayer = true;
             navMeshAgent.speed = chaseSpeed;
@@ -80,13 +86,21 @@ public class MonsterAI : MonoBehaviour
     void ChasePlayer()
     {
         print("Im chassing");
+        print(chaseTimer);
 
         // You can add additional behavior for chasing the player here
+        if(Vector3.Distance(transform.position, player.position) <= criticalDistance)
+        {
+            //eventPlayer death
+            player_dead.Invoke();
+        }
 
-        if ( chaseTimer >= chaseDuration)
+        if ((!endChassing && chaseTimer >= chaseDuration) || ControlPlayer.playerStat == ControlPlayer.PlayerStat.hiding)
         {
             isChasingPlayer = false;
-            SetPatrolDestination();
+            endChassing = true;
+            print("aaaaaaaaaaaaaaaaaaaaam not chassing");
+            StartCoroutine(PatrolWait());
         }
         else
         {
