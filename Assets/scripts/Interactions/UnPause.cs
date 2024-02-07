@@ -17,6 +17,7 @@ public class UnPause : MonoBehaviour
         {
             this.gameObject.SetActive(false);
             player.enabled = true;
+            Time.timeScale = 1f;
         }
     }
 }

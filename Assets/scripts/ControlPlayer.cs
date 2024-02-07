@@ -61,8 +61,8 @@ public class ControlPlayer : MonoBehaviour
         // FMOD Footsteps Initialization
         footsteps = AudioManager.Instance.CreateInstance(FmodEvents.Instance.footstepsWalkGrass);
         runningSound = AudioManager.Instance.CreateInstance(FmodEvents.Instance.footstepsRunGrass);
-        walkwood = AudioManager.Instance.CreateInstance(FmodEvents.Instance.footstepsWalkWood);
-        runningwood = AudioManager.Instance.CreateInstance(FmodEvents.Instance.footstepsRunWood);
+        /*walkwood = AudioManager.Instance.CreateInstance(FmodEvents.Instance.footstepsWalkWood);
+        runningwood = AudioManager.Instance.CreateInstance(FmodEvents.Instance.footstepsRunWood);*/
         Debug.Log("Footsteps EventInstance: " + footsteps.isValid());
     }
 
@@ -122,10 +122,6 @@ public class ControlPlayer : MonoBehaviour
         else
         {
             isWalking = false;
-
-        }
-        if(Mathf.Abs(curSpeedX) <0|| Mathf.Abs(curSpeedY) < 0)
-        {
             flashlightAnimator.SetBool("IsMoving", false);
         }
 
@@ -145,6 +141,7 @@ public class ControlPlayer : MonoBehaviour
 
         characterController.Move(moveDirection * Time.deltaTime);
     }
+
 
     void HandleMouseLook()
     {
@@ -217,6 +214,7 @@ public class ControlPlayer : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape)) {
             MainMenu.SetActive(true);
             this.enabled = false;
+            Time.timeScale = 0f;
         }
         
     }

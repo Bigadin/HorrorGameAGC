@@ -34,7 +34,9 @@ public class FmodEvents : MonoBehaviour
     [field: SerializeField]
     public EventReference keySound { get; private set; }
     [field: SerializeField]
-    public EventReference papperPickup{ get; private set; }
+    public EventReference papperPickup { get; private set; }
+    [field: SerializeField]
+    public EventReference objectPickup { get; private set; }
 
 
 

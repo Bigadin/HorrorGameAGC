@@ -9,8 +9,8 @@ public class Flashlight : MonoBehaviour,IInteractable
     public void Interact()
     {
         flashlight.SetActive(true);
-        Debug.Log("sa marche");
-        Destroy(this.gameObject);
+        AudioManager.Instance.PlayOneShot(FmodEvents.Instance.objectPickup, this.transform.position);
+        this.gameObject.SetActive(false);
         
     }
 

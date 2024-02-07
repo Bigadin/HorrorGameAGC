@@ -16,8 +16,6 @@ public class AudioManager : MonoBehaviour
     private EventInstance musicEventInstance;
     private EventInstance carEventInstance;
 
-    [SerializeField]
-    private Transform carPosition;
 
     private void Awake()
     {
@@ -33,7 +31,6 @@ public class AudioManager : MonoBehaviour
     {
         InitializeAmbiance(FmodEvents.Instance.rain);
         InitializeMusic(FmodEvents.Instance.music);
-        InitializeCarHonking(FmodEvents.Instance.carEngine);
     }
 
     public void PlayOneShot(EventReference sound, Vector3 position)
@@ -77,7 +74,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    private void InitializeCarHonking(EventReference carEventReference)
+    public void InitializeCarHonking(EventReference carEventReference,Transform carPosition)
     {
         carEventInstance = CreateInstance(carEventReference);
         if (carEventInstance.isValid())

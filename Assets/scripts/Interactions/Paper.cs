@@ -15,7 +15,7 @@ public class Paper : MonoBehaviour, IInteractable
     }
     public void Interact()
     {
-        AudioManager.Instance.PlayOneShot(FmodEvents.Instance.papperPickup, this.transform.position);
+        AudioManager.Instance.PlayOneShot(FmodEvents.Instance.papperPickup,this.transform.position);
         paper.SetActive(true);
         player.enabled = false;
 
