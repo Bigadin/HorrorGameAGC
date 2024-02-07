@@ -60,7 +60,7 @@ public class MonsterAI : MonoBehaviour
 
     void Patrol()
     {
-        if (navMeshAgent.remainingDistance < 0.5f)
+        if (navMeshAgent.remainingDistance < 2f)
         {
             StartCoroutine(PatrolWait());
         }
