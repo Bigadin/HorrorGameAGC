@@ -3384,7 +3384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelToLoad: BigadinScene
-  MainMenuScene: Main menu
+  MainMenuScene: 
   Continue_Popup: {fileID: 973932454}
   volume_value: {fileID: 1877892943}
   volumeSlider: {fileID: 1188083696}

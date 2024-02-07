@@ -28,6 +28,9 @@ public class ControlPlayer : MonoBehaviour
     private float CM_Noise_Amplitude = 0.5f;
     private float CM_Noise_Frequency = 0.01f;
 
+    [SerializeField]
+    private GameObject MainMenu;
+
     [HideInInspector]
     public bool canMove = true;
 
@@ -70,6 +73,7 @@ public class ControlPlayer : MonoBehaviour
         HandleMouseLook();
         HandleCameraNoise();
         UpdateSound();
+        OpenMenu();
     }
 
     /*private void CheckFloorType(int layer)
@@ -208,5 +212,12 @@ public class ControlPlayer : MonoBehaviour
         }
     }
     
-
+    private void OpenMenu()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape)) {
+            MainMenu.SetActive(true);
+            this.enabled = false;
+        }
+        
+    }
 }

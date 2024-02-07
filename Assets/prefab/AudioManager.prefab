@@ -167,3 +167,24 @@ MonoBehaviour:
       Data3: -386283370
       Data4: 956783455
     Path: event:/SFX/LockedDoor
+  <unlockDoor>k__BackingField:
+    Guid:
+      Data1: 1679235964
+      Data2: 1206013912
+      Data3: 369260966
+      Data4: 857541507
+    Path: event:/SFX/UnlockDoor
+  <keySound>k__BackingField:
+    Guid:
+      Data1: -708738791
+      Data2: 1216303544
+      Data3: -186369394
+      Data4: 1866978862
+    Path: event:/SFX/Key
+  <papperPickup>k__BackingField:
+    Guid:
+      Data1: -943002231
+      Data2: 1231093970
+      Data3: -4292161
+      Data4: 1984974982
+    Path: event:/SFX/PickupPaper

@@ -33,6 +33,8 @@ public class FmodEvents : MonoBehaviour
     public EventReference unlockDoor { get; private set; }
     [field: SerializeField]
     public EventReference keySound { get; private set; }
+    [field: SerializeField]
+    public EventReference papperPickup{ get; private set; }
 
 
 

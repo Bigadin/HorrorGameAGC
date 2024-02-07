@@ -10,6 +10,7 @@ public class Dialogue_Manager : MonoBehaviour
     public float textDelay;
     public GameObject dialoguePanel;
     private bool dialogueActive = false;
+    [SerializeField]
     private Dictionary<string, string> dialogueDatabase = new Dictionary<string, string>();
 
     void Start()
