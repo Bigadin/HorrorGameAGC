@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Bigadin/BigadinScene.unity
+    path: Assets/Scenes/Bigadin/BIgadinNano.unity
     guid: 6628db073bbd07d41a2252d542f30a6d
   - enabled: 1
     path: Assets/Scenes/Bigadin/TheGamePlay.unity

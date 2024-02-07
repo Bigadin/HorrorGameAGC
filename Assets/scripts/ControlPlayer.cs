@@ -177,35 +177,33 @@ public class ControlPlayer : MonoBehaviour
         {
             PLAYBACK_STATE playbackstate;
             footsteps.getPlaybackState(out playbackstate);
-            Debug.Log("Playback State: " + playbackstate);
 
             if (playbackstate.Equals(PLAYBACK_STATE.STOPPED))
             {
-                Debug.Log("Starting Sound");
+                
                 footsteps.start();
             }
         }
         else
         {
-            Debug.Log("Stopping Sound");
+            
             footsteps.stop(STOP_MODE.ALLOWFADEOUT);
         }
         if (isRunning)
         {
             PLAYBACK_STATE playbackstate;
             runningSound.getPlaybackState(out playbackstate);
-            Debug.Log("Playback State: " + playbackstate);
 
             if (playbackstate.Equals(PLAYBACK_STATE.STOPPED))
             {
-                Debug.Log("Starting Sound");
+                
                 runningSound.start();
             }
 
         }
         else
         {
-            Debug.Log("Stopping Sound");
+            
             runningSound.stop(STOP_MODE.ALLOWFADEOUT);
         }
     }

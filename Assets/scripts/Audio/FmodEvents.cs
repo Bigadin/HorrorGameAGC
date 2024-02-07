@@ -29,7 +29,8 @@ public class FmodEvents : MonoBehaviour
     public EventReference lightSwitch { get; private set; }
     [field: SerializeField]
     public EventReference lockedDoor { get; private set; }
-
+    [field: SerializeField]
+    public EventReference unlockDoor { get; private set; }
     [field: SerializeField]
     public EventReference keySound { get; private set; }
 

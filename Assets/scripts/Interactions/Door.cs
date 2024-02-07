@@ -27,20 +27,27 @@ public class Door : MonoBehaviour,IInteractable
         if (state == DoorState.Locked)
         {
 
-            foreach (GameObject item in Inventory.Instance.GetGameObjects()) { 
-            
+            foreach (GameObject item in Inventory.Instance.GetGameObjects()) {
+                if (item.gameObject.name == "Key")
+                {
+                    state=DoorState.Unlocked;
+                    AudioManager.Instance.PlayOneShot(FmodEvents.Instance.unlockDoor,this.transform.position);
+                    break;
+                }
             
             }
-
-            isOpen=false;
-            AudioManager.Instance.PlayOneShot(FmodEvents.Instance.lockedDoor, this.transform.position);
+            if(state == DoorState.Locked) {
+                isOpen = false;
+                AudioManager.Instance.PlayOneShot(FmodEvents.Instance.lockedDoor, this.transform.position);
+            }
+            
         }
 
         if (!isOpen && state == DoorState.Unlocked)
         {
             isOpen = true;
             animator.SetBool("Open", true);
-            animator.SetBool("CLose", false);
+            animator.SetBool("Close", false);
             AudioManager.Instance.PlayOneShot(FmodEvents.Instance.doorOpenClose, this.transform.position);
         }else if(isOpen && state == DoorState.Unlocked)
         {

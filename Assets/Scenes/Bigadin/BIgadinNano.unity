@@ -406,7 +406,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8897b57978b916d498aaf7ea279aea8a,
         type: 3}
       propertyPath: m_Name
-      value: key
+      value: Key
       objectReference: {fileID: 0}
     - target: {fileID: 3816654056258493912, guid: 8897b57978b916d498aaf7ea279aea8a,
         type: 3}
@@ -431,6 +431,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 431832998}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8897b57978b916d498aaf7ea279aea8a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 431833000}
   m_SourcePrefab: {fileID: 100100000, guid: 8897b57978b916d498aaf7ea279aea8a, type: 3}
 --- !u!1 &431832997 stripped
 GameObject:
@@ -459,6 +463,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.1, y: 0.1, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &431833000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431832997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1c273195770e324390edfe5d6dc543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &527844167
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -614,7 +630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d167cc2db410b96479f08f3cb885c8e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LoadSceneAnim: {fileID: 1024748460}
+  LoadSceneAnim: {fileID: 0}
   pressEIndicator: {fileID: 1024748458}
 --- !u!4 &527844171 stripped
 Transform:
@@ -1059,12 +1075,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1024748457}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1024748460 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 7979038146184699300, guid: 472eafe6ca14a154d9b01c54ba4caed6,
-    type: 3}
-  m_PrefabInstance: {fileID: 1024748457}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1073449838
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1364,9 +1374,15 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e42647ac2a5c24941bdfcddc6255400d, type: 3}
---- !u!114 &1092983995 stripped
+--- !u!1 &1183186344 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4727111513773653008, guid: 472eafe6ca14a154d9b01c54ba4caed6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1024748457}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1185411127 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7153696089017754765, guid: 472eafe6ca14a154d9b01c54ba4caed6,
+  m_CorrespondingSourceObject: {fileID: 8013705376032541520, guid: 472eafe6ca14a154d9b01c54ba4caed6,
     type: 3}
   m_PrefabInstance: {fileID: 1024748457}
   m_PrefabAsset: {fileID: 0}
@@ -1376,12 +1392,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1183186344 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4727111513773653008, guid: 472eafe6ca14a154d9b01c54ba4caed6,
-    type: 3}
-  m_PrefabInstance: {fileID: 1024748457}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1225149080 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3294754058844616880, guid: 8f23fe7df00c12d41bd0e3d187387d76,
@@ -9584,6 +9594,56 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2050882415405602872, guid: bb9a0bffab7f60240897cb8ab0fe7e4b,
+        type: 3}
+      propertyPath: <keySound>k__BackingField.Path
+      value: event:/SFX/Key
+      objectReference: {fileID: 0}
+    - target: {fileID: 2050882415405602872, guid: bb9a0bffab7f60240897cb8ab0fe7e4b,
+        type: 3}
+      propertyPath: <unlockDoor>k__BackingField.Path
+      value: event:/SFX/UnlockDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 2050882415405602872, guid: bb9a0bffab7f60240897cb8ab0fe7e4b,
+        type: 3}
+      propertyPath: <keySound>k__BackingField.Guid.Data1
+      value: -708738791
+      objectReference: {fileID: 0}
+    - target: {fileID: 2050882415405602872, guid: bb9a0bffab7f60240897cb8ab0fe7e4b,
+        type: 3}
+      propertyPath: <keySound>k__BackingField.Guid.Data2
+      value: 1216303544
+      objectReference: {fileID: 0}
+    - target: {fileID: 2050882415405602872, guid: bb9a0bffab7f60240897cb8ab0fe7e4b,
+        type: 3}
+      propertyPath: <keySound>k__BackingField.Guid.Data3
+      value: -186369394
+      objectReference: {fileID: 0}
+    - target: {fileID: 2050882415405602872, guid: bb9a0bffab7f60240897cb8ab0fe7e4b,
+        type: 3}
+      propertyPath: <keySound>k__BackingField.Guid.Data4
+      value: 1866978862
+      objectReference: {fileID: 0}
+    - target: {fileID: 2050882415405602872, guid: bb9a0bffab7f60240897cb8ab0fe7e4b,
+        type: 3}
+      propertyPath: <unlockDoor>k__BackingField.Guid.Data1
+      value: 1679235964
+      objectReference: {fileID: 0}
+    - target: {fileID: 2050882415405602872, guid: bb9a0bffab7f60240897cb8ab0fe7e4b,
+        type: 3}
+      propertyPath: <unlockDoor>k__BackingField.Guid.Data2
+      value: 1206013912
+      objectReference: {fileID: 0}
+    - target: {fileID: 2050882415405602872, guid: bb9a0bffab7f60240897cb8ab0fe7e4b,
+        type: 3}
+      propertyPath: <unlockDoor>k__BackingField.Guid.Data3
+      value: 369260966
+      objectReference: {fileID: 0}
+    - target: {fileID: 2050882415405602872, guid: bb9a0bffab7f60240897cb8ab0fe7e4b,
+        type: 3}
+      propertyPath: <unlockDoor>k__BackingField.Guid.Data4
+      value: 857541507
+      objectReference: {fileID: 0}
     - target: {fileID: 2785143507374301427, guid: bb9a0bffab7f60240897cb8ab0fe7e4b,
         type: 3}
       propertyPath: m_Name
@@ -9928,7 +9988,7 @@ PrefabInstance:
         type: 3}
       propertyPath: pressE
       value: 
-      objectReference: {fileID: 1092983995}
+      objectReference: {fileID: 1185411127}
     - target: {fileID: 6407211177720240183, guid: 6af2abdc1d82fe34a89b5804f6e5bedf,
         type: 3}
       propertyPath: m_IsActive

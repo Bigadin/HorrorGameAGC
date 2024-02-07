@@ -21,7 +21,6 @@ public class Inventory : MonoBehaviour
 
     public void AddObjects(GameObject gameObject)
     {
-
         Items.Add(gameObject);
     }
 

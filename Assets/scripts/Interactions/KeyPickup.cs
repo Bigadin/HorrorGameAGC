@@ -8,6 +8,6 @@ public class KeyPickup : MonoBehaviour, IInteractable
     {
         AudioManager.Instance.PlayOneShot(FmodEvents.Instance.keySound,this.transform.position);
         Inventory.Instance.AddObjects(this.gameObject);
-        Destroy(this.gameObject);
+        gameObject.SetActive(false);
     }
 }
