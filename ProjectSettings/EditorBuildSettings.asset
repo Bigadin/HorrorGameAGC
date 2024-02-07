@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Nomad/Scenes/Main menu.unity
+    guid: 7707beaba65293343b761e04d573e880
+  - enabled: 1
     path: Assets/Scenes/Bigadin/BIgadinNano.unity
     guid: 6628db073bbd07d41a2252d542f30a6d
   - enabled: 1
