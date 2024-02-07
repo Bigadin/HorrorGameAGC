@@ -39,6 +39,7 @@ public class MonsterAI : MonoBehaviour
         ImageDeadAnimator.Play("Dead_transition");
         screamer.SetActive(true);
         transform.GetChild(0).GetComponent<Renderer>().enabled = false;
+        LightBatterieManager.instance.offLight();
         // diro restart StartCoroutine(RestartGame())
     }
     

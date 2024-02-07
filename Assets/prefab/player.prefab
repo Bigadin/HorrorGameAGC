@@ -61,6 +61,7 @@ MonoBehaviour:
   playerCamera: {fileID: 1569871480508923588}
   CM_cam: {fileID: 3225850098271529396}
   flashlightAnimator: {fileID: 3999210475268988930}
+  MainMenu: {fileID: 0}
   canMove: 1
 --- !u!143 &7924056505019148662
 CharacterController:
@@ -82,7 +83,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 3
   m_Height: 2
-  m_Radius: 0.5
+  m_Radius: 0.21
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
