@@ -5,14 +5,14 @@ using UnityEngine;
 public class Flashlight : MonoBehaviour,IInteractable
 {
     [SerializeField]
-    private GameObject flashlight;
+    GameObject flashlight;
+
+    [SerializeField] ControlPlayer cp;
     public void Interact()
     {
         flashlight.SetActive(true);
+        cp.isFlashGrabbed = true;
         Debug.Log("sa marche");
-        Destroy(this.gameObject);
-        
+        this.gameObject.SetActive(false);
     }
-
-    
 }

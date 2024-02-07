@@ -1,6 +1,7 @@
 using Cinemachine;
 using FMOD.Studio;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ControlPlayer : MonoBehaviour
 {
@@ -24,9 +25,15 @@ public class ControlPlayer : MonoBehaviour
     private bool isWalking;
     private bool isRunning;
 
+    public bool isFlashGrabbed = false;
+
     // Added missing variables
     private float CM_Noise_Amplitude = 0.5f;
     private float CM_Noise_Frequency = 0.01f;
+
+    [SerializeField] public Inventory inventory;
+    [SerializeField] Flashlight flash;
+    public string scene;
 
     [SerializeField]
     private GameObject MainMenu;
@@ -50,13 +57,22 @@ public class ControlPlayer : MonoBehaviour
     public static PlayerStat playerStat;
     private FLoorType curentfloor =FLoorType.Default;
 
+    public Inventory Inventory { get => inventory; set => inventory = value; }
 
-
+    void Awake(){
+    }
     void Start()
     {
+
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        if(PlayerPrefs.GetInt("isLoadingLevel") == 1)  //Scene is being loaded from the main menu 
+        {
+            loadPlayer();
+            Debug.Log("Player loaded!!");
+        }
 
         // FMOD Footsteps Initialization
         footsteps = AudioManager.Instance.CreateInstance(FmodEvents.Instance.footstepsWalkGrass);
@@ -64,6 +80,7 @@ public class ControlPlayer : MonoBehaviour
         walkwood = AudioManager.Instance.CreateInstance(FmodEvents.Instance.footstepsWalkWood);
         runningwood = AudioManager.Instance.CreateInstance(FmodEvents.Instance.footstepsRunWood);
         Debug.Log("Footsteps EventInstance: " + footsteps.isValid());
+
     }
 
     void Update()
@@ -74,6 +91,17 @@ public class ControlPlayer : MonoBehaviour
         HandleCameraNoise();
         UpdateSound();
         OpenMenu();
+
+        //TESTING SAVE-LOAD
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            loadPlayer();
+        }
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            savePlayer();
+        }
+
     }
 
     /*private void CheckFloorType(int layer)
@@ -203,11 +231,9 @@ public class ControlPlayer : MonoBehaviour
                 
                 runningSound.start();
             }
-
         }
         else
-        {
-            
+        {   
             runningSound.stop(STOP_MODE.ALLOWFADEOUT);
         }
     }
@@ -217,7 +243,39 @@ public class ControlPlayer : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape)) {
             MainMenu.SetActive(true);
             this.enabled = false;
-        }
+            Time.timeScale=0;
+        }   
+    }
+
+    public void savePlayer()
+    {
+        scene = SceneManager.GetActiveScene().name;
+        Debug.Log(scene);
+        Save_Sys.SavePlayer(this);
+    }
+
+    public void loadPlayer()
+    {
         
+        PlayerData pd = Save_Sys.LoadPlayer();
+
+        Debug.Log(pd.scene);
+
+        Vector3 pos = new Vector3();
+        pos.x = pd.position[0];
+        pos.y = pd.position[1];
+        pos.z = pd.position[2];
+        transform.position = pos;
+
+        Quaternion rot = Quaternion.Euler(pd.rotation[0], pd.rotation[1], pd.rotation[2]);
+        transform.rotation = rot;
+
+        inventory.SetGameObjects(pd.items);
+
+        if (pd.Flash){
+            flash.gameObject.SetActive(true);
+            flash.Interact();
+        }
+        //Add new data here...
     }
 }

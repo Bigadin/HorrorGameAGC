@@ -4,7 +4,7 @@ using System.IO;
 [System.Serializable]
 public static class Save_Sys
 {
-    /*public static void SavePlayer(Player_Action player)
+    public static void SavePlayer(ControlPlayer player)
     {
         string path = Path.Combine(Application.persistentDataPath, "playerData.json");
 
@@ -33,5 +33,5 @@ public static class Save_Sys
             Debug.Log("Failed to load player data because of missing file!" + path);
             return null;
         }
-    }*/
+    }
 }

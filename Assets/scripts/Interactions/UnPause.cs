@@ -16,6 +16,7 @@ public class UnPause : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             this.gameObject.SetActive(false);
+            Time.timeScale = 1; 
             player.enabled = true;
         }
     }

@@ -8,10 +8,6 @@ public class Lamp : MonoBehaviour
     private Light flashlight;
     private bool state=false;
     private float curentIntenisty;
-    private void Awake()
-    {
-        
-    }
     private void Start()
     {
         state = false;

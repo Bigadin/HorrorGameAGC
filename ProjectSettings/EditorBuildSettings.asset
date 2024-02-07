@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Bigadin/TheGamePlay.unity
     guid: bc3880e9687e6ab409fb236369d05039
+  - enabled: 1
+    path: Assets/Nomad/Scenes/Save-Load Test.unity
+    guid: 2b3cd147a242cf344afc72390326df60
   m_configObjects: {}
