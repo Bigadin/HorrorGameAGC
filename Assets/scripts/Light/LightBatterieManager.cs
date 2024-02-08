@@ -61,7 +61,7 @@ public class LightBatterieManager : MonoBehaviour
             }
         }
     }
-    public void TriggerLightHorrorAction() // .2 -> 2
+    public void TriggerLightHorrorAction() 
     {
         LightAnime.SetTrigger("onOff");
 
@@ -81,6 +81,17 @@ public class LightBatterieManager : MonoBehaviour
             }
         }
         hasChanged = false;
+
+    }
+    public void offLight()
+    {
+        flashLight.gameObject.SetActive(false);
+        lightTorchOn = !lightTorchOn;
+    }
+    public void onLight()
+    {
+        flashLight.gameObject.SetActive(true);
+        lightTorchOn = !lightTorchOn;
 
     }
     public void addBattery()

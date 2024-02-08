@@ -68,8 +68,10 @@ public class ControlPlayer : MonoBehaviour
 
     void Update()
     {
-
-        HandleMovement();
+        if(playerStat == PlayerStat.normal)
+        {
+            HandleMovement();
+        }
         HandleMouseLook();
         HandleCameraNoise();
         UpdateSound();

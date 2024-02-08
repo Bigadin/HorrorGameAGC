@@ -12,7 +12,7 @@ public class Interacter : MonoBehaviour
     [SerializeField] private Transform interactionSource;
     [SerializeField] private float interactionDistance;
     [SerializeField] private TextMeshProUGUI pressE;
-    [SerializeField] private float sphereRadius = 0.1f;
+    [SerializeField] private float sphereRadius = 0.3f;
     private Color raycolor = Color.red;   
 
     private void Start()
