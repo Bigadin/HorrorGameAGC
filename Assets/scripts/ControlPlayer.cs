@@ -72,6 +72,7 @@ public class ControlPlayer : MonoBehaviour
         {
             loadPlayer();
             Debug.Log("Player loaded!!");
+            PlayerPrefs.SetInt("isLoadingLevel", 0);
         }
 
         // FMOD Footsteps Initialization
