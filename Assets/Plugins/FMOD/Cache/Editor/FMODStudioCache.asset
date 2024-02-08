@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: ../../Fmod/Tryout/Build/Desktop/Ambiance.bank
   Name: Ambiance
   StudioPath: bank:/Ambiance
-  lastModified: 638427732122958873
+  lastModified: 638429523442705139
   FileSizes:
   - Name: Desktop
     Value: 1597216
@@ -290,7 +290,7 @@ MonoBehaviour:
   - {fileID: -6374985843886719895}
   StringsBanks:
   - {fileID: -6063200131512059321}
-  cacheTime: 638429241246752311
+  cacheTime: 638429523442705139
   cacheVersion: 131616
 --- !u!114 &681106481681254660
 MonoBehaviour:
