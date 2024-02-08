@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: ../../Fmod/Tryout/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638430081424990150
+  lastModified: 638430312108063402
   FileSizes:
   - Name: Desktop
-    Value: 1710
+    Value: 1854
   Exists: 1
 --- !u!114 &-7782750430966627015
 MonoBehaviour:
@@ -74,6 +74,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-6992786150036907968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Monster/MonsterWalk
+  m_EditorClassIdentifier: 
+  Path: event:/Monster/MonsterWalk
+  Guid:
+    Data1: 331361995
+    Data2: 1216659877
+    Data3: 332754330
+    Data4: -478952761
+  Banks:
+  - {fileID: 3188217287157665794}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
 --- !u!114 &-6740091896538964373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,6 +155,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 655
+--- !u!114 &-6148675551987140758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/ChairMove
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/ChairMove
+  Guid:
+    Data1: -1972710281
+    Data2: 1235787181
+    Data3: 845134524
+    Data4: 1827172167
+  Banks:
+  - {fileID: 3188217287157665794}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1051
 --- !u!114 &-5605676080266408640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,7 +197,7 @@ MonoBehaviour:
   Path: ../../Fmod/Tryout/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638430087946398789
+  lastModified: 638430194897160242
   FileSizes:
   - Name: Desktop
     Value: 13786560
@@ -256,6 +310,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 36728
+--- !u!114 &-1250929609420677727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/MonsterGrowl
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/MonsterGrowl
+  Guid:
+    Data1: -1992523759
+    Data2: 1311892154
+    Data3: -1930371428
+    Data4: 143104675
+  Banks:
+  - {fileID: 3188217287157665794}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 17317
 --- !u!114 &-282065997838945670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -348,12 +429,15 @@ MonoBehaviour:
   - {fileID: -6740091896538964373}
   - {fileID: 406604244965312543}
   - {fileID: 2309989665206154981}
+  - {fileID: -1250929609420677727}
+  - {fileID: -6992786150036907968}
+  - {fileID: -6148675551987140758}
   EditorParameters: []
   MasterBanks:
   - {fileID: 6601095499798028562}
   StringsBanks:
   - {fileID: -7792538033750396736}
-  cacheTime: 638430088275636126
+  cacheTime: 638430312114097094
   cacheVersion: 131616
 --- !u!114 &76224510970940441
 MonoBehaviour:
@@ -397,7 +481,7 @@ MonoBehaviour:
   Path: ../../Fmod/Tryout/Build/Desktop/Ambiance.bank
   Name: Ambiance
   StudioPath: bank:/Ambiance
-  lastModified: 638430088121933857
+  lastModified: 638430193716380590
   FileSizes:
   - Name: Desktop
     Value: 3502816
@@ -525,10 +609,10 @@ MonoBehaviour:
   Path: ../../Fmod/Tryout/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638430088275636126
+  lastModified: 638430312114097094
   FileSizes:
   - Name: Desktop
-    Value: 2520960
+    Value: 2744288
   Exists: 1
 --- !u!114 &3296266727586963403
 MonoBehaviour:
@@ -626,7 +710,7 @@ MonoBehaviour:
   Path: ../../Fmod/Tryout/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638430081424972424
+  lastModified: 638430312108033396
   FileSizes:
   - Name: Desktop
     Value: 1036

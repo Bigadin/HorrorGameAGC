@@ -7,6 +7,8 @@ public class Door : MonoBehaviour,IInteractable
 
     private Animator animator;
     private bool isOpen= false;
+    [SerializeField]
+    private string keyOpener;
 
     public enum DoorState {
     Locked,
@@ -28,7 +30,7 @@ public class Door : MonoBehaviour,IInteractable
         {
 
             foreach (GameObject item in Inventory.Instance.GetGameObjects()) {
-                if (item.gameObject.name == "Key") // hna zid el id t3 key
+                if (item.gameObject.name == keyOpener) // hna zid el id t3 key
                 {
                     state=DoorState.Unlocked;
                     AudioManager.Instance?.PlayOneShot(FmodEvents.Instance.unlockDoor,this.transform.position);

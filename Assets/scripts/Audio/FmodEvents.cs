@@ -37,6 +37,12 @@ public class FmodEvents : MonoBehaviour
     public EventReference houseMusicR { get; private set; }
     [field: SerializeField]
     public EventReference houseAmbiance { get; private set; }
+    [field: SerializeField]
+    public EventReference monsterWalk { get; private set; }
+    [field: SerializeField]
+    public EventReference monsterGrowl { get; private set; }
+    [field: SerializeField]
+    public EventReference chairMove { get; private set; }
 
 
 
