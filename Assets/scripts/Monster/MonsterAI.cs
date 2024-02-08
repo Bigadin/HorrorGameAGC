@@ -61,9 +61,13 @@ public class MonsterAI : MonoBehaviour
 
     void Patrol()
     {
-        if (navMeshAgent.remainingDistance < 2f)
+        if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].position) < 1.2f )
         {
-            StartCoroutine(PatrolWait());
+            SetPatrolDestination();
+        }
+        else
+        {
+            navMeshAgent.SetDestination(waypoints[currentWaypointIndex].position);
         }
     }
 
@@ -94,7 +98,27 @@ public class MonsterAI : MonoBehaviour
             chaseTimer = 0f;
         }
     }
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<Door>())
+        {
+            Door dr = other.GetComponent<Door>();
+            if(dr.getdoorStat() == Door.DoorState.Locked)
+            {
+                SetPatrolDestination();
+            }
+            else
+            {
+                dr.openDoor();
+                StartCoroutine(CloseDoor(dr));
+            }
+        }
+    }
+    IEnumerator CloseDoor(Door dr)
+    {
+        yield return new WaitForSeconds(2.5f);
+        dr.CloseDoor();
+    }
     void ChasePlayer()
     {
         print("Im chassing");

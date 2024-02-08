@@ -45,22 +45,29 @@ public class Door : MonoBehaviour,IInteractable
 
         if (!isOpen && state == DoorState.Unlocked)
         {
-            isOpen = true;
-
-
-            animator.SetTrigger("Open");
-            AudioManager.Instance?.PlayOneShot(FmodEvents.Instance.doorOpenClose, this.transform.position);
+            openDoor();
         }else if(isOpen && state == DoorState.Unlocked)
         {
-            isOpen=false;
-
-
-            animator.SetTrigger("Close");
-            AudioManager.Instance.PlayOneShot(FmodEvents.Instance.doorOpenClose, this.transform.position);
+            CloseDoor();
         }
         
     }
+    public void openDoor()
+    {
+        isOpen = true;
 
+
+        animator.SetTrigger("Open");
+        AudioManager.Instance?.PlayOneShot(FmodEvents.Instance.doorOpenClose, this.transform.position);
+    }
+    public void CloseDoor()
+    {
+        isOpen = false;
+
+
+        animator.SetTrigger("Close");
+        AudioManager.Instance?.PlayOneShot(FmodEvents.Instance.doorOpenClose, this.transform.position);
+    }
     public void playerOpenSound()// hadi dertha le animation event sema dir sound hna
     {
 
