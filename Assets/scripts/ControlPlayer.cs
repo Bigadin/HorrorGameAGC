@@ -214,10 +214,11 @@ public class ControlPlayer : MonoBehaviour
     private void OpenMenu()
     {
         if(Input.GetKeyDown(KeyCode.Escape)) {
-            MainMenu.SetActive(true);
-            this.enabled = false;
             Time.timeScale = 0f;
+            MainMenu.SetActive(true);
+            this.enabled= false;    
+
         }
-        
+
     }
 }

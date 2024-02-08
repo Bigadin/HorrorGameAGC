@@ -5,11 +5,12 @@ using UnityEngine;
 public class GameEvent : MonoBehaviour, ILaunchEvent
 {
 
-
+    
     public void LaunchEvent()
     {
         Debug.Log("Start Event");
         throw new System.NotImplementedException();
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

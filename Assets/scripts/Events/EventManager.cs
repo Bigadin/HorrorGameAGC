@@ -11,17 +11,28 @@ public interface ILaunchEvent
 public class EventManager : MonoBehaviour
 {
     [SerializeField]
-    private List<ILaunchEvent> events;  
+    private List<GameEvent> events;
+    public EventManager instance { get; private set; }
 
-    public void AddEvent(ILaunchEvent eventObject)
+    private void Awake()
+    {
+        if (instance != null)
+        {
+
+            Debug.Log("There is more than one event Manager");
+        }
+        instance = this;    
+    }
+
+    public void AddEvent(GameEvent eventObject)
     {
         events.Add(eventObject);  
     }
-    public void RemoveEvent(ILaunchEvent eventObject) {
+    public void RemoveEvent(GameEvent eventObject) {
         events.Remove(eventObject);
     }
 
-    public List<ILaunchEvent> GetEvents()
+    public List<GameEvent> GetEvents()
     {
 
         return events;
