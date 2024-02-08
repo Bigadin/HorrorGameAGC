@@ -18,10 +18,6 @@ public class FmodEvents : MonoBehaviour
     [field: SerializeField]
     public EventReference flashlight { get; private set; }
     [field: SerializeField]
-    public EventReference footstepsRunWood { get; private set; }
-    [field: SerializeField]
-    public EventReference footstepsWalkWood { get; private set; }
-    [field: SerializeField]
     public EventReference carEngine { get; private set; }
     [field: SerializeField]
     public EventReference doorOpenClose { get; private set; }
@@ -37,7 +33,16 @@ public class FmodEvents : MonoBehaviour
     public EventReference papperPickup { get; private set; }
     [field: SerializeField]
     public EventReference objectPickup { get; private set; }
-
+    [field: SerializeField]
+    public EventReference houseMusicR { get; private set; }
+    [field: SerializeField]
+    public EventReference houseAmbiance { get; private set; }
+    [field: SerializeField]
+    public EventReference monsterWalk { get; private set; }
+    [field: SerializeField]
+    public EventReference monsterGrowl { get; private set; }
+    [field: SerializeField]
+    public EventReference chairMove { get; private set; }
 
 
 

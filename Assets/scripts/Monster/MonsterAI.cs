@@ -1,8 +1,11 @@
+using FMOD.Studio;
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
+using UnityEngine.UIElements;
 
 public class MonsterAI : MonoBehaviour
 {
@@ -15,6 +18,9 @@ public class MonsterAI : MonoBehaviour
     public float chaseDuration = 15f;
     public float criticalDistance = 6f; // player dead
 
+    private EventInstance monsterWalk;
+    private bool isWalking = false;
+
     private NavMeshAgent navMeshAgent;
     private int currentWaypointIndex;
     private bool isChasingPlayer;
@@ -25,6 +31,8 @@ public class MonsterAI : MonoBehaviour
     [Header("Dead")]
     [SerializeField] Animator ImageDeadAnimator;
     [SerializeField] GameObject screamer;
+
+    private PLAYBACK_STATE playbackstate1;
 
     public UnityEvent player_dead;
     void Start()
@@ -51,11 +59,13 @@ public class MonsterAI : MonoBehaviour
         {
             Patrol();
             CheckForPlayer();
+            UpdateSound();
         }
         else
         {
             ChasePlayer();
             UpdateChaseTimer();
+            UpdateSound();
         }
     }
 
@@ -63,7 +73,7 @@ public class MonsterAI : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].position) < 1.2f )
         {
-            SetPatrolDestination();
+            StartCoroutine(PatrolWait());
         }
         else
         {
@@ -75,11 +85,13 @@ public class MonsterAI : MonoBehaviour
     {
         yield return new WaitForSeconds(patrolWaitTime);
         isChasingPlayer = false;
+        isWalking = false;  
         SetPatrolDestination();
     }
 
     void SetPatrolDestination()
     {
+        isWalking = true;
         currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
         navMeshAgent.SetDestination(waypoints[currentWaypointIndex].position);
         navMeshAgent.speed = patrolSpeed;
@@ -121,8 +133,8 @@ public class MonsterAI : MonoBehaviour
     }
     void ChasePlayer()
     {
+        isWalking=true;
         print("Im chassing");
-        print(chaseTimer);
 
         // You can add additional behavior for chasing the player here
         if(Vector3.Distance(transform.position, player.position) <= criticalDistance)
@@ -148,4 +160,18 @@ public class MonsterAI : MonoBehaviour
     {
         chaseTimer += Time.deltaTime;
     }
+    public void UpdateSound()
+    {
+        monsterWalk.getPlaybackState(out playbackstate1);
+
+        Vector3 currentPosition = this.transform.position;
+
+        if (playbackstate1.Equals(PLAYBACK_STATE.STOPPED))
+        {
+            Debug.Log("Start sound");
+            monsterWalk.set3DAttributes(RuntimeUtils.To3DAttributes(currentPosition));
+            monsterWalk.start();
+        }
+    }
+
 }

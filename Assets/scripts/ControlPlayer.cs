@@ -19,8 +19,6 @@ public class ControlPlayer : MonoBehaviour
     // FMOD Footsteps
     private EventInstance footsteps;
     private EventInstance runningSound;
-    private EventInstance walkwood;
-    private EventInstance runningwood;
     private bool isWalking;
     private bool isRunning;
 

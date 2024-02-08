@@ -45,7 +45,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: babcb911956bf0d42b4f6233bf92c627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carPosition: {fileID: 0}
 --- !u!1 &4075030048506775003
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,3 +187,10 @@ MonoBehaviour:
       Data3: -4292161
       Data4: 1984974982
     Path: event:/SFX/PickupPaper
+  <objectPickup>k__BackingField:
+    Guid:
+      Data1: -961052432
+      Data2: 1251159640
+      Data3: -2041841760
+      Data4: 971118547
+    Path: event:/SFX/PickupObject

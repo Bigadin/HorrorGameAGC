@@ -18,9 +18,10 @@ public class Paper : MonoBehaviour, IInteractable
 
     private void Awake()
     {
-        player =GameObject.FindGameObjectWithTag("Player").GetComponent<ControlPlayer>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<ControlPlayer>();
     }
-    public void Interact()
+
+    public virtual void Interact()
     {
 
         AudioManager.Instance.PlayOneShot(FmodEvents.Instance.papperPickup,this.transform.position);

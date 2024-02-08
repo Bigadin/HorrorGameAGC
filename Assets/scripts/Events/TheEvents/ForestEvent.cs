@@ -2,17 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ForestEvent : MonoBehaviour
+public class ForestEvent : GameEvent
 {
-    // Start is called before the first frame update
-    void Start()
+    override 
+    public void ConcreteEvent()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        base.ConcreteEvent();
+        Debug.Log("I am in the forest let's goooo");
     }
 }

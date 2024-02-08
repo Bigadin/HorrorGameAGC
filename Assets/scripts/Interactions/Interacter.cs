@@ -32,7 +32,7 @@ public class Interacter : MonoBehaviour
             if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactable))
             {
                 // Display the interaction prompt
-                pressE.text = "Press E";
+                pressE.text = "E";
 
                 // Check for input to interact
                 if (Input.GetKeyDown(KeyCode.E))
