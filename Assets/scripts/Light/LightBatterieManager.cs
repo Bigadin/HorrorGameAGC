@@ -86,10 +86,13 @@ public class LightBatterieManager : MonoBehaviour
     public void offLight()
     {
         flashLight.gameObject.SetActive(false);
+        lightTorchOn = !lightTorchOn;
     }
     public void onLight()
     {
         flashLight.gameObject.SetActive(true);
+        lightTorchOn = !lightTorchOn;
+
     }
     public void addBattery()
     {
