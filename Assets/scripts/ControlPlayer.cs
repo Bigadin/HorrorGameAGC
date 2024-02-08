@@ -214,6 +214,7 @@ public class ControlPlayer : MonoBehaviour
     private void OpenMenu()
     {
         if(Input.GetKeyDown(KeyCode.Escape)) {
+            Camera.main.GetComponent<CinemachineBrain>().enabled = false;
             Time.timeScale = 0f;
             MainMenu.SetActive(true);
             this.enabled= false;    

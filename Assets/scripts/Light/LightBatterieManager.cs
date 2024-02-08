@@ -38,7 +38,7 @@ public class LightBatterieManager : MonoBehaviour
         {
             TriggerLightHorrorAction();
         }
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             // sound for torche tiktak
             lightTorchOn = !lightTorchOn;
@@ -102,6 +102,7 @@ public class LightBatterieManager : MonoBehaviour
         }
         batterieSlot++;
         flashLight.intensity += 2;
+        UpdateBatterieLvl();
 
     }
 }
