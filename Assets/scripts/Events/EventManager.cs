@@ -2,17 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+public interface ILaunchEvent
+{
+    void LaunchEvent();
+}
+
 public class EventManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private List<ILaunchEvent> events;  
+
+    public void AddEvent(ILaunchEvent eventObject)
     {
-        
+        events.Add(eventObject);  
+    }
+    public void RemoveEvent(ILaunchEvent eventObject) {
+        events.Remove(eventObject);
     }
 
-    // Update is called once per frame
-    void Update()
+    public List<ILaunchEvent> GetEvents()
     {
-        
+
+        return events;
     }
 }
