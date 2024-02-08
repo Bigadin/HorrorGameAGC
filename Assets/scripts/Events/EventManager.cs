@@ -12,7 +12,7 @@ public class EventManager : MonoBehaviour
 {
     [SerializeField]
     private List<GameEvent> events;
-    public EventManager instance { get; private set; }
+    public static EventManager instance { get; private set; }
 
     private void Awake()
     {
@@ -30,6 +30,10 @@ public class EventManager : MonoBehaviour
     }
     public void RemoveEvent(GameEvent eventObject) {
         events.Remove(eventObject);
+        foreach(GameEvent gameEvent in events)
+        {
+            gameEvent.UpdateOrder();
+        }
     }
 
     public List<GameEvent> GetEvents()
