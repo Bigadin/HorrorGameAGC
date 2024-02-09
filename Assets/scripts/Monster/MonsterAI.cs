@@ -2,6 +2,7 @@ using FMOD.Studio;
 using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.ShaderGraph.Serialization;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
@@ -51,7 +52,7 @@ public class MonsterAI : MonoBehaviour
         // diro restart StartCoroutine(RestartGame())
     }
     
-    void Update()
+    void FixedUpdate()
     {
         
         if (!isChasingPlayer)
@@ -72,15 +73,23 @@ public class MonsterAI : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].position) < 1.2f )
         {
-            StartCoroutine(PatrolWait());
+            if (!hasSetNextDistination)
+            {
+                print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA :::::::::: " + hasSetNextDistination);
+
+                StartCoroutine(PatrolWait());
+                hasSetNextDistination = true;
+
+            }
         }
         else
         {
+            hasSetNextDistination = false;
             animator.SetBool("isRunning", true);
             navMeshAgent.SetDestination(waypoints[currentWaypointIndex].position);
         }
     }
-
+    bool hasSetNextDistination;
     IEnumerator PatrolWait()
     {
         animator.SetBool("isRunning", false);
@@ -88,8 +97,9 @@ public class MonsterAI : MonoBehaviour
         yield return new WaitForSeconds(patrolWaitTime);
 
         isChasingPlayer = false;
-        isWalking = false;  
+        isWalking = false;    
         SetPatrolDestination();
+ 
     }
 
     void SetPatrolDestination()
@@ -97,9 +107,9 @@ public class MonsterAI : MonoBehaviour
         isWalking = true;
         currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
         animator.SetBool("isRunning", true);
-
         navMeshAgent.SetDestination(waypoints[currentWaypointIndex].position);
         navMeshAgent.speed = patrolSpeed;
+        
     }
 
     void CheckForPlayer()
