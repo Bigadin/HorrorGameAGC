@@ -12,7 +12,7 @@ using UnityEngine.UI;
 
 public class Main_Menu_UI : MonoBehaviour
 {
-    [Header ("Level loading")]
+    [Header("Level loading")]
     public string LevelToLoad;
     public string MainMenuScene;
     [SerializeField] Transform Continue_Popup;
@@ -25,7 +25,7 @@ public class Main_Menu_UI : MonoBehaviour
     [Header("Graphics")]
     [SerializeField] TMP_Text brightness_value;
     [SerializeField] Slider brightnessSlider;
-    [SerializeField] float defaultBrightness =1;
+    [SerializeField] float defaultBrightness = 1;
     [SerializeField] Toggle fullscreenToggle;
 
     public TMP_Dropdown dropdown;
@@ -42,7 +42,8 @@ public class Main_Menu_UI : MonoBehaviour
         List<string> options = new List<string>();
         int index_cureent_resolution = 0;
 
-        for(int i = 0; i < resolutions.Length; i++) { 
+        for (int i = 0; i < resolutions.Length; i++)
+        {
             string option = resolutions[i].width + " x " + resolutions[i].height;
             options.Add(option);
 
@@ -120,18 +121,19 @@ public class Main_Menu_UI : MonoBehaviour
     {
         PlayerPrefs.SetFloat("masterBrightness", brightness);
         PlayerPrefs.SetInt("masterFullscreen", (isFullscreen ? 1 : 0));
-        Screen.fullScreen = isFullscreen;   
+        Screen.fullScreen = isFullscreen;
     }
 
     public void setResolution(int index)
     {
         Resolution res = resolutions[index];
-        Screen.SetResolution(res.width,res.height,Screen.fullScreen);
+        Screen.SetResolution(res.width, res.height, Screen.fullScreen);
     }
 
     public void resetValues(string MenuType)
     {
-        if(MenuType == "Audio") {
+        if (MenuType == "Audio")
+        {
             AudioListener.volume = defaultVolume;
             volumeSlider.value = defaultVolume;
             volume_value.text = defaultVolume.ToString("0.0");
@@ -145,7 +147,7 @@ public class Main_Menu_UI : MonoBehaviour
             Screen.fullScreen = false;
 
             Resolution res = Screen.currentResolution;
-            Screen.SetResolution(res.width,res.height,Screen.fullScreen);
+            Screen.SetResolution(res.width, res.height, Screen.fullScreen);
             dropdown.value = resolutions.Length;
 
             applyGraphics();

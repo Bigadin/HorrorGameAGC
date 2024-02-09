@@ -5,7 +5,7 @@ using UnityEngine;
 public class ControlPlayer : MonoBehaviour
 {
     [SerializeField]
-    private float walkingSpeed = 7.5f, runningSpeed = 11.5f,jumpSpeed = 8.0f,gravity = 20.0f ,lookSpeed = 2.0f, lookXLimit = 45.0f;
+    private float walkingSpeed = 7.5f, runningSpeed = 11.5f, jumpSpeed = 8.0f, gravity = 20.0f, lookSpeed = 2.0f, lookXLimit = 45.0f;
     public Camera playerCamera;
     public CinemachineVirtualCamera CM_cam;
 
@@ -29,15 +29,19 @@ public class ControlPlayer : MonoBehaviour
     [SerializeField]
     private GameObject MainMenu;
 
+    [SerializeField]
+    private GameObject pressE;
+
     [HideInInspector]
     public bool canMove = true;
 
-    public enum FLoorType {
-    Default,
-    Grass,
-    Wood
-    
-    
+    public enum FLoorType
+    {
+        Default,
+        Grass,
+        Wood
+
+
 
     }
     public enum PlayerStat
@@ -46,7 +50,7 @@ public class ControlPlayer : MonoBehaviour
         hiding,
     }
     public static PlayerStat playerStat;
-    private FLoorType curentfloor =FLoorType.Default;
+    private FLoorType curentfloor = FLoorType.Default;
 
 
 
@@ -66,7 +70,7 @@ public class ControlPlayer : MonoBehaviour
 
     void Update()
     {
-        if(playerStat == PlayerStat.normal)
+        if (playerStat == PlayerStat.normal)
         {
             HandleMovement();
         }
@@ -181,13 +185,13 @@ public class ControlPlayer : MonoBehaviour
 
             if (playbackstate.Equals(PLAYBACK_STATE.STOPPED))
             {
-                
+
                 footsteps.start();
             }
         }
         else
         {
-            
+
             footsteps.stop(STOP_MODE.ALLOWFADEOUT);
         }
         if (isRunning)
@@ -197,26 +201,30 @@ public class ControlPlayer : MonoBehaviour
 
             if (playbackstate.Equals(PLAYBACK_STATE.STOPPED))
             {
-                
+
                 runningSound.start();
             }
 
         }
         else
         {
-            
+
             runningSound.stop(STOP_MODE.ALLOWFADEOUT);
         }
     }
-    
+
     private void OpenMenu()
     {
-        if(Input.GetKeyDown(KeyCode.Escape)) {
+        if (Input.GetKeyDown(KeyCode.Escape) && this.enabled)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
             Camera.main.GetComponent<CinemachineBrain>().enabled = false;
             Time.timeScale = 0f;
+            pressE.SetActive(false);
             MainMenu.SetActive(true);
-            this.enabled= false;    
-
+            this.enabled = false;
         }
 
     }
