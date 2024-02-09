@@ -11,10 +11,12 @@ public class EventChair : GameEvent
     private Transform newPosition;
     [SerializeField]
     private float speed;
+
+    [SerializeField] Animator chairEventAnim;
     override
     public void ConcreteEvent()
     {
-      chairPosition.position = Vector3.Lerp(chairPosition.position, newPosition.position, speed * Time.deltaTime);
+        chairEventAnim.Play("ChairEvent");
       AudioManager.Instance.PlayOneShot(FmodEvents.Instance.chairMove, chairPosition.position);
     }
 }
