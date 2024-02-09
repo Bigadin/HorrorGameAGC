@@ -23,7 +23,7 @@ public class Door : MonoBehaviour,IInteractable
     {
         animator = GetComponent<Animator>();
     }
-    public void Interact()
+    public virtual void Interact()
     {
 
         if (state == DoorState.Locked)

@@ -47,6 +47,10 @@ public class FmodEvents : MonoBehaviour
     public EventReference musicDrama { get; private set; }
     [field: SerializeField]
     public EventReference closingDoor { get; private set; }
+    [field: SerializeField]
+    public EventReference dramaSpeed { get; private set; }
+    [field: SerializeField]
+    public EventReference thunderShot { get; private set; }
 
 
     private void Awake()

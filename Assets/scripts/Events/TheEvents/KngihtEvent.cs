@@ -22,5 +22,6 @@ public class KngihtEvent : GameEvent
         this.knightPosition.position = newKnightPosition.position;
         this.knightPosition.rotation = newKnightPosition.rotation;
         AudioManager.Instance.StopMusic();
+        EventManager.instance.StopEventMusic();
     }
 }

@@ -43,10 +43,23 @@ public class EventChair : GameEvent
                 musicDramaPlaying = true;
                 Debug.Log("musicDrama event has finished playing");
                 AudioManager.Instance.RelaunchMusic(musicDramaPlaying);
-                
+                EventManager.instance.RemoveEvent(this);
+
             }
         }
     }
 
-    
+    public virtual void StopMusicDrama()
+    {
+        base.StopEventMusic();
+        if (musicDramaEventInstance.isValid())
+        {
+            musicDramaEventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        }
+        else
+        {
+            Debug.Log("There is problem");
+        }
+    }
+
 }
