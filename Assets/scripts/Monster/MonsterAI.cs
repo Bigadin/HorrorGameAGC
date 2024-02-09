@@ -53,8 +53,7 @@ public class MonsterAI : MonoBehaviour
     
     void Update()
     {
-        animator.SetBool("isRunning", true);
-
+        
         if (!isChasingPlayer)
         {
             Patrol();
@@ -77,13 +76,17 @@ public class MonsterAI : MonoBehaviour
         }
         else
         {
+            animator.SetBool("isRunning", true);
             navMeshAgent.SetDestination(waypoints[currentWaypointIndex].position);
         }
     }
 
     IEnumerator PatrolWait()
     {
+        animator.SetBool("isRunning", false);
+
         yield return new WaitForSeconds(patrolWaitTime);
+
         isChasingPlayer = false;
         isWalking = false;  
         SetPatrolDestination();
@@ -93,6 +96,8 @@ public class MonsterAI : MonoBehaviour
     {
         isWalking = true;
         currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
+        animator.SetBool("isRunning", true);
+
         navMeshAgent.SetDestination(waypoints[currentWaypointIndex].position);
         navMeshAgent.speed = patrolSpeed;
     }
@@ -147,7 +152,6 @@ public class MonsterAI : MonoBehaviour
         {
             isChasingPlayer = false;
             endChassing = true;
-            print("aaaaaaaaaaaaaaaaaaaaam not chassing");
             StartCoroutine(PatrolWait());
         }
         else

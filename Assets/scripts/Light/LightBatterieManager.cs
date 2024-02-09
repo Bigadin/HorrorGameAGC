@@ -43,6 +43,8 @@ public class LightBatterieManager : MonoBehaviour
             // sound for torche tiktak
             lightTorchOn = !lightTorchOn;
             flashLight.gameObject.SetActive(lightTorchOn);
+            AudioManager.Instance.PlayOneShot(FmodEvents.Instance.flashlight, this.transform.position);
+
         }
     }
     void BatterieSlotTimerCounter()
@@ -86,11 +88,15 @@ public class LightBatterieManager : MonoBehaviour
     public void offLight()
     {
         flashLight.gameObject.SetActive(false);
+        AudioManager.Instance.PlayOneShot(FmodEvents.Instance.flashlight, this.transform.position);
+
         lightTorchOn = !lightTorchOn;
     }
     public void onLight()
     {
         flashLight.gameObject.SetActive(true);
+        AudioManager.Instance.PlayOneShot(FmodEvents.Instance.flashlight, this.transform.position);
+
         lightTorchOn = !lightTorchOn;
 
     }
