@@ -72,14 +72,22 @@ public class Door : MonoBehaviour,IInteractable
     }
     public void playerOpenSound()// hadi dertha le animation event sema dir sound hna
     {
-
+        AudioManager.Instance.PlayOneShot(FmodEvents.Instance.doorOpenClose, this.transform.position);
     }
     public void playCloseSound()
     {
-
+        AudioManager.Instance.PlayOneShot(FmodEvents.Instance.closingDoor,this.transform.position);
     }
     public DoorState getdoorStat()// hadi monster ysha9ha
     {
         return state;
+    }
+    public void Setbool(bool boola)
+    {
+        this.isOpen= boola;
+    }
+    public bool getBool()
+    {
+        return this.isOpen;
     }
 }

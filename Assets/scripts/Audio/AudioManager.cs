@@ -153,7 +153,28 @@ public class AudioManager : MonoBehaviour
     {
         CleanUp();
     }
+    public void RelaunchMusic(bool hasFinished)
+    {
+        if(hasFinished)
+        {
+            InitializeMusic(FmodEvents.Instance.houseMusicR);
+        }
+    }
 
+    public void StopMusic()
+    {
+        if ( musicEventInstance.isValid())
+        {
+            // Stop the music event instance
+            musicEventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            // Release the music event instance
+            musicEventInstance.release();
+        }
+        else
+        {
+            Debug.LogWarning("Music event instance is not valid or null.");
+        }
+    }
 }
 
 
