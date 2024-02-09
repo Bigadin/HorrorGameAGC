@@ -24,4 +24,10 @@ public class KngihtEvent : GameEvent
         AudioManager.Instance.StopMusic();
         EventManager.instance.StopEventMusic();
     }
+
+    public override void StopEventMusic()
+    {
+        base.StopEventMusic();
+
+    }
 }
