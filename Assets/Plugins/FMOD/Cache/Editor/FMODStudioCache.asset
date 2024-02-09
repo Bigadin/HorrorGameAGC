@@ -69,10 +69,10 @@ MonoBehaviour:
   Path: ../../Fmod/Tryout/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638430858560713659
+  lastModified: 638431171384429115
   FileSizes:
   - Name: Desktop
-    Value: 14198784
+    Value: 15943712
   Exists: 1
 --- !u!114 &-7025324666030676297
 MonoBehaviour:
@@ -155,6 +155,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1000
+--- !u!114 &-6268527550203946592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/DramaMusic2
+  m_EditorClassIdentifier: 
+  Path: event:/Music/DramaMusic2
+  Guid:
+    Data1: -38224513
+    Data2: 1341017093
+    Data3: -1666146688
+    Data4: -567718350
+  Banks:
+  - {fileID: -7091448553885747660}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 30000
 --- !u!114 &-5941474962472779292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,10 +359,10 @@ MonoBehaviour:
   Path: ../../Fmod/Tryout/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638430858960703335
+  lastModified: 638431126500911045
   FileSizes:
   - Name: Desktop
-    Value: 2128
+    Value: 2324
   Exists: 1
 --- !u!114 &-3518567391585761395
 MonoBehaviour:
@@ -406,10 +433,10 @@ MonoBehaviour:
   Path: ../../Fmod/Tryout/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638430858574448245
+  lastModified: 638431126509245163
   FileSizes:
   - Name: Desktop
-    Value: 3010976
+    Value: 3092960
   Exists: 1
 --- !u!114 &-1977998917059436884
 MonoBehaviour:
@@ -426,7 +453,7 @@ MonoBehaviour:
   Path: ../../Fmod/Tryout/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638430858960693360
+  lastModified: 638431126500881037
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -586,12 +613,16 @@ MonoBehaviour:
   - {fileID: -9141057044049614367}
   - {fileID: 9092315397632136878}
   - {fileID: -1074854339577476917}
+  - {fileID: -6268527550203946592}
+  - {fileID: 6971578755120644214}
+  - {fileID: 8094652277791583183}
+  - {fileID: 5729585626706770073}
   EditorParameters: []
   MasterBanks:
   - {fileID: -1977998917059436884}
   StringsBanks:
   - {fileID: -3877728109703724437}
-  cacheTime: 638430858960703335
+  cacheTime: 638431171384429115
   cacheVersion: 131616
 --- !u!114 &76224510970940441
 MonoBehaviour:
@@ -809,6 +840,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 60000
+--- !u!114 &5729585626706770073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/KidsLaugh
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/KidsLaugh
+  Guid:
+    Data1: 175775850
+    Data2: 1316960318
+    Data3: -1784339035
+    Data4: -714343156
+  Banks:
+  - {fileID: -2355917160693587590}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3748
 --- !u!114 &6727201313235930888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -836,6 +894,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 40000
+--- !u!114 &6971578755120644214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/THrowKnifeStart
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/THrowKnifeStart
+  Guid:
+    Data1: -1587283402
+    Data2: 1305632275
+    Data3: -178952813
+    Data4: 337966737
+  Banks:
+  - {fileID: -2355917160693587590}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1000
+--- !u!114 &8094652277791583183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/THrowKnifeEnd
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/THrowKnifeEnd
+  Guid:
+    Data1: -1698268317
+    Data2: 1110799393
+    Data3: 1370650265
+    Data4: 1316717930
+  Banks:
+  - {fileID: -2355917160693587590}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 709
 --- !u!114 &8409744333078326802
 MonoBehaviour:
   m_ObjectHideFlags: 0

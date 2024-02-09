@@ -26,23 +26,23 @@ public class EventChair : GameEvent
         AudioManager.Instance.StopMusic();
         musicDramaEventInstance = AudioManager.Instance.CreateInstance(FmodEvents.Instance.musicDrama);
         musicDramaEventInstance.start();
-        musicDramaPlaying = false;
+        musicDramaPlaying = true;
     }
 
 
     void Update()
     {
 
-        if (musicDramaEventInstance.isValid() && !musicDramaPlaying)
+        if (musicDramaEventInstance.isValid() && musicDramaPlaying)
         {
 
             musicDramaEventInstance.getPlaybackState(out musicDramaPlaybackState);
 
             if (musicDramaPlaybackState == PLAYBACK_STATE.STOPPED)
             {
-                musicDramaPlaying = true;
+                musicDramaPlaying = false;
                 Debug.Log("musicDrama event has finished playing");
-                AudioManager.Instance.RelaunchMusic(musicDramaPlaying);
+                AudioManager.Instance.RelaunchMusic();
                 EventManager.instance.RemoveEvent(this);
 
             }

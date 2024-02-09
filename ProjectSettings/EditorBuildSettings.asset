@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Bigadin/BIgadinNano.unity
     guid: 6628db073bbd07d41a2252d542f30a6d
   - enabled: 1
-    path: Assets/Scenes/Bigadin/TheGamePlayNano.unity
-    guid: bc3880e9687e6ab409fb236369d05039
+    path: Assets/Scenes/TheGamePlay.unity
+    guid: f59aaa63127916b4da4412eea685bf5e
   m_configObjects: {}

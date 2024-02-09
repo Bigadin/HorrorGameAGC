@@ -6,6 +6,7 @@ using System.Diagnostics.Tracing;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class AudioManager : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class AudioManager : MonoBehaviour
     private EventInstance ambianceEventInstance;
     private EventInstance musicEventInstance;
     private EventInstance carEventInstance;
-
+    private EventInstance randomSoundInstance;
     private Scene scene;
 
 
@@ -32,19 +33,20 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        scene=SceneManager.GetActiveScene();
+        scene = SceneManager.GetActiveScene();
         Debug.Log(scene.buildIndex);
         if (scene.buildIndex == 1)
         {
             InitializeAmbiance(FmodEvents.Instance.rain);
             InitializeMusic(FmodEvents.Instance.music);
 
-        }else if(scene.buildIndex == 2)
+        }
+        else if (scene.buildIndex == 2)
         {
             InitializeAmbiance(FmodEvents.Instance.houseAmbiance);
             InitializeMusic(FmodEvents.Instance.houseMusicR);
         }
-        
+
     }
 
     public void PlayOneShot(EventReference sound, Vector3 position)
@@ -62,7 +64,7 @@ public class AudioManager : MonoBehaviour
 
     private void InitializeAmbiance(EventReference ambianceEventReference)
     {
-        if(scene.buildIndex == 1)
+        if (scene.buildIndex == 1)
         {
             ambianceEventInstance = CreateInstance(ambianceEventReference);
             if (ambianceEventInstance.isValid())
@@ -74,9 +76,10 @@ public class AudioManager : MonoBehaviour
             {
                 Debug.LogError("Failed to create Ambiance EventInstance");
             }
-        }else if(scene.buildIndex == 2)
+        }
+        else if (scene.buildIndex == 2)
         {
-             ambianceEventInstance= CreateInstance(ambianceEventReference);
+            ambianceEventInstance = CreateInstance(ambianceEventReference);
             if (ambianceEventInstance.isValid())
             {
                 Debug.Log("Ambiance EventInstance created successfully");
@@ -87,12 +90,12 @@ public class AudioManager : MonoBehaviour
                 Debug.LogError("Failed to create Ambiance EventInstance");
             }
         }
-        
+
     }
 
     private void InitializeMusic(EventReference ambianceEventReference)
     {
-        if(scene.buildIndex == 1)
+        if (scene.buildIndex == 1)
         {
             musicEventInstance = CreateInstance(ambianceEventReference);
             if (musicEventInstance.isValid())
@@ -104,7 +107,8 @@ public class AudioManager : MonoBehaviour
             {
                 Debug.LogError("Failed to create Ambiance EventInstance");
             }
-        }else if( scene.buildIndex == 2)
+        }
+        else if (scene.buildIndex == 2)
         {
             musicEventInstance = CreateInstance(ambianceEventReference);
             if (musicEventInstance.isValid())
@@ -118,10 +122,10 @@ public class AudioManager : MonoBehaviour
             }
 
         }
-        
+
     }
 
-    public void InitializeCarHonking(EventReference carEventReference,Transform carPosition)
+    public void InitializeCarHonking(EventReference carEventReference, Transform carPosition)
     {
         carEventInstance = CreateInstance(carEventReference);
         if (carEventInstance.isValid())
@@ -129,6 +133,24 @@ public class AudioManager : MonoBehaviour
             Debug.Log("Ambiance EventInstance created successfully");
             carEventInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(carPosition, Vector3.zero));
             carEventInstance.start();
+        }
+        else
+        {
+            Debug.LogError("Failed to create Ambiance EventInstance");
+        }
+    }
+
+    public void InitializeSound(EventReference eventReference, Transform soundPosition,float minDistance,float maxDistance)
+    {
+        randomSoundInstance = CreateInstance(eventReference);
+        if (randomSoundInstance.isValid())
+        {
+            Debug.Log("Ambiance EventInstance created successfully");
+            randomSoundInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(soundPosition, Vector3.zero));
+
+            randomSoundInstance.setProperty(EVENT_PROPERTY.MINIMUM_DISTANCE, minDistance);
+            randomSoundInstance.setProperty(EVENT_PROPERTY.MAXIMUM_DISTANCE, maxDistance);
+            randomSoundInstance.start();
         }
         else
         {
@@ -153,17 +175,15 @@ public class AudioManager : MonoBehaviour
     {
         CleanUp();
     }
-    public void RelaunchMusic(bool hasFinished)
+    public void RelaunchMusic()
     {
-        if(hasFinished)
-        {
-            InitializeMusic(FmodEvents.Instance.houseMusicR);
-        }
+        InitializeMusic(FmodEvents.Instance.houseMusicR);
+        InitializeAmbiance(FmodEvents.Instance.houseAmbiance);
     }
 
     public void StopMusic()
     {
-        if ( musicEventInstance.isValid())
+        if (musicEventInstance.isValid())
         {
             // Stop the music event instance
             musicEventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
@@ -174,7 +194,20 @@ public class AudioManager : MonoBehaviour
         {
             Debug.LogWarning("Music event instance is not valid or null.");
         }
-        
+
+    }
+
+    public void StopSound()
+    {
+        if(randomSoundInstance.isValid())
+        {
+            randomSoundInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            randomSoundInstance.release();
+        }
+        else
+        {
+            Debug.LogWarning("Music event instance is not valid or null.");
+        }
     }
 }
 

@@ -27,8 +27,9 @@ public class DoorTrigger : Door
             {
                 light.intensity = 50f;
             }
-            backgroundThunder.intensity = 500f;
+            backgroundThunder.intensity = 1000f;
             musicDramaEventInstance = AudioManager.Instance.CreateInstance(FmodEvents.Instance.musicDrama);
+            musicDramaPlaying=true; 
             AudioManager.Instance.PlayOneShot(FmodEvents.Instance.thunderShot, this.transform.position);
             musicDramaEventInstance.start();
             StartCoroutine(coolDownEnd());
@@ -39,16 +40,16 @@ public class DoorTrigger : Door
     void Update()
     {
 
-        if (musicDramaEventInstance.isValid() && !musicDramaPlaying)
+        if (musicDramaEventInstance.isValid() && musicDramaPlaying)
         {
 
             musicDramaEventInstance.getPlaybackState(out musicDramaPlaybackState);
 
             if (musicDramaPlaybackState == PLAYBACK_STATE.STOPPED)
             {
-                musicDramaPlaying = true;
+                musicDramaPlaying = false;
                 Debug.Log("musicDrama event has finished playing");
-                AudioManager.Instance.RelaunchMusic(musicDramaPlaying);
+                AudioManager.Instance.RelaunchMusic();
 
             }
         }
