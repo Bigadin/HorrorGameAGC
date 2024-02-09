@@ -380,8 +380,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: C:/Users/ggyan/Documents/FMOD Studio/UnityFmod/Tryout.fspro
-  sourceBankPath: C:/Users/ggyan/Documents/FMOD Studio/UnityFmod/Build
+  sourceProjectPath: ../../Fmod/Tryout/Tryout.fspro
+  sourceBankPath: ../../Fmod/Tryout/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1

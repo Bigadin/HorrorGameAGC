@@ -18,7 +18,6 @@ public class GameEvent : MonoBehaviour, ILaunchEvent
             Debug.Log("Start Event");
             ConcreteEvent();
             UpdateOrder();
-            EventManager.instance.RemoveEvent(this);
         }
        
         
@@ -49,5 +48,9 @@ public class GameEvent : MonoBehaviour, ILaunchEvent
     public virtual void ConcreteEvent()
     {
         Debug.Log("Concrete");
+    }
+    public virtual void StopEventMusic()
+    {
+        
     }
 }

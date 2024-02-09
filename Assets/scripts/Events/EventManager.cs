@@ -41,4 +41,12 @@ public class EventManager : MonoBehaviour
 
         return events;
     }
+
+    public void StopEventMusic()
+    {
+        foreach(GameEvent gameEvent in events)
+        {
+            gameEvent.StopEventMusic();
+        }
+    }
 }
