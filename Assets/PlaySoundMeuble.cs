@@ -6,10 +6,10 @@ public class PlaySoundMeuble : MonoBehaviour
 {
     public void PlayStart()
     {
-        AudioManager.Instance.InitializeSound(FmodEvents.Instance.startSpawn, this.transform, 1f, 40f);
+        AudioManager.Instance.InitializeSound(FmodEvents.Instance.startSpawn, this.transform, 1f, 60f);
     }
     public void PlayEnd()
     {
-        AudioManager.Instance.InitializeSound(FmodEvents.Instance.finishSpawn, this.transform, 1f, 40f);
+        AudioManager.Instance.InitializeSound(FmodEvents.Instance.finishSpawn, this.transform, 1f, 60f);
     }
 }

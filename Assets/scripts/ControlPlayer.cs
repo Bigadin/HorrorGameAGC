@@ -1,6 +1,9 @@
 using Cinemachine;
 using FMOD.Studio;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Collections.Generic;
 
 public class ControlPlayer : MonoBehaviour
 {
@@ -26,11 +29,20 @@ public class ControlPlayer : MonoBehaviour
     private float CM_Noise_Amplitude = 0.5f;
     private float CM_Noise_Frequency = 0.01f;
 
+    [SerializeField] public Inventory inventory;
+    public string scene;
+
     [SerializeField]
     private GameObject MainMenu;
 
+    [SerializeField] GameObject saveNotif;
+
+    [SerializeField] GameObject loadNotif;
+
     [SerializeField]
     private GameObject pressE;
+
+    [SerializeField] public EventManager eventManager;
 
     [HideInInspector]
     public bool canMove = true;
@@ -78,6 +90,16 @@ public class ControlPlayer : MonoBehaviour
         HandleCameraNoise();
         UpdateSound();
         OpenMenu();
+
+        //TESTING SAVE-LOAD
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            loadPlayer();
+        }
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            savePlayer();
+        }
     }
 
     /*private void CheckFloorType(int layer)
@@ -226,6 +248,59 @@ public class ControlPlayer : MonoBehaviour
             MainMenu.SetActive(true);
             this.enabled = false;
         }
+    }
 
+    public void SaveNotif()
+    {
+        saveNotif.gameObject.SetActive(true);
+        StartCoroutine(DisableTextAfterDelay(2f, saveNotif)); // Disable text after 2 seconds
+    }
+
+    public void LoadNotif()
+    {
+        loadNotif.gameObject.SetActive(true);
+        StartCoroutine(DisableTextAfterDelay(2f, loadNotif)); // Disable text after 2 seconds
+    }
+
+    IEnumerator DisableTextAfterDelay(float delay, GameObject go)
+    {
+        yield return new WaitForSeconds(delay);
+        HideNotif(go);
+    }
+
+    public void HideNotif(GameObject go)
+    {
+        // Hide the thought
+        go.gameObject.SetActive(false);
+    }
+
+    public void savePlayer()
+    {
+        scene = SceneManager.GetActiveScene().name;
+        Debug.Log(scene);
+        Save_Sys.SavePlayer(this);
+        SaveNotif();
+    }
+
+    public void loadPlayer()
+    {
+        PlayerData pd = Save_Sys.LoadPlayer();
+
+        Debug.Log(pd.scene);
+
+        Vector3 pos = new Vector3();
+        pos.x = pd.position[0];
+        pos.y = pd.position[1];
+        pos.z = pd.position[2];
+        transform.position = pos;
+
+        Quaternion rot = Quaternion.Euler(pd.rotation[0], pd.rotation[1], pd.rotation[2]);
+        transform.rotation = rot;
+
+        inventory.SetGameObjects(pd.items);
+        eventManager.SetEvents(pd.events);
+
+        LoadNotif();
+        //Add new data here...
     }
 }

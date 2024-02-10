@@ -21,16 +21,17 @@ public class EventManager : MonoBehaviour
 
             Debug.Log("There is more than one event Manager");
         }
-        instance = this;    
+        instance = this;
     }
 
     public void AddEvent(GameEvent eventObject)
     {
-        events.Add(eventObject);  
+        events.Add(eventObject);
     }
-    public void RemoveEvent(GameEvent eventObject) {
+    public void RemoveEvent(GameEvent eventObject)
+    {
         events.Remove(eventObject);
-        foreach(GameEvent gameEvent in events)
+        foreach (GameEvent gameEvent in events)
         {
             gameEvent.UpdateOrder();
         }
@@ -38,8 +39,12 @@ public class EventManager : MonoBehaviour
 
     public List<GameEvent> GetEvents()
     {
-
         return events;
+    }
+
+    public void SetEvents(List<GameEvent> events)
+    {
+        this.events = events;
     }
 
     public void StopEventMusic()

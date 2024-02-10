@@ -30,8 +30,10 @@ public class Inventory : MonoBehaviour
     }
     public List<GameObject> GetGameObjects()
     {
-
         return Items;
     }
-
+    public void SetGameObjects(List<GameObject> i)
+    {
+        Items = i;
+    }
 }
