@@ -32,6 +32,7 @@ public class MonsterAI : MonoBehaviour
     [Header("Dead")]
     [SerializeField] Animator ImageDeadAnimator;
     [SerializeField] GameObject screamer;
+    [SerializeField] Transform startPos;
 
     private PLAYBACK_STATE playbackstate1;
 
@@ -45,13 +46,29 @@ public class MonsterAI : MonoBehaviour
     }
     void dead()
     {
+        ImageDeadAnimator.enabled = true;
         ImageDeadAnimator.Play("Dead_transition");
         screamer.SetActive(true);
         transform.GetChild(0).GetComponent<Renderer>().enabled = false;
         LightBatterieManager.instance.offLight();
-        // diro restart StartCoroutine(RestartGame())
+        StartCoroutine(RestartGame());
     }
-    
+    IEnumerator RestartGame()
+    {
+        yield return new WaitForSeconds(3.1f);
+        ImageDeadAnimator.enabled = false;
+
+        player.GetComponent<ControlPlayer>().loadPlayer();
+        deadPlayer = false;
+        screamer.SetActive(false);
+        transform.GetChild(0).GetComponent<Renderer>().enabled = true;
+        LightBatterieManager.instance.onLight();
+        isChasingPlayer = false;
+        StartCoroutine(PatrolWait());
+        navMeshAgent.enabled = false;
+        transform.position = startPos.position;
+        navMeshAgent.enabled = true;
+    }
     void FixedUpdate()
     {
         
@@ -146,6 +163,7 @@ public class MonsterAI : MonoBehaviour
         yield return new WaitForSeconds(2.5f);
         dr.CloseDoor();
     }
+    bool deadPlayer;
     void ChasePlayer()
     {
         isWalking=true;
@@ -154,8 +172,12 @@ public class MonsterAI : MonoBehaviour
         // You can add additional behavior for chasing the player here
         if(Vector3.Distance(transform.position, player.position) <= criticalDistance)
         {
-            //eventPlayer death
-            player_dead.Invoke();
+            if (!deadPlayer)
+            {
+                deadPlayer = true;
+                player_dead.Invoke();
+
+            }
         }
 
         if ((!endChassing && chaseTimer >= chaseDuration) || ControlPlayer.playerStat == ControlPlayer.PlayerStat.hiding)

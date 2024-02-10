@@ -9,6 +9,9 @@ public class KngihtEvent : GameEvent
 
     [SerializeField]
     private Transform newKnightPosition;
+
+    [SerializeField] GameObject lights;
+
     [SerializeField]
     private Animator doorAnimator;
     [SerializeField]
@@ -22,7 +25,13 @@ public class KngihtEvent : GameEvent
         this.knightPosition.position = newKnightPosition.position;
         this.knightPosition.rotation = newKnightPosition.rotation;
         this.enabled = false;
-        
-    }
+        lights.SetActive(true);
 
+        StartCoroutine(desableLight());
+    }
+    IEnumerator desableLight()
+    {
+        yield return new WaitForSeconds(1);
+        lights.SetActive(false);
+    }
 }
