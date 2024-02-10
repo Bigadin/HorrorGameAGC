@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &31909261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1158,7 +1158,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &624076219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2876,7 +2876,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1208854874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3884,6 +3884,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1066347099017010048}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1640451451 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4942079214409790064, guid: 3b246e0e2e8515549be5fc3e05e5443c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8327313385303022189}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f4597ba6d7ba6b4786795f7eb800299, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1691738586
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5905,6 +5917,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2057461362}
     m_Modifications:
+    - target: {fileID: 2435085618590074156, guid: d3ec46360b2a57f4899273d2dc4e382c,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 7.0501065
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435085618590074156, guid: d3ec46360b2a57f4899273d2dc4e382c,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 8.091713
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435085618590074156, guid: d3ec46360b2a57f4899273d2dc4e382c,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0.35004985
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435085618590074156, guid: d3ec46360b2a57f4899273d2dc4e382c,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.27173996
+      objectReference: {fileID: 0}
     - target: {fileID: 3405299556568488176, guid: d3ec46360b2a57f4899273d2dc4e382c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5957,6 +5989,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3838622222919999553, guid: d3ec46360b2a57f4899273d2dc4e382c,
         type: 3}
+      propertyPath: bibRoom
+      value: 
+      objectReference: {fileID: 1640451451}
+    - target: {fileID: 3838622222919999553, guid: d3ec46360b2a57f4899273d2dc4e382c,
+        type: 3}
       propertyPath: roomDoor
       value: 
       objectReference: {fileID: 650241081}
@@ -5987,6 +6024,11 @@ PrefabInstance:
       objectReference: {fileID: 1507431379}
     - target: {fileID: 5956925615470692916, guid: d3ec46360b2a57f4899273d2dc4e382c,
         type: 3}
+      propertyPath: bibRoom
+      value: 
+      objectReference: {fileID: 1640451451}
+    - target: {fileID: 5956925615470692916, guid: d3ec46360b2a57f4899273d2dc4e382c,
+        type: 3}
       propertyPath: roomDoor
       value: 
       objectReference: {fileID: 650241081}
@@ -6009,6 +6051,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: bebeEvent
+      objectReference: {fileID: 0}
+    - target: {fileID: 8486797148955064658, guid: d3ec46360b2a57f4899273d2dc4e382c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6294,6 +6341,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Kitchen_Event
+      objectReference: {fileID: 0}
+    - target: {fileID: 5688077457654807348, guid: 44d4b5972a47e2344a55dddae84fab59,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8728546927475965075, guid: 44d4b5972a47e2344a55dddae84fab59,
         type: 3}
@@ -6965,12 +7017,22 @@ PrefabInstance:
     - target: {fileID: 518492246104732618, guid: bd5fc9614781bca46982f48b556aff35,
         type: 3}
       propertyPath: m_Size.x
-      value: 3.6212077
+      value: 5.3552933
+      objectReference: {fileID: 0}
+    - target: {fileID: 518492246104732618, guid: bd5fc9614781bca46982f48b556aff35,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 6.858101
       objectReference: {fileID: 0}
     - target: {fileID: 518492246104732618, guid: bd5fc9614781bca46982f48b556aff35,
         type: 3}
       propertyPath: m_Center.x
-      value: -9.285789
+      value: -8.418745
+      objectReference: {fileID: 0}
+    - target: {fileID: 518492246104732618, guid: bd5fc9614781bca46982f48b556aff35,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -13.601292
       objectReference: {fileID: 0}
     - target: {fileID: 3706103623754240132, guid: bd5fc9614781bca46982f48b556aff35,
         type: 3}
@@ -7006,6 +7068,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DoorEvent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173685368825682117, guid: bd5fc9614781bca46982f48b556aff35,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5011669989064058282, guid: bd5fc9614781bca46982f48b556aff35,
         type: 3}

@@ -9,7 +9,7 @@ public class bebeInsideEvent : bebeEvent
         foreach (var e in LightAnim) {
             e.Play("BebeEvent");
         }
-        this.roomDoor = base.roomDoor;
+        
         StartCoroutine(base.WaitbeforeEnd());
     }
     

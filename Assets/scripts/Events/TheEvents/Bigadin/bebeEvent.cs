@@ -5,9 +5,10 @@ using UnityEngine;
 public class bebeEvent : GameEvent
 {
 
-    [SerializeField] public Door roomDoor;
+     public Door roomDoor;
+     public Door bibRoom;
     [SerializeField]  NoteTrigger note;
-    [SerializeField] public Animator[] LightAnim;
+     public Animator[] LightAnim;
 
     bool isEventStart = false;
     public override void ConcreteEvent()
@@ -49,7 +50,10 @@ public class bebeEvent : GameEvent
     {
         yield return new WaitForSeconds(10);
         roomDoor.setdoorStat(Door.DoorState.Unlocked);
+        bibRoom.setdoorStat(Door.DoorState.Unlocked);
+        bibRoom.openDoor();
         LightAnim[0].enabled = false;
         LightAnim[1].enabled = false;
+
     }
 }
