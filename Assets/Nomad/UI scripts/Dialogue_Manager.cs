@@ -25,8 +25,17 @@ public class Dialogue_Manager : MonoBehaviour
     void PopulateDialogueDatabase()
     {
         // Example: Adding dialogue lines to the database
-        dialogueDatabase.Add("1", "This is the first line of dialogue.");
-        dialogueDatabase.Add("2", "This is the second line of dialogue.");
+        dialogueDatabase.Add("1", "My car needs gas, I can't start it like this.");
+        dialogueDatabase.Add("2", "I should probably follow these lights. Maybe I can find someone who can help me.");
+        dialogueDatabase.Add("3", "A manor right here?");
+        dialogueDatabase.Add("4", "Why is everything so dark?");
+        dialogueDatabase.Add("5", "The stairs are blocked. I should find another way.");
+        dialogueDatabase.Add("6", "Where is this music coming from?");
+        dialogueDatabase.Add("7", "I should search around the house more.");
+        dialogueDatabase.Add("8", "What was that monster? I should really find a way out and quick.");
+        dialogueDatabase.Add("9", "I think the monster came out from the stairs. I should check them.");
+        dialogueDatabase.Add("10", "I should go check the paintings... probably.");
+
         // Add more lines as needed...
     }
 
