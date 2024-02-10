@@ -82,6 +82,10 @@ public class Door : MonoBehaviour,IInteractable
     {
         return state;
     }
+    public void setdoorStat(DoorState st)// hadi monster ysha9ha
+    {
+        state = st;
+    }
     public void Setbool(bool boola)
     {
         this.isOpen= boola;
