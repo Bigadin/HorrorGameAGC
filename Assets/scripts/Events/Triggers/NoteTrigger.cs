@@ -11,14 +11,23 @@ public class NoteTrigger : Paper
     public override void Interact()
     {
         base.Interact();
-        noteEvent.LaunchEvent();
-        //Invoke("executeLunchEvent",2);
+        if(this.name == "note001")
+        {
+            noteEvent.GetComponent<Collider>().enabled = true;
+        }
+        else if(this.name == "note002")
+        {
+            noteEvent.GetComponent<spownMonsterEvent>().spownMonster();
+            noteEvent.LaunchEvent();
+
+        }
+        else if(this.name == "bebe event note")
+        {
+            noteEvent.LaunchEvent();
+        }
+
         Destroy(this.gameObject);
     }
-    void executeLunchEvent()
-    {
-        noteEvent.LaunchEvent();
 
-    }
 
 }

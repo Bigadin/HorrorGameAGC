@@ -6,12 +6,9 @@ using UnityEngine;
 public class DoorTrigger : Door
 {
     
-
-    [SerializeField]
-    private Light backgroundThunder;
-
+    [SerializeField] GameObject lights;
     private int count = 0;
-
+    public  bool bathEvent;
     private EventInstance musicDramaEventInstance;
     private PLAYBACK_STATE musicDramaPlaybackState;
     private bool musicDramaPlaying = false;
@@ -20,20 +17,34 @@ public class DoorTrigger : Door
     public override void Interact()
     {
         base.Interact();
-        if(count == 1)
+        if(bathEvent)
         {
+            lights.SetActive(true);
+            StartCoroutine(desableLight());
+            GetComponent<Door>().openDoor();
             LightBatterieManager.instance.offLight();
+            bathEvent = false;
             musicDramaEventInstance = AudioManager.Instance.CreateInstance(FmodEvents.Instance.musicDrama);
             musicDramaPlaying=true; 
             AudioManager.Instance.PlayOneShot(FmodEvents.Instance.thunderShot, this.transform.position);
             musicDramaEventInstance.start();
+            GetComponent<DoorTrigger>().enabled = false;
+            
+
         }
         count++;
     }
 
 
-  
-    public void StopMusicDrama()
+
+IEnumerator desableLight()
+{
+    yield return new WaitForSeconds(3.2f);
+    lights.SetActive(false);
+        LightBatterieManager.instance.onLight();
+}
+
+public void StopMusicDrama()
     {
         if (musicDramaEventInstance.isValid())
         {

@@ -35,7 +35,7 @@ public class Hiding : MonoBehaviour,IInteractable
             player.GetComponent<CharacterController>().enabled = false;
             player.position = hide_point[1].position;
             ControlPlayer.playerStat = ControlPlayer.PlayerStat.normal;
-
+            LightBatterieManager.instance.onLight();
             player.GetComponent<CharacterController>().enabled = true;
             ishiding = false;
         }

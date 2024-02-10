@@ -14,30 +14,26 @@ public class KitchenEvent : GameEvent
     public override void ConcreteEvent()
     {
             GetComponent<Collider>().enabled = true;
-           
+       
+            AudioManager.Instance.StopMusic();
+            SetDramaMusicInstance(AudioManager.Instance.CreateInstance(FmodEvents.Instance.dramaSpeed2));
+            musicDramaEventInstance.start();
+            musicDramaPlaying = true;
+            AudioManager.Instance.PlayOneShot(FmodEvents.Instance.thunderShot, thunderPlace.position);
+            foreach (var eventObject in eventObjects)
+            {
+                eventObject.evObjects.SetActive(true);
+            }
+            StartCoroutine(eventDestroy());
         
+
     }
     private void OnTriggerStay(Collider other)
     {
        
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            AudioManager.Instance.PlayOneShot(FmodEvents.Instance.thunderShot, thunderPlace.position);
-            AudioManager.Instance.StopMusic();
-            SetDramaMusicInstance(AudioManager.Instance.CreateInstance(FmodEvents.Instance.dramaSpeed2));
-            musicDramaEventInstance.start();
-            musicDramaPlaying = true;
-            foreach (var eventObject in eventObjects)
-            {
-                eventObject.evObjects.SetActive(true);
-            }
-            StartCoroutine(eventDestroy());
-        }
-    }
+
 
     IEnumerator eventDestroy()
     {
