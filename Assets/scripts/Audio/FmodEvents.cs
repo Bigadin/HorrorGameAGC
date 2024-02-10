@@ -79,6 +79,8 @@ public class FmodEvents : MonoBehaviour
     public EventReference slamDoor { get; private set; }
     [field: SerializeField]
     public EventReference bodyFall{ get; private set; }
+    [field: SerializeField]
+    public EventReference backGroundMusic { get; private set; }
 
 
 

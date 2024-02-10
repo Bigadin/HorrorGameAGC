@@ -23,6 +23,10 @@ public class AudioManager : MonoBehaviour
 
     private RuntimeManager studioSystem;
 
+    [Range(0f, 1f)]
+    public float masteVolume = 1f;
+
+    private Bus masterBus;
 
     private void Awake()
     {
@@ -32,6 +36,13 @@ public class AudioManager : MonoBehaviour
         }
         Instance = this;
         eventInstances = new List<EventInstance>();
+
+        masterBus = RuntimeManager.GetBus("bus:/");
+    }
+
+    private void Update()
+    {
+        masterBus.setVolume(masteVolume);
     }
 
     private void Start()
