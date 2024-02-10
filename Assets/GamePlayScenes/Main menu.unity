@@ -3254,7 +3254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9eaad71075b0d2469b513a9ed4227c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelToLoad: BigadinScene
+  LevelToLoad: BigadinNano
   MainMenuScene: 
   Continue_Popup: {fileID: 973932454}
   volume_value: {fileID: 1877892943}
@@ -4418,6 +4418,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1037422457}
   - component: {fileID: 1037422458}
+  - component: {fileID: 1037422459}
   m_Layer: 5
   m_Name: Submenu_Sound
   m_TagString: Untagged
@@ -4459,6 +4460,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037422456}
   m_CullTransparentMesh: 1
+--- !u!114 &1037422459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037422456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f344945653e9cc846bad66a35c06a902, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  slider: {fileID: 1188083696}
 --- !u!1 &1049490705
 GameObject:
   m_ObjectHideFlags: 0
@@ -5294,10 +5309,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 784563213}
-        m_TargetAssemblyTypeName: Main_Menu_UI, Assembly-CSharp
-        m_MethodName: setVolume
-        m_Mode: 0
+      - m_Target: {fileID: 1037422459}
+        m_TargetAssemblyTypeName: VolumeSlider, Assembly-CSharp
+        m_MethodName: OnSliderValueChanged
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7652,7 +7667,9 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
