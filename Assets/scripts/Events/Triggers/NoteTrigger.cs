@@ -11,6 +11,13 @@ public class NoteTrigger : Paper
     {
         base.Interact();
         noteEvent.LaunchEvent();
+        //Invoke("executeLunchEvent",2);
         Destroy(this.gameObject);
     }
+    void executeLunchEvent()
+    {
+        noteEvent.LaunchEvent();
+
+    }
+
 }

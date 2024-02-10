@@ -5,8 +5,9 @@ using UnityEngine;
 public class bebeEvent : GameEvent
 {
 
-    [SerializeField] Door roomDoor;
-    [SerializeField] Animator[] LightAnim;
+    [SerializeField] public Door roomDoor;
+    [SerializeField]  NoteTrigger note;
+    [SerializeField] public Animator[] LightAnim;
 
     bool isEventStart = false;
     public override void ConcreteEvent()
@@ -24,7 +25,7 @@ public class bebeEvent : GameEvent
         yield return new WaitForSeconds(10);
         isEventStart = true;
         // babe sound
-        
+        note.gameObject.SetActive(true);
         foreach (Animator anim in LightAnim)
         {
             anim.Play("DoorEvent");
@@ -38,13 +39,13 @@ public class bebeEvent : GameEvent
             {
                 roomDoor.CloseDoor();
                 roomDoor.setdoorStat(Door.DoorState.Locked);
-                StartCoroutine(WaitbeforeEnd());
+                
                 isEventStart=false;
             }
 
         }
     }
-    IEnumerator WaitbeforeEnd()
+    public IEnumerator WaitbeforeEnd()
     {
         yield return new WaitForSeconds(10);
         roomDoor.setdoorStat(Door.DoorState.Unlocked);
