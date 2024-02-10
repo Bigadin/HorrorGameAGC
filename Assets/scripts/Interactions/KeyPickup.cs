@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class KeyPickup : MonoBehaviour, IInteractable
 {
+    private Dialogue_Manager manager;
+
+    private void Awake()
+    {
+        manager = GameObject.FindGameObjectWithTag("DialogueManager").GetComponent<Dialogue_Manager>();
+    }
     public void Interact()
     {
         AudioManager.Instance.PlayOneShot(FmodEvents.Instance.keySound,this.transform.position);

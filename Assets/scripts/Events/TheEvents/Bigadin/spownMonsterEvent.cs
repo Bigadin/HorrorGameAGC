@@ -18,7 +18,7 @@ public class spownMonsterEvent : GameEvent
         }
         Monster.SetActive(true);
         thoughtActivate.SetActive(true);
-
+        SetDramaMusicInstance(AudioManager.Instance.CreateInstance(FmodEvents.Instance.musicDrama));
     }
 
 }

@@ -3191,7 +3191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9eaad71075b0d2469b513a9ed4227c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelToLoad: BigadinNano
+  LevelToLoad: BigadinNano 2
   MainMenuScene: 
   Continue_Popup: {fileID: 973932454}
   volume_value: {fileID: 1877892943}
@@ -8008,7 +8008,7 @@ MonoBehaviour:
     Path: event:/Music/MainMenuMusic
   Event: 
   PlayEvent: 1
-  StopEvent: 0
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0

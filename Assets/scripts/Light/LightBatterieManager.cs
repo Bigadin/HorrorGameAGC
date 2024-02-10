@@ -12,6 +12,8 @@ public class LightBatterieManager : MonoBehaviour
     [SerializeField] Animator LightAnime;
     private bool lightTorchOn;
     [SerializeField] float LightTorcheBatteriePerSlot = 10;
+    [SerializeField]
+    private Transform playerPosition;
 
     public static LightBatterieManager instance { get; private set; }
 
@@ -40,7 +42,7 @@ public class LightBatterieManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.F))
         {
-            // sound for torche tiktak
+            AudioManager.Instance.PlayOneShot(FmodEvents.Instance.flashlight, playerPosition.position);
             lightTorchOn = !lightTorchOn;
             flashLight.gameObject.SetActive(lightTorchOn);
             AudioManager.Instance.PlayOneShot(FmodEvents.Instance.flashlight, this.transform.position);
