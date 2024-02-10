@@ -6,6 +6,8 @@ public class spownMonsterEvent : GameEvent
 {
     [SerializeField] Animator[] meubleAnimator;
     [SerializeField] GameObject Monster;
+    [SerializeField]
+    private GameObject thoughtActivate;
     public override void ConcreteEvent()
     {
         base.ConcreteEvent();
@@ -19,6 +21,7 @@ public class spownMonsterEvent : GameEvent
             anim.Play("MonsterEvent");
         }
         Monster.SetActive(true);
+        thoughtActivate.SetActive(true);
 
     }
 

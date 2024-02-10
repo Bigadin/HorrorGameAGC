@@ -6,6 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class LoaderDoor : Door
 {
+
+    private Dialogue_Manager dialogue_manager;
+
+    private void Start()
+    {
+        dialogue_manager = GameObject.FindGameObjectWithTag("DialogueManager").GetComponent<Dialogue_Manager>();
+    }
     public override void Interact()
     {
         if (GetState() == DoorState.Locked)
@@ -26,8 +33,12 @@ public class LoaderDoor : Door
             {
                 Setbool(false);
                 AudioManager.Instance?.PlayOneShot(FmodEvents.Instance.lockedDoor, this.transform.position);
+                dialogue_manager.ShowThought("7");
             }
 
+        }if(GetState() == DoorState.Unlocked)
+        {
+            LoadNextScene();
         }
 
       
