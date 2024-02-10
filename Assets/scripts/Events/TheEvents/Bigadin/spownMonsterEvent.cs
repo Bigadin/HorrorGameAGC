@@ -8,7 +8,7 @@ public class spownMonsterEvent : GameEvent
     [SerializeField] GameObject Monster;
     [SerializeField]
     private GameObject thoughtActivate;
-    void spownMonster()
+    public void spownMonster()
     {
         print("MOOOOOOOOOOOONSTRE");
         Monster.SetActive(true);

@@ -696,11 +696,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 6379300332317264253, guid: 1a949afd6ba5f5b4f942c26b5af41868,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 368981624}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a949afd6ba5f5b4f942c26b5af41868, type: 3}
 --- !u!1001 &170648870
@@ -6266,8 +6262,8 @@ Transform:
   - {fileID: 302930603}
   - {fileID: 391327394}
   - {fileID: 2012613953}
-  - {fileID: 1291773724}
   - {fileID: 114174514}
+  - {fileID: 1895742864}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1415877329
@@ -6552,7 +6548,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 768817793}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 477533824220968700, guid: 21463257127902d4bb11d3b48ce927df,
         type: 3}
@@ -8520,6 +8516,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4902151464930610874, guid: 5e80f0df27c3d8040bb30634dfb4567a,
     type: 3}
   m_PrefabInstance: {fileID: 1891116077}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1895742864 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1253633376605075106, guid: 9f36069dabad11f4d8dcbb0e0791d886,
+    type: 3}
+  m_PrefabInstance: {fileID: 338934851210004958}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1940160481
 GameObject:
@@ -10985,6 +10987,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 995184823}
+    - targetCorrespondingSourceObject: {fileID: 6505863173544569550, guid: a63d79129b21ff74887a6fc8a5f94274,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1945435047}
   m_SourcePrefab: {fileID: 100100000, guid: a63d79129b21ff74887a6fc8a5f94274, type: 3}
 --- !u!4 &5367541362112517877 stripped
 Transform:
@@ -11404,7 +11410,7 @@ PrefabInstance:
     - target: {fileID: 4689998237749134552, guid: 9c9796728b411174ba22ae652096f209,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5018804623282102261, guid: 9c9796728b411174ba22ae652096f209,
         type: 3}
@@ -12418,3 +12424,4 @@ SceneRoots:
   - {fileID: 265780433}
   - {fileID: 986735581}
   - {fileID: 495821619}
+  - {fileID: 1624524350}
