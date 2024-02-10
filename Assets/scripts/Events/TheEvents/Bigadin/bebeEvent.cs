@@ -49,8 +49,9 @@ public class bebeEvent : GameEvent
     }
     public IEnumerator WaitbeforeEnd()
     {
+      
         yield return new WaitForSeconds(5);
-        isEventStart = false;
+        
         roomDoor.setdoorStat(Door.DoorState.Unlocked);
         bibRoom.setdoorStat(Door.DoorState.Unlocked);
         bibRoom.openDoor();

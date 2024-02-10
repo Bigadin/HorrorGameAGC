@@ -8,14 +8,10 @@ public class spownMonsterEvent : GameEvent
     [SerializeField] GameObject Monster;
     [SerializeField]
     private GameObject thoughtActivate;
-    public override void ConcreteEvent()
-    {
-        base.ConcreteEvent();
-        spownMonster();
-
-    }
     void spownMonster()
     {
+        print("MOOOOOOOOOOOONSTRE");
+        Monster.SetActive(true);
         foreach (var anim in meubleAnimator)
         {
             anim.Play("MonsterEvent");

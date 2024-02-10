@@ -12,6 +12,8 @@ public class Password : MonoBehaviour, IInteractable
 
     [SerializeField]
     private GameObject password_UI;
+    [SerializeField]
+    private GameObject Chest;
 
     [SerializeField]
     private GameObject pressE;
@@ -49,7 +51,9 @@ public class Password : MonoBehaviour, IInteractable
 
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-
+            
+            Chest.GetComponent<Animator>().Play("OpenCoffre");
+            Chest.transform.GetChild(2).gameObject.SetActive(false);
             Camera.main.GetComponent<CinemachineBrain>().enabled = true;
             pressE.SetActive(true);
             player.enabled = true;

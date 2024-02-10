@@ -58,7 +58,7 @@ public class LightBatterieManager : MonoBehaviour
                 hasChanged = true;
                 batterieSlot--;
                 UpdateBatterieLvl();
-                flashLight.intensity -= 20;
+                flashLight.intensity -= 4;
                 BatterieSlotTimer = LightTorcheBatteriePerSlot;
             }
         }
@@ -88,14 +88,12 @@ public class LightBatterieManager : MonoBehaviour
     public void offLight()
     {
         flashLight.gameObject.SetActive(false);
-        AudioManager.Instance.PlayOneShot(FmodEvents.Instance.flashlight, this.transform.position);
 
         lightTorchOn = !lightTorchOn;
     }
     public void onLight()
     {
         flashLight.gameObject.SetActive(true);
-        AudioManager.Instance.PlayOneShot(FmodEvents.Instance.flashlight, this.transform.position);
 
         lightTorchOn = !lightTorchOn;
 

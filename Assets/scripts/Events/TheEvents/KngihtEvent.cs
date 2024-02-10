@@ -9,20 +9,24 @@ public class KngihtEvent : GameEvent
 
     [SerializeField]
     private Transform newKnightPosition;
+
+    
+
     [SerializeField]
     private Animator doorAnimator;
     [SerializeField]
-    private Door doorScript;
+    private DoorTrigger doorScript;
 
     public override void ConcreteEvent()
     {
         AudioManager.Instance.StopMusic();
-        doorAnimator.SetTrigger("Close");
-        doorScript.Setbool(false);
+        doorScript.CloseDoor();
+        doorScript.bathEvent = true;
         this.knightPosition.position = newKnightPosition.position;
         this.knightPosition.rotation = newKnightPosition.rotation;
         this.enabled = false;
-        
+        GetComponent<Collider>().enabled = false;
+       
     }
-
+ 
 }

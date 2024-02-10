@@ -5,14 +5,10 @@ using UnityEngine;
 
 public class DoorTrigger : Door
 {
-    [SerializeField]
-    private List<Light> knightEyes;
-
-    [SerializeField]
-    private Light backgroundThunder;
-
+    
+    [SerializeField] GameObject lights;
     private int count = 0;
-
+    public  bool bathEvent;
     private EventInstance musicDramaEventInstance;
     private PLAYBACK_STATE musicDramaPlaybackState;
     private bool musicDramaPlaying = false;
@@ -21,34 +17,34 @@ public class DoorTrigger : Door
     public override void Interact()
     {
         base.Interact();
-        if(count == 1)
+        if(bathEvent)
         {
-            foreach (Light light in knightEyes)
-            {
-                light.intensity = 50f;
-            }
-            backgroundThunder.intensity = 1000f;
+            lights.SetActive(true);
+            StartCoroutine(desableLight());
+            GetComponent<Door>().openDoor();
+            LightBatterieManager.instance.offLight();
+            bathEvent = false;
             musicDramaEventInstance = AudioManager.Instance.CreateInstance(FmodEvents.Instance.musicDrama);
             musicDramaPlaying=true; 
             AudioManager.Instance.PlayOneShot(FmodEvents.Instance.thunderShot, this.transform.position);
             musicDramaEventInstance.start();
-            StartCoroutine(coolDownEnd());
+            GetComponent<DoorTrigger>().enabled = false;
+            
+
         }
         count++;
     }
 
 
-    private IEnumerator coolDownEnd()
-    {
-        yield return new WaitForSeconds(3f);
-        foreach(Light light in knightEyes)
-        {
-            light.intensity = 0f;
-            backgroundThunder.intensity = 0f;
-        }
 
-    }
-    public void StopMusicDrama()
+IEnumerator desableLight()
+{
+    yield return new WaitForSeconds(3.2f);
+    lights.SetActive(false);
+        LightBatterieManager.instance.onLight();
+}
+
+public void StopMusicDrama()
     {
         if (musicDramaEventInstance.isValid())
         {

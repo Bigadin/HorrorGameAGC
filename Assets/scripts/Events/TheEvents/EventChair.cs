@@ -20,15 +20,16 @@ public class EventChair : GameEvent
         
         chairEventAnim.Play("ChairEvent");
 
-        AudioManager.Instance.PlayOneShot(FmodEvents.Instance.chairMove, chairPosition.position);
 
+        AudioManager.Instance.PlayOneShot(FmodEvents.Instance.chairMove, chairPosition.position);
         // Play the music drama event and get its instance
         AudioManager.Instance.StopMusic();
         SetDramaMusicInstance(AudioManager.Instance.CreateInstance(FmodEvents.Instance.musicDrama));
         musicDramaEventInstance.start();
         musicDramaPlaying = true;
         this.enabled = false;
-    }
+
+    }  
 
 
 

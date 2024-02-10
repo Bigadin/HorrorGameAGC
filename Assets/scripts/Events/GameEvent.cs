@@ -8,7 +8,7 @@ using UnityEngine;
 public class GameEvent : MonoBehaviour, ILaunchEvent
 {
     [SerializeField]
-    private static int order=0;
+    private static int order = 0;
     [SerializeField]
     private int launchOrder = 0;
     public EventInstance musicDramaEventInstance {  get; private set; }
@@ -30,6 +30,7 @@ public class GameEvent : MonoBehaviour, ILaunchEvent
     {
         if (other.gameObject.tag == "Player")
         {
+            
             LaunchEvent();
         }
     }
