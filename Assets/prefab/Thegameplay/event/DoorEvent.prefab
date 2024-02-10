@@ -54,7 +54,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   roomDoor: {fileID: 0}
-  timeBeforeStart: 30
+  timeBeforeStart: 10
   timestopingAnimation: 10
 --- !u!65 &518492246104732618
 BoxCollider:
@@ -75,8 +75,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4.5548124, y: 4.537815, z: 4.8155823}
-  m_Center: {x: -9.752592, y: -0.2839203, z: -13.98188}
+  m_Size: {x: 5.3552933, y: 4.537815, z: 6.858101}
+  m_Center: {x: -8.418745, y: -0.2839203, z: -13.601292}
 --- !u!1 &6345314754303398824
 GameObject:
   m_ObjectHideFlags: 0

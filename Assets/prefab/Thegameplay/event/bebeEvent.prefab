@@ -54,8 +54,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4.51, y: 6, z: 5.16}
-  m_Center: {x: -0.92, y: 0, z: 0.49}
+  m_Size: {x: 7.0501065, y: 6, z: 8.091713}
+  m_Center: {x: 0.35004985, y: 0, z: 0.27173996}
 --- !u!114 &5956925615470692916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,8 +69,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   order: 0
-  launchOrder: 0
+  launchOrder: 1
   roomDoor: {fileID: 0}
+  bibRoom: {fileID: 0}
   note: {fileID: 3859300759788341087}
   LightAnim:
   - {fileID: 0}
@@ -122,6 +123,7 @@ MonoBehaviour:
   order: 0
   launchOrder: 0
   roomDoor: {fileID: 0}
+  bibRoom: {fileID: 0}
   note: {fileID: 0}
   LightAnim:
   - {fileID: 0}
