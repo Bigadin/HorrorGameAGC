@@ -10,7 +10,7 @@ public class bebeEvent : GameEvent
     [SerializeField]  NoteTrigger note;
      public Animator[] LightAnim;
 
-    bool isEventStart = false;
+    private  bool isEventStart = false;
     public override void ConcreteEvent()
     {
         
@@ -18,12 +18,13 @@ public class bebeEvent : GameEvent
         {
             StartCoroutine(WaitbeforeStart());
         }
+       
 
     }
     IEnumerator WaitbeforeStart()
     {
         
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(8);
         isEventStart = true;
         AudioManager.Instance.InitializeSound(FmodEvents.Instance.babyCry, note.gameObject.transform, 1f, 70f);
         note.gameObject.SetActive(true);
@@ -48,7 +49,8 @@ public class bebeEvent : GameEvent
     }
     public IEnumerator WaitbeforeEnd()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(5);
+        isEventStart = false;
         roomDoor.setdoorStat(Door.DoorState.Unlocked);
         bibRoom.setdoorStat(Door.DoorState.Unlocked);
         bibRoom.openDoor();
