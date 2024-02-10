@@ -7,6 +7,7 @@ public class NoteTrigger : Paper
     [SerializeField]
     private GameEvent noteEvent;
 
+
     public override void Interact()
     {
         base.Interact();

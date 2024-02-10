@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEditorInternal;
 
 public class AudioManager : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class AudioManager : MonoBehaviour
     private EventInstance carEventInstance;
     private EventInstance randomSoundInstance;
     private Scene scene;
+
+    private RuntimeManager studioSystem;
 
 
     private void Awake()
@@ -34,6 +37,7 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         scene = SceneManager.GetActiveScene();
+
         Debug.Log(scene.buildIndex);
         if (scene.buildIndex == 1)
         {
@@ -52,8 +56,13 @@ public class AudioManager : MonoBehaviour
     public void PlayOneShot(EventReference sound, Vector3 position)
     {
         RuntimeManager.PlayOneShot(sound, position);
+
     }
 
+    
+
+
+    
     public EventInstance CreateInstance(EventReference sound)
     {
         EventInstance eventInstance = RuntimeManager.CreateInstance(sound);

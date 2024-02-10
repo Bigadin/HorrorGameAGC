@@ -359,10 +359,10 @@ MonoBehaviour:
   Path: ../../Fmod/Tryout/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638431126500911045
+  lastModified: 638431244307646949
   FileSizes:
   - Name: Desktop
-    Value: 2324
+    Value: 2404
   Exists: 1
 --- !u!114 &-3518567391585761395
 MonoBehaviour:
@@ -433,10 +433,10 @@ MonoBehaviour:
   Path: ../../Fmod/Tryout/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638431126509245163
+  lastModified: 638431244317679807
   FileSizes:
   - Name: Desktop
-    Value: 3092960
+    Value: 3143072
   Exists: 1
 --- !u!114 &-1977998917059436884
 MonoBehaviour:
@@ -453,7 +453,7 @@ MonoBehaviour:
   Path: ../../Fmod/Tryout/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638431126500881037
+  lastModified: 638431244307616932
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -617,12 +617,14 @@ MonoBehaviour:
   - {fileID: 6971578755120644214}
   - {fileID: 8094652277791583183}
   - {fileID: 5729585626706770073}
+  - {fileID: 7225719680001770558}
+  - {fileID: 3129372847274700205}
   EditorParameters: []
   MasterBanks:
   - {fileID: -1977998917059436884}
   StringsBanks:
   - {fileID: -3877728109703724437}
-  cacheTime: 638431171384429115
+  cacheTime: 638431244317679807
   cacheVersion: 131616
 --- !u!114 &76224510970940441
 MonoBehaviour:
@@ -759,6 +761,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 60000
+--- !u!114 &3129372847274700205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/StartSpawn
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/StartSpawn
+  Guid:
+    Data1: 421626238
+    Data2: 1127710177
+    Data3: -1055019111
+    Data4: -537097363
+  Banks:
+  - {fileID: -2355917160693587590}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3189
 --- !u!114 &3215370824459672896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -921,6 +950,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1000
+--- !u!114 &7225719680001770558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/EndSpawn
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/EndSpawn
+  Guid:
+    Data1: -1873593554
+    Data2: 1135888654
+    Data3: -1972946037
+    Data4: 343467465
+  Banks:
+  - {fileID: -2355917160693587590}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 312
 --- !u!114 &8094652277791583183
 MonoBehaviour:
   m_ObjectHideFlags: 0

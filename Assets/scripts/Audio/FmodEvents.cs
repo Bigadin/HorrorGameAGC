@@ -63,6 +63,10 @@ public class FmodEvents : MonoBehaviour
     public EventReference instruMusic { get; private set; }
     [field: SerializeField]
     public EventReference babySound { get; private set; }
+    [field: SerializeField]
+    public EventReference startSpawn { get; private set; }
+    [field: SerializeField]
+    public EventReference finishSpawn { get; private set; }
 
 
 

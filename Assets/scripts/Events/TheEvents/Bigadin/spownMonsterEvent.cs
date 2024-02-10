@@ -18,7 +18,6 @@ public class spownMonsterEvent : GameEvent
         {
             anim.Play("MonsterEvent");
         }
-        //play sound
         Monster.SetActive(true);
 
     }
