@@ -94,4 +94,25 @@ public class Door : MonoBehaviour,IInteractable
     {
         return this.isOpen;
     }
+    public string GetKeyOpener()
+    {
+        return keyOpener;
+    }
+    public void SetKeyOpener(string keyOpener)
+    {
+        this.keyOpener = keyOpener;
+    }
+    public DoorState GetState()
+    {
+        return state;
+    }
+    public void SetState(DoorState st)
+    {
+        this.state = st;
+    }
+
+    public void PlayEventSound()
+    {
+        AudioManager.Instance.InitializeSound(FmodEvents.Instance.slamDoor, gameObject.transform, 1f, 40f);
+    }
 }

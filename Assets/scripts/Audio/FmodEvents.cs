@@ -69,6 +69,16 @@ public class FmodEvents : MonoBehaviour
     public EventReference finishSpawn { get; private set; }
     [field: SerializeField]
     public EventReference clockTicking { get; private set; }
+    [field: SerializeField]
+    public EventReference openTiroire { get; private set; }
+    [field: SerializeField]
+    public EventReference CloseTiroire { get; private set; }
+    [field: SerializeField]
+    public EventReference babyCry { get; private set; }
+    [field: SerializeField]
+    public EventReference slamDoor { get; private set; }
+    [field: SerializeField]
+    public EventReference bodyFall{ get; private set; }
 
 
 

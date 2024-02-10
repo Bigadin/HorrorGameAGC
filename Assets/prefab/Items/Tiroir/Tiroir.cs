@@ -24,4 +24,13 @@ public class Tiroir : MonoBehaviour, IInteractable
             isOpen = false;
         }
     }
+
+    public void StartSound()
+    {
+        AudioManager.Instance.PlayOneShot(FmodEvents.Instance.openTiroire,transform.position);
+    }
+    public void StopSound()
+    {
+        AudioManager.Instance.PlayOneShot(FmodEvents.Instance.CloseTiroire,transform.position);
+    }
 }

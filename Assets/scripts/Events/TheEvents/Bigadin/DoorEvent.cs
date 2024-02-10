@@ -13,10 +13,11 @@ public class DoorEvent : GameEvent
     bool IsEventStart = false; // hada li i9ol ida event bda
     public override void ConcreteEvent()
     {
-        base.ConcreteEvent();
+        
         if(!IsEventStart)
         {
             StartCoroutine(DoorEventStart());
+            
         }
     }
     IEnumerator DoorEventStart()
@@ -61,6 +62,6 @@ public class DoorEvent : GameEvent
     {
         roomDoor.setdoorStat(Door.DoorState.Unlocked);
         roomDoor.openDoor();
-        EventManager.instance.RemoveEvent(this);
+        
     }
 }

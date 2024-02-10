@@ -54,6 +54,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 9636
+--- !u!114 &-8303545589394388861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SlamDoor
+  m_EditorClassIdentifier: 
+  Path: event:/SlamDoor
+  Guid:
+    Data1: -1611332161
+    Data2: 1295874380
+    Data3: -1299642455
+    Data4: -1964351436
+  Banks:
+  - {fileID: -2355917160693587590}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1496
+--- !u!114 &-8147658459491877338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/OpenTiroire
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/OpenTiroire
+  Guid:
+    Data1: 1429360052
+    Data2: 1229506502
+    Data3: 684796828
+    Data4: 1095516231
+  Banks:
+  - {fileID: -2355917160693587590}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 600
 --- !u!114 &-7782750430966627015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,7 +150,7 @@ MonoBehaviour:
   Path: ../../Fmod/Tryout/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638431449602169091
+  lastModified: 638431744401369115
   FileSizes:
   - Name: Desktop
     Value: 17060640
@@ -208,7 +262,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 30000
+  Length: 16000
 --- !u!114 &-5941474962472779292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -413,11 +467,38 @@ MonoBehaviour:
   Path: ../../Fmod/Tryout/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638431448641218235
+  lastModified: 638431680430665825
   FileSizes:
   - Name: Desktop
-    Value: 2694
+    Value: 2924
   Exists: 1
+--- !u!114 &-3794608143712198030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/CloseTiroire
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/CloseTiroire
+  Guid:
+    Data1: -1712819179
+    Data2: 1316220763
+    Data3: -1786137208
+    Data4: 20549823
+  Banks:
+  - {fileID: -2355917160693587590}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 584
 --- !u!114 &-3557211483768852124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -541,10 +622,10 @@ MonoBehaviour:
   Path: ../../Fmod/Tryout/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638431437454834084
+  lastModified: 638431744414007206
   FileSizes:
   - Name: Desktop
-    Value: 3947296
+    Value: 5248704
   Exists: 1
 --- !u!114 &-1977998917059436884
 MonoBehaviour:
@@ -561,11 +642,38 @@ MonoBehaviour:
   Path: ../../Fmod/Tryout/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638431448641198227
+  lastModified: 638431680430645818
   FileSizes:
   - Name: Desktop
     Value: 1036
   Exists: 1
+--- !u!114 &-1394568256175858321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BabyCry
+  m_EditorClassIdentifier: 
+  Path: event:/BabyCry
+  Guid:
+    Data1: 731506854
+    Data2: 1272158990
+    Data3: 481990533
+    Data4: -1243139426
+  Banks:
+  - {fileID: -2355917160693587590}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 40000
 --- !u!114 &-1100572230020366397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -733,12 +841,17 @@ MonoBehaviour:
   - {fileID: -3925690413913527365}
   - {fileID: 7674499184790732069}
   - {fileID: 7615407794413867516}
+  - {fileID: -3794608143712198030}
+  - {fileID: -8147658459491877338}
+  - {fileID: -1394568256175858321}
+  - {fileID: 922936577609082334}
+  - {fileID: -8303545589394388861}
   EditorParameters: []
   MasterBanks:
   - {fileID: -1977998917059436884}
   StringsBanks:
   - {fileID: -3877728109703724437}
-  cacheTime: 638431449602169091
+  cacheTime: 638431744414007206
   cacheVersion: 131616
 --- !u!114 &76224510970940441
 MonoBehaviour:
@@ -794,6 +907,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &922936577609082334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BodyFall
+  m_EditorClassIdentifier: 
+  Path: event:/BodyFall
+  Guid:
+    Data1: 1776742317
+    Data2: 1224378876
+    Data3: -744189290
+    Data4: -1009415326
+  Banks:
+  - {fileID: -2355917160693587590}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 393
 --- !u!114 &2102545019147471104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1187,7 +1327,7 @@ MonoBehaviour:
   Path: ../../Fmod/Tryout/Build/Desktop/Ambiance.bank
   Name: Ambiance
   StudioPath: bank:/Ambiance
-  lastModified: 638431444726136677
+  lastModified: 638431710340612264
   FileSizes:
   - Name: Desktop
     Value: 6738208

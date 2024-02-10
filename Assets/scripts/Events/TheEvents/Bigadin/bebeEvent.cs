@@ -13,7 +13,7 @@ public class bebeEvent : GameEvent
     bool isEventStart = false;
     public override void ConcreteEvent()
     {
-        base.ConcreteEvent();
+        
         if (!isEventStart)
         {
             StartCoroutine(WaitbeforeStart());
@@ -25,7 +25,7 @@ public class bebeEvent : GameEvent
         
         yield return new WaitForSeconds(10);
         isEventStart = true;
-        // babe sound
+        AudioManager.Instance.InitializeSound(FmodEvents.Instance.babyCry, note.gameObject.transform, 1f, 70f);
         note.gameObject.SetActive(true);
         foreach (Animator anim in LightAnim)
         {
@@ -54,6 +54,6 @@ public class bebeEvent : GameEvent
         bibRoom.openDoor();
         LightAnim[0].enabled = false;
         LightAnim[1].enabled = false;
-
+        AudioManager.Instance.RelaunchMusic();
     }
 }
