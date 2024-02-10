@@ -17,8 +17,10 @@ public class StartGame : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 //do what ever sound you want (oppening door)
-                LoadSceneAnim.Play("SwitchSceneAnimation");
+                AudioManager.Instance.PlayOneShot(FmodEvents.Instance.doorOpenClose,transform.position);
+                // LoadSceneAnim.Play("SwitchSceneAnimation");
                 StartCoroutine(EnterHouse());
+                
             }
         }
     }

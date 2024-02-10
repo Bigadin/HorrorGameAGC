@@ -35,6 +35,7 @@ public class Dialogue_Manager : MonoBehaviour
         dialogueDatabase.Add("8", "What was that monster? I should really find a way out and quick.");
         dialogueDatabase.Add("9", "I think the monster came out from the stairs. I should check them.");
         dialogueDatabase.Add("10", "I should go check the paintings... probably.");
+        dialogueDatabase.Add("11", "I shouldn't go this way, i have to follow the lights");
 
         // Add more lines as needed...
     }

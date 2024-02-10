@@ -7,7 +7,6 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 using TMPro;
-using UnityEditorInternal;
 
 public class AudioManager : MonoBehaviour
 {
