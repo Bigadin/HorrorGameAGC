@@ -43,6 +43,7 @@ public class MonsterAI : MonoBehaviour
     void dead()
     {
         ImageDeadAnimator.Play("Dead_transition");
+        AudioManager.Instance.PlayOneShot(FmodEvents.Instance.Death, transform.position);
         screamer.SetActive(true);
         transform.GetChild(0).GetComponent<Renderer>().enabled = false;
         LightBatterieManager.instance.offLight();

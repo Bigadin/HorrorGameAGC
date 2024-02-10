@@ -150,10 +150,10 @@ MonoBehaviour:
   Path: ../../Fmod/Tryout/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638431796975597232
+  lastModified: 638431937687124713
   FileSizes:
   - Name: Desktop
-    Value: 19077920
+    Value: 19077632
   Exists: 1
 --- !u!114 &-7025324666030676297
 MonoBehaviour:
@@ -338,7 +338,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -7091448553885747660}
   IsStream: 1
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
@@ -494,10 +494,10 @@ MonoBehaviour:
   Path: ../../Fmod/Tryout/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638431796930417787
+  lastModified: 638431937672093952
   FileSizes:
   - Name: Desktop
-    Value: 2980
+    Value: 3026
   Exists: 1
 --- !u!114 &-3794608143712198030
 MonoBehaviour:
@@ -649,10 +649,10 @@ MonoBehaviour:
   Path: ../../Fmod/Tryout/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638431796987184747
+  lastModified: 638431937707034854
   FileSizes:
   - Name: Desktop
-    Value: 5248704
+    Value: 5319552
   Exists: 1
 --- !u!114 &-1977998917059436884
 MonoBehaviour:
@@ -669,7 +669,7 @@ MonoBehaviour:
   Path: ../../Fmod/Tryout/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638431796930397777
+  lastModified: 638431937672073949
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -874,12 +874,13 @@ MonoBehaviour:
   - {fileID: 922936577609082334}
   - {fileID: -8303545589394388861}
   - {fileID: -4985531880522859348}
+  - {fileID: 4395580920212239764}
   EditorParameters: []
   MasterBanks:
   - {fileID: -1977998917059436884}
   StringsBanks:
   - {fileID: -3877728109703724437}
-  cacheTime: 638431796987184747
+  cacheTime: 638431937707034854
   cacheVersion: 131616
 --- !u!114 &76224510970940441
 MonoBehaviour:
@@ -1124,6 +1125,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 18300
+--- !u!114 &4395580920212239764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Death
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Death
+  Guid:
+    Data1: -2108169515
+    Data2: 1176727690
+    Data3: -1245702503
+    Data4: -87373321
+  Banks:
+  - {fileID: -2355917160693587590}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3350
 --- !u!114 &5649248145171240402
 MonoBehaviour:
   m_ObjectHideFlags: 0

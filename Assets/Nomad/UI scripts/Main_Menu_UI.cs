@@ -53,6 +53,9 @@ public class Main_Menu_UI : MonoBehaviour
         dropdown.AddOptions(options);
         dropdown.value = index_cureent_resolution;
         dropdown.RefreshShownValue();
+
+        setResolution(resolutions.Length);
+        setFullscreen(true);
     }
     public void StartNewGame()
     {
