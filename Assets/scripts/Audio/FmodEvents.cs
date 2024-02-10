@@ -67,6 +67,8 @@ public class FmodEvents : MonoBehaviour
     public EventReference startSpawn { get; private set; }
     [field: SerializeField]
     public EventReference finishSpawn { get; private set; }
+    [field: SerializeField]
+    public EventReference clockTicking { get; private set; }
 
 
 

@@ -11,7 +11,7 @@ public class EventChair : GameEvent
 
     [SerializeField] Animator chairEventAnim;
 
-    private EventInstance musicDramaEventInstance;
+    
     private PLAYBACK_STATE musicDramaPlaybackState;
     private bool musicDramaPlaying=false;
 
@@ -24,42 +24,14 @@ public class EventChair : GameEvent
 
         // Play the music drama event and get its instance
         AudioManager.Instance.StopMusic();
-        musicDramaEventInstance = AudioManager.Instance.CreateInstance(FmodEvents.Instance.musicDrama);
+        SetDramaMusicInstance(AudioManager.Instance.CreateInstance(FmodEvents.Instance.musicDrama));
         musicDramaEventInstance.start();
         musicDramaPlaying = true;
+        this.enabled = false;
     }
 
 
-    void Update()
-    {
 
-        if (musicDramaEventInstance.isValid() && musicDramaPlaying)
-        {
-
-            musicDramaEventInstance.getPlaybackState(out musicDramaPlaybackState);
-
-            if (musicDramaPlaybackState == PLAYBACK_STATE.STOPPED)
-            {
-                musicDramaPlaying = false;
-                Debug.Log("musicDrama event has finished playing");
-                AudioManager.Instance.RelaunchMusic();
-                EventManager.instance.RemoveEvent(this);
-
-            }
-        }
-    }
-
-    public virtual void StopMusicDrama()
-    {
-        base.StopEventMusic();
-        if (musicDramaEventInstance.isValid())
-        {
-            musicDramaEventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-        }
-        else
-        {
-            Debug.Log("There is problem");
-        }
-    }
+    
 
 }

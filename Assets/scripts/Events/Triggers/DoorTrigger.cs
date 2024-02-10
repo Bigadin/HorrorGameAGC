@@ -37,23 +37,6 @@ public class DoorTrigger : Door
         count++;
     }
 
-    void Update()
-    {
-
-        if (musicDramaEventInstance.isValid() && musicDramaPlaying)
-        {
-
-            musicDramaEventInstance.getPlaybackState(out musicDramaPlaybackState);
-
-            if (musicDramaPlaybackState == PLAYBACK_STATE.STOPPED)
-            {
-                musicDramaPlaying = false;
-                Debug.Log("musicDrama event has finished playing");
-                AudioManager.Instance.RelaunchMusic();
-
-            }
-        }
-    }
 
     private IEnumerator coolDownEnd()
     {
@@ -64,5 +47,13 @@ public class DoorTrigger : Door
             backgroundThunder.intensity = 0f;
         }
 
+    }
+    public void StopMusicDrama()
+    {
+        if (musicDramaEventInstance.isValid())
+        {
+            musicDramaEventInstance.stop(STOP_MODE.IMMEDIATE);
+            
+        }
     }
 }

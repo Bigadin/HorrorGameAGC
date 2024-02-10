@@ -6009,6 +6009,11 @@ PrefabInstance:
       objectReference: {fileID: 650241081}
     - target: {fileID: 5956925615470692916, guid: d3ec46360b2a57f4899273d2dc4e382c,
         type: 3}
+      propertyPath: launchOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5956925615470692916, guid: d3ec46360b2a57f4899273d2dc4e382c,
+        type: 3}
       propertyPath: LightAnim.Array.data[0]
       value: 
       objectReference: {fileID: 479545276}
@@ -6392,6 +6397,7 @@ MonoBehaviour:
     evObjects: {fileID: 659548291}
   - name: light 2
     evObjects: {fileID: 787238171}
+  thunderPlace: {fileID: 0}
 --- !u!65 &5367541362112517883
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -31,10 +31,7 @@ public class EventManager : MonoBehaviour
     public void RemoveEvent(GameEvent eventObject)
     {
         events.Remove(eventObject);
-        foreach (GameEvent gameEvent in events)
-        {
-            gameEvent.UpdateOrder();
-        }
+       
     }
 
     public List<GameEvent> GetEvents()

@@ -11,7 +11,7 @@ public class LivingRoomEvent : GameEvent
 
     public override void ConcreteEvent()
     {
-        base.ConcreteEvent();
+        
         AudioManager.Instance.InitializeSound(FmodEvents.Instance.tvSound, tvPosition,1f,40f);
         tvLight.intensity = 100f;
 

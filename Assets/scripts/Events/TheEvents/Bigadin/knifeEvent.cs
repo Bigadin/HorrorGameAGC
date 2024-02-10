@@ -5,9 +5,11 @@ using UnityEngine;
 public class knifeEvent : GameEvent
 {
     [SerializeField] Animator knifeAnimator;
+    [SerializeField]
+    private DoorTrigger door;
     public override void ConcreteEvent()
     {
-        base.ConcreteEvent();
+        door.StopMusicDrama();
         knifeAnimator.Play("knifeEvent");
         //sound
     }

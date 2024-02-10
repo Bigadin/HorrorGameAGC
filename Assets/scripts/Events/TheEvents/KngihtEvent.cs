@@ -16,18 +16,13 @@ public class KngihtEvent : GameEvent
 
     public override void ConcreteEvent()
     {
-        base.ConcreteEvent();
+        AudioManager.Instance.StopMusic();
         doorAnimator.SetTrigger("Close");
         doorScript.Setbool(false);
         this.knightPosition.position = newKnightPosition.position;
         this.knightPosition.rotation = newKnightPosition.rotation;
-        AudioManager.Instance.StopMusic();
-        EventManager.instance.StopEventMusic();
+        this.enabled = false;
+        
     }
 
-    public override void StopEventMusic()
-    {
-        base.StopEventMusic();
-
-    }
 }

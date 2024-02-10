@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000001EABC30F068 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0000018F59EE5CF8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -19,10 +19,518 @@
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
-[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
-[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
-[LOG] LiveUpdate::release                      : 
-[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
-[LOG] Thread::callback                         : FMOD stream thread finished.
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] SystemI::close                           : Closed.
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] SystemI::createSound                     : filename = ../../Fmod/Tryout/Build/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] Thread::initThread                       : Init FMOD nonblocking thread (0). Affinity: 0x4000000000000003, Priority: 0xFFFF7FFC, Stack Size: 114688, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0000018F571DC958, queue head = 0000018F7DB29E98, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000018F571DC958
+[LOG] SystemI::createSoundInternal             :     Create name='../../Fmod/Tryout/Build/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3908320
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38976
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000018ED29C5A20
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 83
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSound                     :     filename = ../../Fmod/Tryout/Build/Desktop/Music.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         :     add sound to async queue : soundi = 0000018F571DC298, queue head = 0000018F7DB29E98, queue count = 0
+[LOG] SystemI::createSoundInternal             :     Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6720320
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 17888
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000006DCDEFF1F8
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->useropen           = 00007FFD1E9F3F70
+[LOG] SystemI::createSoundInternal             :     exinfo->userclose          = 00007FFD1E9F3F30
+[LOG] SystemI::createSoundInternal             :     exinfo->userread           = 00007FFD1E9F4050
+[LOG] SystemI::createSoundInternal             :     exinfo->userseek           = 00007FFD1E9F4110
+[LOG] SystemI::createSoundInternal             :     exinfo->fileuserdata       = 0000018F2098F988
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            :     register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='456037__florianreichelt__heavy-breathing-while-running', format=5, channels=2, frequency=48000, lengthbytes=551008, lengthpcm=2288640, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.968658.
+[LOG] SystemI::createSoundInternal             :     Sample 0/1: name='398430__naturestemper__wolf-howl', format=5, channels=2, frequency=48000, lengthbytes=84224, lengthpcm=389955, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.111908.
+[LOG] SystemI::createSoundInternal             :     Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6720320
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 17888
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000006DCDEFF1F8
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->useropen           = 00007FFD1E9F3F70
+[LOG] SystemI::createSoundInternal             :     exinfo->userclose          = 00007FFD1E9F3F30
+[LOG] SystemI::createSoundInternal             :     exinfo->userread           = 00007FFD1E9F4050
+[LOG] SystemI::createSoundInternal             :     exinfo->userseek           = 00007FFD1E9F4110
+[LOG] SystemI::createSoundInternal             :     exinfo->fileuserdata       = 0000018F2098F988
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            :     register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             :     Sample 0/1: name='178580__zarry__wolf-howl', format=5, channels=1, frequency=48000, lengthbytes=37632, lengthpcm=236011, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.419067.
+[LOG] Thread::initThread                       :     Init FMOD file thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFC, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000018F571DC958
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000018F571DC298
+[LOG] SystemI::createSoundInternal             :     Create name='../../Fmod/Tryout/Build/Desktop/Music.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 17051040
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 9600
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000018ED29C5B60
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 83
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='553484__victor_natas__scary-violin-melody', format=5, channels=2, frequency=48000, lengthbytes=1115008, lengthpcm=3712000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.988495.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000018F571DC298
+[LOG] SystemI::createSound                     : filename = ../../Fmod/Tryout/Build/Desktop/Ambiance.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0000018F571DBD88, queue head = 0000018F7DB29E98, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000018F571DBD88
+[LOG] SystemI::createSoundInternal             :     Create name='../../Fmod/Tryout/Build/Desktop/Ambiance.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6720320
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 17888
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000018ED29C5CA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSound                     :     filename = ../../Fmod/Tryout/Build/Desktop/Ambiance.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 83
+[LOG] AsyncThread::add                         :     add sound to async queue : soundi = 0000018F5624D178, queue head = 0000018F7DB29E98, queue count = 0
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSound                     :     filename = ../../Fmod/Tryout/Build/Desktop/Ambiance.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         :     add sound to async queue : soundi = 0000018F5624CC68, queue head = 0000018F7DB29E98, queue count = 1
+[LOG] SystemI::createSound                     :     filename = ../../Fmod/Tryout/Build/Desktop/Ambiance.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         :     add sound to async queue : soundi = 0000018F5624CFC8, queue head = 0000018F7DB29E98, queue count = 2
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='575461__trashcanstudios__003-rain-outside-b', format=5, channels=2, frequency=48000, lengthbytes=619744, lengthpcm=2343221, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.181587.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000018F571DBD88
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000018F5624D178
+[LOG] SystemI::createSoundInternal             :     Create name='../../Fmod/Tryout/Build/Desktop/Ambiance.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6720320
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 17888
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000018ED29C5DE0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='482681__inchadney__crickets', format=5, channels=2, frequency=48000, lengthbytes=293632, lengthpcm=1054498, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.500000.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000018F5624D178
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000018F5624CC68
+[LOG] SystemI::createSoundInternal             :     Create name='../../Fmod/Tryout/Build/Desktop/Ambiance.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6720320
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 17888
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000018ED29C57A0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='151189__hokstnator__balfron-thunder-d', format=5, channels=2, frequency=48000, lengthbytes=140224, lengthpcm=685008, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.291976.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000018F5624CC68
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000018F5624CFC8
+[LOG] SystemI::createSoundInternal             :     Create name='../../Fmod/Tryout/Build/Desktop/Ambiance.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6720320
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 17888
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000018F58D0E860
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='473595__kostas17__a-gust-of-wind-in-a-forest', format=5, channels=2, frequency=48000, lengthbytes=223584, lengthpcm=875979, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.077911.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000018F5624CFC8
+[LOG] SystemI::createSound                     : filename = ../../Fmod/Tryout/Build/Desktop/Ambiance.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0000018F5624C758, queue head = 0000018F7DB29E98, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000018F5624C758
+[LOG] SystemI::createSoundInternal             :     Create name='../../Fmod/Tryout/Build/Desktop/Ambiance.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6720320
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 17888
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000018F58D0E5E0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='81904__robinhood76__01290-wolf-howl-4', format=5, channels=1, frequency=48000, lengthbytes=85408, lengthpcm=497036, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.957214.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000018F5624C758
+[LOG] SoundI::release                          : 151189__hokstnator__balfron-thunder-d (0000018F5624CC68)
+[LOG] SoundI::release                          :     151189__hokstnator__balfron-thunder-d (0000018EFAE25418)
+[LOG] SoundI::release                          :     151189__hokstnator__balfron-thunder-d (0000018EADCA32D8)
+[LOG] SoundI::release                          : 482681__inchadney__crickets (0000018F5624D178)
+[LOG] SoundI::release                          :     482681__inchadney__crickets (0000018EFAE24F38)
+[LOG] SoundI::release                          :     482681__inchadney__crickets (0000018EADCA3B48)
+[LOG] SoundI::release                          : 81904__robinhood76__01290-wolf-howl-4 (0000018F5624C758)
+[LOG] SoundI::release                          :     81904__robinhood76__01290-wolf-howl-4 (0000018EFAE25758)
+[LOG] SoundI::release                          :     81904__robinhood76__01290-wolf-howl-4 (0000018F539AD388)
+[LOG] SystemI::createSound                     : filename = ../../Fmod/Tryout/Build/Desktop/Ambiance.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0000018F5624C908, queue head = 0000018F7DB29E98, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000018F5624C908
+[LOG] SystemI::createSoundInternal             :     Create name='../../Fmod/Tryout/Build/Desktop/Ambiance.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6720320
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 17888
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000018F58D0E4A0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='473595__kostas17__a-gust-of-wind-in-a-forest', format=5, channels=2, frequency=48000, lengthbytes=223584, lengthpcm=875979, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.077911.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000018F5624C908
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0000018F539AD388, queue head = 0000018F7DB29E98, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000018F539AD388
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000018F539AD388
+[LOG] SoundI::release                          : 473595__kostas17__a-gust-of-wind-in-a-forest (0000018F5624CFC8)
+[LOG] SoundI::release                          :     473595__kostas17__a-gust-of-wind-in-a-forest (0000018EFAE255B8)
+[LOG] SoundI::release                          :     473595__kostas17__a-gust-of-wind-in-a-forest (0000018EADCA3CF8)
+[LOG] SoundI::release                          : 456037__florianreichelt__heavy-breathing-while-running (0000018F571DC958)
+[LOG] SoundI::release                          :     456037__florianreichelt__heavy-breathing-while-running (0000018F53A58958)
+[LOG] SoundI::release                          :     456037__florianreichelt__heavy-breathing-while-running (0000018EADCA2F78)
+[LOG] SoundI::release                          : 473595__kostas17__a-gust-of-wind-in-a-forest (0000018F5624C908)
+[LOG] SoundI::release                          :     473595__kostas17__a-gust-of-wind-in-a-forest (0000018EFAE250D8)
+[LOG] SoundI::release                          :     473595__kostas17__a-gust-of-wind-in-a-forest (0000018F539AD388)
+[LOG] SoundI::release                          : 575461__trashcanstudios__003-rain-outside-b (0000018F571DBD88)
+[LOG] SoundI::release                          :     575461__trashcanstudios__003-rain-outside-b (0000018F53A58E38)
+[LOG] SoundI::release                          :     575461__trashcanstudios__003-rain-outside-b (0000018EADCA3998)
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 3908320
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 38976
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000006DCDEFF1F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFD1E9F3F70
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFD1E9F3F30
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFD1E9F4050
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFD1E9F4110
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000018F5785C308
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='371832__iamgiorgio__j2_engine_start', format=5, channels=2, frequency=48000, lengthbytes=48960, lengthpcm=264568, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.583893.
+[LOG] SoundI::release                          : 553484__victor_natas__scary-violin-melody (0000018F571DC298)
+[LOG] SoundI::release                          :     553484__victor_natas__scary-violin-melody (0000018F53A58AF8)
+[LOG] SoundI::release                          :     553484__victor_natas__scary-violin-melody (0000018EADCA3488)
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 3908320
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 38976
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000006DCDEFF1F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFD1E9F3F70
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFD1E9F3F30
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFD1E9F4050
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFD1E9F4110
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000018F578600E8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='128190__soundmary__car-drive-away', format=5, channels=1, frequency=48000, lengthbytes=72992, lengthpcm=431133, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.254669.
+[LOG] SystemI::createSound                     : filename = ../../Fmod/Tryout/Build/Desktop/Ambiance.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0000018F571DBBD8, queue head = 0000018F7DB29E98, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000018F571DBBD8
+[LOG] SystemI::createSoundInternal             :     Create name='../../Fmod/Tryout/Build/Desktop/Ambiance.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6720320
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 17888
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000018ED29C5B60
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSound                     :     filename = ../../Fmod/Tryout/Build/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 16500
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         :     add sound to async queue : soundi = 0000018F571DC7A8, queue head = 0000018F7DB29E98, queue count = 0
+[LOG] SystemI::createSound                     :     filename = ../../Fmod/Tryout/Build/Desktop/Music.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         :     add sound to async queue : soundi = 0000018F571DBF38, queue head = 0000018F7DB29E98, queue count = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='503237__jgrzinich__windy-stormy-night-in-a-forest', format=5, channels=2, frequency=48000, lengthbytes=3148896, lengthpcm=11721261, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.993134.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000018F571DBBD8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000018F571DC7A8
+[LOG] SystemI::createSoundInternal             :     Create name='../../Fmod/Tryout/Build/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3908320
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38976
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000018ED29C5CA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='456037__florianreichelt__heavy-breathing-while-running', format=5, channels=2, frequency=48000, lengthbytes=551008, lengthpcm=2288640, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.968658.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000018F571DC7A8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000018F571DBF38
+[LOG] SystemI::createSoundInternal             :     Create name='../../Fmod/Tryout/Build/Desktop/Music.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 17051040
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 9600
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000018ED29C57A0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='553484__victor_natas__scary-violin-melody', format=5, channels=2, frequency=48000, lengthbytes=1115008, lengthpcm=3712000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.988495.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000018F571DBF38
+[LOG] SoundI::release                          : 456037__florianreichelt__heavy-breathing-while-running (0000018F571DC7A8)
+[LOG] SoundI::release                          :     456037__florianreichelt__heavy-breathing-while-running (0000019046322D88)
+[LOG] SoundI::release                          :     456037__florianreichelt__heavy-breathing-while-running (000001908BE4FC58)
+[LOG] SoundI::release                          : 503237__jgrzinich__windy-stormy-night-in-a-forest (0000018F571DBBD8)
+[LOG] SoundI::release                          :     503237__jgrzinich__windy-stormy-night-in-a-forest (0000018F26122598)
+[LOG] SoundI::release                          :     503237__jgrzinich__windy-stormy-night-in-a-forest (000001908BE4F238)
+[LOG] SoundI::release                          : 553484__victor_natas__scary-violin-melody (0000018F571DBF38)
+[LOG] SoundI::release                          :     553484__victor_natas__scary-violin-melody (00000190463223C8)
+[LOG] SoundI::release                          :     553484__victor_natas__scary-violin-melody (000001908BE4EED8)
+[LOG] SystemI::createSound                     : filename = ../../Fmod/Tryout/Build/Desktop/Ambiance.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0000018F58C1B078, queue head = 0000018F7DB29E98, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000018F58C1B078
+[LOG] SystemI::createSoundInternal             :     Create name='../../Fmod/Tryout/Build/Desktop/Ambiance.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6720320
+[LOG] SystemI::createSound                     :     filename = ../../Fmod/Tryout/Build/Desktop/Ambiance.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 17888
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] AsyncThread::add                         :     add sound to async queue : soundi = 0000018F578CB208, queue head = 0000018F7DB29E98, queue count = 0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000018F541A3AF0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSound                     :     filename = ../../Fmod/Tryout/Build/Desktop/Ambiance.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         :     add sound to async queue : soundi = 0000018F54007658, queue head = 0000018F7DB29E98, queue count = 1
+[LOG] SystemI::createSound                     :     filename = ../../Fmod/Tryout/Build/Desktop/Ambiance.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         :     add sound to async queue : soundi = 0000018F540072F8, queue head = 0000018F7DB29E98, queue count = 2
+[LOG] SystemI::createSound                     :     filename = ../../Fmod/Tryout/Build/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         :     add sound to async queue : soundi = 0000018F540074A8, queue head = 0000018F7DB29E98, queue count = 3
+[LOG] SystemI::createSound                     :     filename = ../../Fmod/Tryout/Build/Desktop/Music.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         :     add sound to async queue : soundi = 0000018F54007D18, queue head = 0000018F7DB29E98, queue count = 4
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='575461__trashcanstudios__003-rain-outside-b', format=5, channels=2, frequency=48000, lengthbytes=619744, lengthpcm=2343221, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.181587.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000018F58C1B078
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000018F578CB208
+[LOG] SystemI::createSoundInternal             :     Create name='../../Fmod/Tryout/Build/Desktop/Ambiance.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6720320
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 17888
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000018F541A39B0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='482681__inchadney__crickets', format=5, channels=2, frequency=48000, lengthbytes=293632, lengthpcm=1054498, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.500000.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000018F578CB208
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000018F54007658
+[LOG] SystemI::createSoundInternal             :     Create name='../../Fmod/Tryout/Build/Desktop/Ambiance.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6720320
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 17888
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000018F541A3D70
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='151195__hokstnator__balfron-thunder-f', format=5, channels=2, frequency=48000, lengthbytes=99008, lengthpcm=601173, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.483524.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000018F54007658
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000018F540072F8
+[LOG] SystemI::createSoundInternal             :     Create name='../../Fmod/Tryout/Build/Desktop/Ambiance.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6720320
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 17888
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000018F541A35F0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='473595__kostas17__a-gust-of-wind-in-a-forest', format=5, channels=2, frequency=48000, lengthbytes=223584, lengthpcm=875979, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.077911.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000018F540072F8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000018F540074A8
+[LOG] SystemI::createSoundInternal             :     Create name='../../Fmod/Tryout/Build/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3908320
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38976
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000018F541A2FB0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='456037__florianreichelt__heavy-breathing-while-running', format=5, channels=2, frequency=48000, lengthbytes=551008, lengthpcm=2288640, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.968658.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000018F540074A8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000018F54007D18
+[LOG] SystemI::createSoundInternal             :     Create name='../../Fmod/Tryout/Build/Desktop/Music.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 17051040
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 9600
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000018F541A3730
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='553484__victor_natas__scary-violin-melody', format=5, channels=2, frequency=48000, lengthbytes=1115008, lengthpcm=3712000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.988495.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000018F54007D18
+[LOG] SoundI::release                          : 151195__hokstnator__balfron-thunder-f (0000018F54007658)
+[LOG] SoundI::release                          :     151195__hokstnator__balfron-thunder-f (0000018F54486DC8)
+[LOG] SoundI::release                          :     151195__hokstnator__balfron-thunder-f (0000018F23033D18)
+[LOG] SystemI::createSound                     : filename = ../../Fmod/Tryout/Build/Desktop/Ambiance.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0000018F54007808, queue head = 0000018F7DB29E98, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000018F54007808
+[LOG] SystemI::createSoundInternal             :     Create name='../../Fmod/Tryout/Build/Desktop/Ambiance.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6720320
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 17888
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000018F541A3D70
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='482681__inchadney__crickets', format=5, channels=2, frequency=48000, lengthbytes=293632, lengthpcm=1054498, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.500000.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000018F54007808
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0000018F230323C8, queue head = 0000018F7DB29E98, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000018F230323C8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000018F230323C8
+[LOG] SoundI::release                          : 482681__inchadney__crickets (0000018F578CB208)
+[LOG] SoundI::release                          :     482681__inchadney__crickets (0000018F53BCF328)
+[LOG] SoundI::release                          :     482681__inchadney__crickets (0000018F230334A8)
+[LOG] SystemI::createSound                     : filename = ../../Fmod/Tryout/Build/Desktop/Ambiance.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0000018F578CB208, queue head = 0000018F7DB29E98, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000018F578CB208
+[LOG] SystemI::createSoundInternal             :     Create name='../../Fmod/Tryout/Build/Desktop/Ambiance.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6720320
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 17888
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000018F541A3870
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='151195__hokstnator__balfron-thunder-f', format=5, channels=2, frequency=48000, lengthbytes=99008, lengthpcm=601173, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.483524.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000018F578CB208
+[LOG] SystemI::createSound                     : filename = ../../Fmod/Tryout/Build/Desktop/Ambiance.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0000018F54007658, queue head = 0000018F7DB29E98, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000018F54007658
+[LOG] SystemI::createSoundInternal             :     Create name='../../Fmod/Tryout/Build/Desktop/Ambiance.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6720320
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 17888
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000018F541A39B0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 16350
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSound                     :     filename = ../../Fmod/Tryout/Build/Desktop/Ambiance.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         :     add sound to async queue : soundi = 0000018F540079B8, queue head = 0000018F7DB29E98, queue count = 0
+[LOG] SystemI::createSound                     :     filename = ../../Fmod/Tryout/Build/Desktop/SFX.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         :     add sound to async queue : soundi = 0000018EAD500FE8, queue head = 0000018F7DB29E98, queue count = 1
+[LOG] SystemI::createSound                     :     filename = ../../Fmod/Tryout/Build/Desktop/Music.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         :     add sound to async queue : soundi = 0000018EFB873AC8, queue head = 0000018F7DB29E98, queue count = 2
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='575461__trashcanstudios__003-rain-outside-b', format=5, channels=2, frequency=48000, lengthbytes=619744, lengthpcm=2343221, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.181587.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000018F54007658
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000018F540079B8
+[LOG] SystemI::createSoundInternal             :     Create name='../../Fmod/Tryout/Build/Desktop/Ambiance.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6720320
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 17888
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000018F541A3230
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='473595__kostas17__a-gust-of-wind-in-a-forest', format=5, channels=2, frequency=48000, lengthbytes=223584, lengthpcm=875979, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.077911.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000018F540079B8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000018EAD500FE8
+[LOG] SystemI::createSoundInternal             :     Create name='../../Fmod/Tryout/Build/Desktop/SFX.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3908320
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 38976
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000018F541A3370
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 16350
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='456037__florianreichelt__heavy-breathing-while-running', format=5, channels=2, frequency=48000, lengthbytes=551008, lengthpcm=2288640, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.968658.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000018EAD500FE8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000018EFB873AC8
+[LOG] SystemI::createSoundInternal             :     Create name='../../Fmod/Tryout/Build/Desktop/Music.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 17051040
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 9600
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000018ED1C45F30
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 16350
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='553484__victor_natas__scary-violin-melody', format=5, channels=2, frequency=48000, lengthbytes=1115008, lengthpcm=3712000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.988495.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000018EFB873AC8
+[LOG] SoundI::release                          : 553484__victor_natas__scary-violin-melody (0000018F54007D18)
+[LOG] SoundI::release                          :     553484__victor_natas__scary-violin-melody (0000018F544865A8)
+[LOG] SoundI::release                          :     553484__victor_natas__scary-violin-melody (0000018F230339B8)
+[LOG] SoundI::release                          : 456037__florianreichelt__heavy-breathing-while-running (0000018F540074A8)
+[LOG] SoundI::release                          :     456037__florianreichelt__heavy-breathing-while-running (0000018F544868E8)
+[LOG] SoundI::release                          :     456037__florianreichelt__heavy-breathing-while-running (0000018F23032068)
+[LOG] SoundI::release                          : 151195__hokstnator__balfron-thunder-f (0000018F578CB208)
+[LOG] SoundI::release                          :     151195__hokstnator__balfron-thunder-f (0000018F53BCF668)
+[LOG] SoundI::release                          :     151195__hokstnator__balfron-thunder-f (0000018F23032218)
+[LOG] SoundI::release                          : 482681__inchadney__crickets (0000018F54007808)
+[LOG] SoundI::release                          :     482681__inchadney__crickets (0000018F54486268)
+[LOG] SoundI::release                          :     482681__inchadney__crickets (0000018F230323C8)
+[LOG] SoundI::release                          : 473595__kostas17__a-gust-of-wind-in-a-forest (0000018F540072F8)
+[LOG] SoundI::release                          :     473595__kostas17__a-gust-of-wind-in-a-forest (0000018F54486A88)
+[LOG] SoundI::release                          :     473595__kostas17__a-gust-of-wind-in-a-forest (0000018F23033808)
+[LOG] SoundI::release                          : 575461__trashcanstudios__003-rain-outside-b (0000018F58C1B078)
+[LOG] SoundI::release                          :     575461__trashcanstudios__003-rain-outside-b (0000018F53BCFCE8)
+[LOG] SoundI::release                          :     575461__trashcanstudios__003-rain-outside-b (0000018F23033658)
+[LOG] SystemI::createSound                     : filename = ../../Fmod/Tryout/Build/Desktop/Ambiance.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0000018EFB873768, queue head = 0000018F7DB29E98, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000018EFB873768
+[LOG] SystemI::createSoundInternal             :     Create name='../../Fmod/Tryout/Build/Desktop/Ambiance.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6720320
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 17888
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000018F541A3D70
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='473595__kostas17__a-gust-of-wind-in-a-forest', format=5, channels=2, frequency=48000, lengthbytes=223584, lengthpcm=875979, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.077911.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000018EFB873768
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0000018F23033148, queue head = 0000018F7DB29E98, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000018F23033148
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000018F23033148
+[LOG] SoundI::release                          : 473595__kostas17__a-gust-of-wind-in-a-forest (0000018F540079B8)
+[LOG] SoundI::release                          :     473595__kostas17__a-gust-of-wind-in-a-forest (000001904F439708)
+[LOG] SoundI::release                          :     473595__kostas17__a-gust-of-wind-in-a-forest (0000018F230328D8)
+[LOG] SoundI::release                          : 456037__florianreichelt__heavy-breathing-while-running (0000018EAD500FE8)
+[LOG] SoundI::release                          :     456037__florianreichelt__heavy-breathing-while-running (000001904F439A48)
+[LOG] SoundI::release                          :     456037__florianreichelt__heavy-breathing-while-running (0000018F23032578)
+[LOG] SoundI::release                          : 473595__kostas17__a-gust-of-wind-in-a-forest (0000018EFB873768)
+[LOG] SoundI::release                          :     473595__kostas17__a-gust-of-wind-in-a-forest (0000018F53BCF668)
+[LOG] SoundI::release                          :     473595__kostas17__a-gust-of-wind-in-a-forest (0000018F23033148)
+[LOG] SoundI::release                          : 575461__trashcanstudios__003-rain-outside-b (0000018F54007658)
+[LOG] SoundI::release                          :     575461__trashcanstudios__003-rain-outside-b (0000018F53BCF328)
+[LOG] SoundI::release                          :     575461__trashcanstudios__003-rain-outside-b (0000018F23032DE8)
+[LOG] SoundI::release                          : 553484__victor_natas__scary-violin-melody (0000018EFB873AC8)
+[LOG] SoundI::release                          :     553484__victor_natas__scary-violin-melody (000001904F439BE8)
+[LOG] SoundI::release                          :     553484__victor_natas__scary-violin-melody (0000018F23032F98)

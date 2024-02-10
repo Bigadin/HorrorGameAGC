@@ -50,6 +50,7 @@ public class AudioManager : MonoBehaviour
             InitializeAmbiance(FmodEvents.Instance.houseAmbiance);
             InitializeMusic(FmodEvents.Instance.houseMusicR);
         }
+        InvokeRepeating(nameof(RelaunchMusic), 60f, 60f);
 
     }
 
@@ -186,9 +187,20 @@ public class AudioManager : MonoBehaviour
     }
     public void RelaunchMusic()
     {
-        InitializeMusic(FmodEvents.Instance.houseMusicR);
-        InitializeAmbiance(FmodEvents.Instance.houseAmbiance);
+        if (musicEventInstance.isValid())
+        {
+            musicEventInstance.getPlaybackState(out PLAYBACK_STATE playbackState);
+            if (playbackState == PLAYBACK_STATE.STOPPED)
+            {
+                InitializeMusic(FmodEvents.Instance.houseMusicR);
+            }
+        }
+        else
+        {
+            InitializeMusic(FmodEvents.Instance.houseMusicR);
+        }
     }
+
 
     public void StopMusic()
     {
