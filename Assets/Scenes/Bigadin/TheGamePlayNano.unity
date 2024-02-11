@@ -1037,7 +1037,7 @@ PrefabInstance:
     - target: {fileID: 1735935399728210781, guid: 3d13e8f759afe1847a7cfb09b5909564,
         type: 3}
       propertyPath: LightTorcheBatteriePerSlot
-      value: 1000
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 1735935399728210781, guid: 3d13e8f759afe1847a7cfb09b5909564,
         type: 3}
@@ -1268,6 +1268,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1060c04d04cd7904593d44a96159d543, type: 2}
+    - target: {fileID: 4893724970485742050, guid: 6af2abdc1d82fe34a89b5804f6e5bedf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9509858444e185c40b2e84018adc9ea3, type: 2}
     - target: {fileID: 6306153888512268124, guid: 6af2abdc1d82fe34a89b5804f6e5bedf,
         type: 3}
       propertyPath: MainMenu

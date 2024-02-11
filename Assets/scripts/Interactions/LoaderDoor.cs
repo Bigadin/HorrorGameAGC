@@ -8,6 +8,7 @@ public class LoaderDoor : Door
 {
 
     private Dialogue_Manager dialogue_manager;
+    [SerializeField] GameObject LoadingScreen;
 
     private void Start()
     {
@@ -38,16 +39,20 @@ public class LoaderDoor : Door
 
         }if(GetState() == DoorState.Unlocked)
         {
-            LoadNextScene();
+            
+            StartCoroutine(LoadNextScene());
         }
 
       
     }
 
-    void LoadNextScene()
+    IEnumerator LoadNextScene()
     {
+         
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = (currentSceneIndex + 1) % SceneManager.sceneCountInBuildSettings;
-        SceneManager.LoadScene(nextSceneIndex);
+        SceneManager.LoadSceneAsync(nextSceneIndex);
+        LoadingScreen.SetActive(true);
+        yield return null;
     }
 }

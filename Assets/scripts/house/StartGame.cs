@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class StartGame : MonoBehaviour
 {
-    [SerializeField] Animator LoadSceneAnim;
+    [SerializeField] GameObject LoadSceneAnim;
     [SerializeField] GameObject pressEIndicator;
+    
     private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Player")
@@ -18,19 +20,22 @@ public class StartGame : MonoBehaviour
             {
                 //do what ever sound you want (oppening door)
                 AudioManager.Instance.PlayOneShot(FmodEvents.Instance.doorOpenClose,transform.position);
-                // LoadSceneAnim.Play("SwitchSceneAnimation");
+                LoadSceneAnim.SetActive(true);
                 StartCoroutine(EnterHouse());
                 
             }
         }
     }
+    
     private void OnTriggerExit(Collider other)
     {
-        pressEIndicator.SetActive(false);
+        pressEIndicator.GetComponent<TextMeshProUGUI>().text = "Enter Manor -E-";
     }
     IEnumerator EnterHouse()
     {
-        yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex +1);
+
+        yield return null;
     }
 }
