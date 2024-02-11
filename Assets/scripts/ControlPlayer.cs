@@ -292,7 +292,9 @@ public class ControlPlayer : MonoBehaviour
         pos.x = pd.position[0];
         pos.y = pd.position[1];
         pos.z = pd.position[2];
+        transform.GetComponent<CharacterController>().enabled = false;
         transform.position = pos;
+        transform.GetComponent<CharacterController>().enabled = true;
 
         Quaternion rot = Quaternion.Euler(pd.rotation[0], pd.rotation[1], pd.rotation[2]);
         transform.rotation = rot;
