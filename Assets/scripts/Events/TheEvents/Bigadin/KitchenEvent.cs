@@ -11,10 +11,12 @@ public class KitchenEvent : GameEvent
     private Transform thunderPlace;
     private PLAYBACK_STATE musicDramaPlaybackState;
     private bool musicDramaPlaying = false;
+
     public override void ConcreteEvent()
     {
+
             GetComponent<Collider>().enabled = true;
-       
+            
             AudioManager.Instance.StopMusic();
             SetDramaMusicInstance(AudioManager.Instance.CreateInstance(FmodEvents.Instance.dramaSpeed2));
             musicDramaEventInstance.start();
@@ -24,6 +26,7 @@ public class KitchenEvent : GameEvent
             {
                 eventObject.evObjects.SetActive(true);
             }
+            LightBatterieManager.instance.offLight();
             StartCoroutine(eventDestroy());
         
 
@@ -46,6 +49,7 @@ public class KitchenEvent : GameEvent
         }
         //play sound
         GetComponent<Collider>().enabled = false;
+        LightBatterieManager.instance.onLight();
 
     }
 

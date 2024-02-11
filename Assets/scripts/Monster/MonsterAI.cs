@@ -43,19 +43,21 @@ public class MonsterAI : MonoBehaviour
     }
     void dead()
     {
-        ImageDeadAnimator.enabled = true;
-        ImageDeadAnimator.Play("Dead_transition");
         AudioManager.Instance.PlayOneShot(FmodEvents.Instance.Death, transform.position);
+        ImageDeadAnimator.enabled = true;
+        ImageDeadAnimator.gameObject.SetActive(true);
+        ImageDeadAnimator.Play("Dead_transition");
         screamer.SetActive(true);
         transform.GetChild(0).GetComponent<Renderer>().enabled = false;
         LightBatterieManager.instance.offLight();
         StartCoroutine(RestartGame());
+
     }
     IEnumerator RestartGame()
     {
         yield return new WaitForSeconds(3.1f);
         ImageDeadAnimator.enabled = false;
-
+        endChassing = true;
         player.GetComponent<ControlPlayer>().loadPlayer();
         deadPlayer = false;
         screamer.SetActive(false);
@@ -63,13 +65,15 @@ public class MonsterAI : MonoBehaviour
         LightBatterieManager.instance.onLight();
         isChasingPlayer = false;
         StartCoroutine(PatrolWait());
+        ImageDeadAnimator.gameObject.SetActive(false);
         navMeshAgent.enabled = false;
         transform.position = startPos.position;
         navMeshAgent.enabled = true;
+
     }
     void FixedUpdate()
     {
-        
+
         if (!isChasingPlayer)
         {
             Patrol();
@@ -86,11 +90,10 @@ public class MonsterAI : MonoBehaviour
 
     void Patrol()
     {
-        if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].position) < 1.2f )
+        if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].position) < 1.2f)
         {
             if (!hasSetNextDistination)
             {
-                print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA :::::::::: " + hasSetNextDistination);
 
                 StartCoroutine(PatrolWait());
                 hasSetNextDistination = true;
@@ -112,9 +115,9 @@ public class MonsterAI : MonoBehaviour
         yield return new WaitForSeconds(patrolWaitTime);
 
         isChasingPlayer = false;
-        isWalking = false;    
+        isWalking = false;
         SetPatrolDestination();
- 
+
     }
 
     void SetPatrolDestination()
@@ -124,16 +127,17 @@ public class MonsterAI : MonoBehaviour
         animator.SetBool("isRunning", true);
         navMeshAgent.SetDestination(waypoints[currentWaypointIndex].position);
         navMeshAgent.speed = patrolSpeed;
-        
+
     }
 
     void CheckForPlayer()
     {
-       
+
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
-        if (distanceToPlayer < detectionRange && !endChassing)
+        if (distanceToPlayer < detectionRange && ControlPlayer.playerStat != ControlPlayer.PlayerStat.hiding)
         {
+            endChassing = false;
             isChasingPlayer = true;
             navMeshAgent.speed = chaseSpeed;
             navMeshAgent.SetDestination(player.position);
@@ -145,7 +149,7 @@ public class MonsterAI : MonoBehaviour
         if (other.GetComponent<Door>())
         {
             Door dr = other.GetComponent<Door>();
-            if(dr.getdoorStat() == Door.DoorState.Locked)
+            if (dr.getdoorStat() == Door.DoorState.Locked)
             {
                 SetPatrolDestination();
             }
@@ -164,11 +168,11 @@ public class MonsterAI : MonoBehaviour
     bool deadPlayer;
     void ChasePlayer()
     {
-        isWalking=true;
+        isWalking = true;
         print("Im chassing");
 
         // You can add additional behavior for chasing the player here
-        if(Vector3.Distance(transform.position, player.position) <= criticalDistance)
+        if (Vector3.Distance(transform.position, player.position) <= criticalDistance && ControlPlayer.playerStat != ControlPlayer.PlayerStat.hiding)
         {
             if (!deadPlayer)
             {

@@ -150,10 +150,10 @@ MonoBehaviour:
   Path: ../../Fmod/Tryout/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638431937687124713
+  lastModified: 638432021810131118
   FileSizes:
   - Name: Desktop
-    Value: 19077632
+    Value: 19077920
   Exists: 1
 --- !u!114 &-7025324666030676297
 MonoBehaviour:
@@ -649,7 +649,7 @@ MonoBehaviour:
   Path: ../../Fmod/Tryout/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638431937707034854
+  lastModified: 638432000618311836
   FileSizes:
   - Name: Desktop
     Value: 5319552
@@ -700,7 +700,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 40000
+  Length: 21350
 --- !u!114 &-1100572230020366397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -880,7 +880,7 @@ MonoBehaviour:
   - {fileID: -1977998917059436884}
   StringsBanks:
   - {fileID: -3877728109703724437}
-  cacheTime: 638431937707034854
+  cacheTime: 638432021810131118
   cacheVersion: 131616
 --- !u!114 &76224510970940441
 MonoBehaviour:
@@ -1043,7 +1043,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 60000
+  Length: 45000
 --- !u!114 &3129372847274700205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1151,7 +1151,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 3350
+  Length: 3050
 --- !u!114 &5649248145171240402
 MonoBehaviour:
   m_ObjectHideFlags: 0

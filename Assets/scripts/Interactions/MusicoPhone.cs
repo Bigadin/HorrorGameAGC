@@ -11,18 +11,29 @@ public class MusicoPhone : MonoBehaviour, IInteractable
 
     [SerializeField]
     private GameObject key;
-    
+
+    private bool canActivate=false;
+
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
+    
     public void Interact()
     {
-        AudioManager.Instance.StopSound();
-        AudioManager.Instance.PlayOneShot(FmodEvents.Instance.babySound, player.position - Vector3.back * 2f);
-        note.SetActive(true);
-        key.SetActive(true);
-        this.enabled = false;
+        if(canActivate) {
+            AudioManager.Instance.StopSound();
+            AudioManager.Instance.PlayOneShot(FmodEvents.Instance.babySound, player.position - Vector3.back * 2f);
+            note.SetActive(true);
+            key.SetActive(true);
+            this.enabled = false;
+        }
+       
+    }
+
+    public void SetActivate(bool activater)
+    {
+        canActivate = activater;
     }
 
 }
