@@ -5,24 +5,27 @@ using UnityEngine;
 public class DoorEvent : GameEvent
 {
     [SerializeField] Animator[] AllAnim;
-    
+
     [SerializeField] Door roomDoor;
     public float timeBeforeStart = 30f;// hada 9bl mayebda ki yedkhl fla chambre
     public float timestopingAnimation = 10f;
+    [SerializeField]
+    private GameObject monster;
 
+   
     bool IsEventStart = false; // hada li i9ol ida event bda
     public override void ConcreteEvent()
     {
-        
-        if(!IsEventStart)
-        {
-            StartCoroutine(DoorEventStart());
-            
-        }
+
+
     }
-    IEnumerator DoorEventStart()
+    public void StartEvent(float time)
     {
-        yield return new WaitForSeconds(timeBeforeStart); // ki yedkhel la chambre isena 3s besh ybda event
+        StartCoroutine(DoorEventStart(time));
+    }
+    IEnumerator DoorEventStart(float time)
+    {
+        yield return new WaitForSeconds(time); // ki yedkhel la chambre isena 3s besh ybda event
         IsEventStart = true;
         allTheEventTriggers();
     }
@@ -41,6 +44,7 @@ public class DoorEvent : GameEvent
         {
             if (IsEventStart)
             {
+                monster.SetActive(false);
                 roomDoor.CloseDoor();
                 roomDoor.setdoorStat(Door.DoorState.Locked);
                 AllAnim[0].transform.GetComponent<Door>().setdoorStat(Door.DoorState.Unlocked);
@@ -62,6 +66,7 @@ public class DoorEvent : GameEvent
     {
         roomDoor.setdoorStat(Door.DoorState.Unlocked);
         roomDoor.openDoor();
+        monster.SetActive(true);
         
     }
 }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class spownMonsterEvent : GameEvent
@@ -8,6 +6,8 @@ public class spownMonsterEvent : GameEvent
     [SerializeField] GameObject Monster;
     [SerializeField]
     private GameObject thoughtActivate;
+
+    [SerializeField] DoorEvent DoorEvent;
     public void spownMonster()
     {
         print("MOOOOOOOOOOOONSTRE");
@@ -18,6 +18,7 @@ public class spownMonsterEvent : GameEvent
         }
         Monster.SetActive(true);
         thoughtActivate.SetActive(true);
+        DoorEvent.StartEvent(60f);
         SetDramaMusicInstance(AudioManager.Instance.CreateInstance(FmodEvents.Instance.musicDrama));
     }
 

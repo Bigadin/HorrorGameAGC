@@ -39,6 +39,7 @@ public class Dialogue_Manager : MonoBehaviour
         dialogueDatabase.Add("12", "Press F to turn on the FlashLight");
         dialogueDatabase.Add("13", "This key should open a door.");
         dialogueDatabase.Add("14", "I got what i needed i should flee now.");
+        dialogueDatabase.Add("15", "Is this a baby crying ? i should check it out.");
 
         // Add more lines as needed...
     }

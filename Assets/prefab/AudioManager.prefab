@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: babcb911956bf0d42b4f6233bf92c627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  masteVolume: 1
 --- !u!1 &4075030048506775003
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,20 +125,6 @@ MonoBehaviour:
       Data3: 12769186
       Data4: -450486446
     Path: event:/SFX/FlashLight
-  <footstepsRunWood>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <footstepsWalkWood>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
   <carEngine>k__BackingField:
     Guid:
       Data1: -244738321
@@ -194,3 +181,178 @@ MonoBehaviour:
       Data3: -2041841760
       Data4: 971118547
     Path: event:/SFX/PickupObject
+  <houseMusicR>k__BackingField:
+    Guid:
+      Data1: -1670068204
+      Data2: 1272934817
+      Data3: -1198347097
+      Data4: 1635145515
+    Path: event:/Music/MusicRandomHouse
+  <houseAmbiance>k__BackingField:
+    Guid:
+      Data1: -969862916
+      Data2: 1151285598
+      Data3: -2074312003
+      Data4: -1042411268
+    Path: event:/Ambiant/HouseAmbiance
+  <monsterWalk>k__BackingField:
+    Guid:
+      Data1: 331361995
+      Data2: 1216659877
+      Data3: 332754330
+      Data4: -478952761
+    Path: event:/Monster/MonsterWalk
+  <monsterGrowl>k__BackingField:
+    Guid:
+      Data1: -1992523759
+      Data2: 1311892154
+      Data3: -1930371428
+      Data4: 143104675
+    Path: event:/SFX/MonsterGrowl
+  <chairMove>k__BackingField:
+    Guid:
+      Data1: -1972710281
+      Data2: 1235787181
+      Data3: 845134524
+      Data4: 1827172167
+    Path: event:/SFX/ChairMove
+  <musicDrama>k__BackingField:
+    Guid:
+      Data1: 1025674837
+      Data2: 1179774467
+      Data3: -687985509
+      Data4: -801621189
+    Path: event:/Music/DramaMusic
+  <closingDoor>k__BackingField:
+    Guid:
+      Data1: 938999113
+      Data2: 1319993916
+      Data3: -1518018888
+      Data4: 1963281096
+    Path: event:/SFX/CloseDoor
+  <dramaSpeed>k__BackingField:
+    Guid:
+      Data1: -335019571
+      Data2: 1122213854
+      Data3: -1933331312
+      Data4: -959452667
+    Path: event:/Music/DramaSpeed1
+  <thunderShot>k__BackingField:
+    Guid:
+      Data1: -626701287
+      Data2: 1084870078
+      Data3: -1802921051
+      Data4: 1117637617
+    Path: event:/Ambiant/ThunderShot
+  <dramaSpeed2>k__BackingField:
+    Guid:
+      Data1: -38224513
+      Data2: 1341017093
+      Data3: -1666146688
+      Data4: -567718350
+    Path: event:/Music/DramaMusic2
+  <knifeStart>k__BackingField:
+    Guid:
+      Data1: -1587283402
+      Data2: 1305632275
+      Data3: -178952813
+      Data4: 337966737
+    Path: event:/SFX/THrowKnifeStart
+  <knifeEnd>k__BackingField:
+    Guid:
+      Data1: -1698268317
+      Data2: 1110799393
+      Data3: 1370650265
+      Data4: 1316717930
+    Path: event:/SFX/THrowKnifeEnd
+  <tvSound>k__BackingField:
+    Guid:
+      Data1: -179068372
+      Data2: 1113813260
+      Data3: 325712053
+      Data4: -1066661677
+    Path: event:/SFX/TV
+  <instruMusic>k__BackingField:
+    Guid:
+      Data1: -827331814
+      Data2: 1210282357
+      Data3: -51426130
+      Data4: 759795041
+    Path: event:/Music/InstrumentMusic
+  <babySound>k__BackingField:
+    Guid:
+      Data1: 175775850
+      Data2: 1316960318
+      Data3: -1784339035
+      Data4: -714343156
+    Path: event:/SFX/KidsLaugh
+  <startSpawn>k__BackingField:
+    Guid:
+      Data1: 421626238
+      Data2: 1127710177
+      Data3: -1055019111
+      Data4: -537097363
+    Path: event:/SFX/StartSpawn
+  <finishSpawn>k__BackingField:
+    Guid:
+      Data1: -1873593554
+      Data2: 1135888654
+      Data3: -1972946037
+      Data4: 343467465
+    Path: event:/SFX/EndSpawn
+  <clockTicking>k__BackingField:
+    Guid:
+      Data1: 111705906
+      Data2: 1151621208
+      Data3: -449177672
+      Data4: 1891007875
+    Path: event:/SFX/ClockTicking
+  <openTiroire>k__BackingField:
+    Guid:
+      Data1: 1429360052
+      Data2: 1229506502
+      Data3: 684796828
+      Data4: 1095516231
+    Path: event:/SFX/OpenTiroire
+  <CloseTiroire>k__BackingField:
+    Guid:
+      Data1: -1712819179
+      Data2: 1316220763
+      Data3: -1786137208
+      Data4: 20549823
+    Path: event:/SFX/CloseTiroire
+  <babyCry>k__BackingField:
+    Guid:
+      Data1: 731506854
+      Data2: 1272158990
+      Data3: 481990533
+      Data4: -1243139426
+    Path: event:/BabyCry
+  <slamDoor>k__BackingField:
+    Guid:
+      Data1: -1611332161
+      Data2: 1295874380
+      Data3: -1299642455
+      Data4: -1964351436
+    Path: event:/SlamDoor
+  <bodyFall>k__BackingField:
+    Guid:
+      Data1: 1776742317
+      Data2: 1224378876
+      Data3: -744189290
+      Data4: -1009415326
+    Path: event:/BodyFall
+  <backGroundMusic>k__BackingField:
+    Guid:
+      Data1: -969862916
+      Data2: 1151285598
+      Data3: -2074312003
+      Data4: -1042411268
+    Path: event:/Ambiant/HouseAmbiance
+  <Death>k__BackingField:
+    Guid:
+      Data1: -2108169515
+      Data2: 1176727690
+      Data3: -1245702503
+      Data4: -87373321
+    Path: event:/SFX/Death
