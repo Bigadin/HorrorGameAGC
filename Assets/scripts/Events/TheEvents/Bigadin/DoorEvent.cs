@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Transactions;
 using UnityEngine;
 
 public class DoorEvent : GameEvent
@@ -14,15 +15,20 @@ public class DoorEvent : GameEvent
     public override void ConcreteEvent()
     {
         
-        if(!IsEventStart)
+   
+    }
+    public void StartEvent(float time)
+    {
+        if (!IsEventStart)
         {
-            StartCoroutine(DoorEventStart());
-            
+            StartCoroutine(DoorEventStart(time));
+
         }
     }
-    IEnumerator DoorEventStart()
+    public IEnumerator DoorEventStart(float time)
     {
-        yield return new WaitForSeconds(timeBeforeStart); // ki yedkhel la chambre isena 3s besh ybda event
+        print("DOOOOOOOOOOOOOOOOOOR ok");
+        yield return new WaitForSeconds(time); // ki yedkhel la chambre isena 3s besh ybda event
         IsEventStart = true;
         allTheEventTriggers();
     }

@@ -8,9 +8,11 @@ public class spownMonsterEvent : GameEvent
     [SerializeField] GameObject Monster;
     [SerializeField]
     private GameObject thoughtActivate;
+
+    [SerializeField] DoorEvent DoorEvent;
     public void spownMonster()
     {
-        print("MOOOOOOOOOOOONSTRE");
+        StartDoorEvent();
         Monster.SetActive(true);
         foreach (var anim in meubleAnimator)
         {
@@ -18,7 +20,11 @@ public class spownMonsterEvent : GameEvent
         }
         Monster.SetActive(true);
         thoughtActivate.SetActive(true);
+
         SetDramaMusicInstance(AudioManager.Instance.CreateInstance(FmodEvents.Instance.musicDrama));
     }
-
+    void StartDoorEvent()
+    {
+        DoorEvent.StartEvent(20f);
+    }
 }

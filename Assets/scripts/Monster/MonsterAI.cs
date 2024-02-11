@@ -29,7 +29,7 @@ public class MonsterAI : MonoBehaviour
     [Header("Dead")]
     [SerializeField] Animator ImageDeadAnimator;
     [SerializeField] GameObject screamer;
-    [SerializeField] Transform startPos;
+    [SerializeField] Transform[] startPos;
 
     private PLAYBACK_STATE playbackstate1;
 
@@ -67,7 +67,7 @@ public class MonsterAI : MonoBehaviour
         StartCoroutine(PatrolWait());
         ImageDeadAnimator.gameObject.SetActive(false);
         navMeshAgent.enabled = false;
-        transform.position = startPos.position;
+        transform.position = startPos[Random.Range(0,1)].position;
         navMeshAgent.enabled = true;
 
     }
