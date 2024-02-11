@@ -88,6 +88,8 @@ public class Main_Menu_UI : MonoBehaviour
     }
     public void MainMenu()
     {
+        GetComponent<UnPause>().player.enabled = true;
+        Time.timeScale= 1.0f;
         SceneManager.LoadScene(MainMenuScene);
     }
     public void Continue()

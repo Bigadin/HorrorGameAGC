@@ -6,7 +6,7 @@ using UnityEngine;
 public class UnPause : MonoBehaviour
 {
 
-    private ControlPlayer player;
+    public ControlPlayer player;
 
     public GameObject[] objectsToDeactivate;
     public GameObject menuHolder;
@@ -19,6 +19,7 @@ public class UnPause : MonoBehaviour
 
     public void Continue()
     {
+        Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
@@ -27,7 +28,7 @@ public class UnPause : MonoBehaviour
         pressE.SetActive(true);
         this.gameObject.SetActive(false);
         player.enabled = true;
-        Time.timeScale = 1f;
+        
     }
     public void DeactivateAllObjects()
     {
@@ -41,6 +42,8 @@ public class UnPause : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            Time.timeScale = 1f;
+            Debug.Log("Unpause iiiiiiii");
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
 
@@ -52,7 +55,7 @@ public class UnPause : MonoBehaviour
 
             this.gameObject.SetActive(false);
             player.enabled = true;
-            Time.timeScale = 1f;
+            
         }
     }
 }

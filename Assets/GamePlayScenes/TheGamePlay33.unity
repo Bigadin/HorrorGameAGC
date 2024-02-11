@@ -295,7 +295,8 @@ PrefabInstance:
     - target: {fileID: 6967349205606546995, guid: 21463257127902d4bb11d3b48ce927df,
         type: 3}
       propertyPath: realText
-      value: 'Hummm that chimney was always a good place to hide '
+      value: "Why does he always want to stay in front of the chimney? Maybe he felt
+        cold in his earlier state of life.\r\n\t\t\t\tMarie"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -433,6 +434,12 @@ PrefabInstance:
       propertyPath: noteText
       value: 
       objectReference: {fileID: 1507431379}
+    - target: {fileID: 3859300759788341087, guid: d3ec46360b2a57f4899273d2dc4e382c,
+        type: 3}
+      propertyPath: realText
+      value: "Where am i ? Oh, bless me! The library! I've left something of great
+        import within its confines\n\t\t\t\tDad"
+      objectReference: {fileID: 0}
     - target: {fileID: 3859300759788341087, guid: d3ec46360b2a57f4899273d2dc4e382c,
         type: 3}
       propertyPath: noteEvent
@@ -688,12 +695,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89c717b9d5b14014faa8f95833e2b04d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &139215505 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8335769552649525385, guid: 472eafe6ca14a154d9b01c54ba4caed6,
-    type: 3}
-  m_PrefabInstance: {fileID: 837396134}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &170648870
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1892,7 +1893,7 @@ PrefabInstance:
     - target: {fileID: 4972751049412202342, guid: c783a8823e038a04eab0c54d67d1d86a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 29.16
+      value: 26.94
       objectReference: {fileID: 0}
     - target: {fileID: 4972751049412202342, guid: c783a8823e038a04eab0c54d67d1d86a,
         type: 3}
@@ -1902,7 +1903,7 @@ PrefabInstance:
     - target: {fileID: 4972751049412202342, guid: c783a8823e038a04eab0c54d67d1d86a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -88.82
+      value: -92.24
       objectReference: {fileID: 0}
     - target: {fileID: 6626920528156030628, guid: c783a8823e038a04eab0c54d67d1d86a,
         type: 3}
@@ -2143,7 +2144,8 @@ PrefabInstance:
     - target: {fileID: 3158873081398408650, guid: f8c569426d29389429bf23a9628987d3,
         type: 3}
       propertyPath: realText
-      value: "our child!! he's born BUT NOT COMPLETE!! \nhe turned  into a monster.\nHIDE!"
+      value: "our child..!! has CHANGED!!!\r\nhe turned into a monster.\r\nwhy he
+        doesn't love me ?\r\n           Mom"
       objectReference: {fileID: 0}
     - target: {fileID: 3158873081398408650, guid: f8c569426d29389429bf23a9628987d3,
         type: 3}
@@ -3397,103 +3399,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 778224316}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &793293836
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 793293839}
-  - component: {fileID: 793293838}
-  - component: {fileID: 793293840}
-  m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!20 &793293838
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 793293836}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_Iso: 200
-  m_ShutterSpeed: 0.005
-  m_Aperture: 16
-  m_FocusDistance: 10
-  m_FocalLength: 50
-  m_BladeCount: 5
-  m_Curvature: {x: 2, y: 11}
-  m_BarrelClipping: 0.25
-  m_Anamorphism: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!4 &793293839
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 793293836}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &793293840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 793293836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attenuationObject: {fileID: 0}
 --- !u!1001 &814450357
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3900,7 +3805,7 @@ PrefabInstance:
         type: 3}
       propertyPath: menuHolder
       value: 
-      objectReference: {fileID: 139215505}
+      objectReference: {fileID: 1371193021}
     - target: {fileID: 6038796724749829250, guid: 472eafe6ca14a154d9b01c54ba4caed6,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -4067,7 +3972,7 @@ PrefabInstance:
         type: 3}
       propertyPath: menuHolder
       value: 
-      objectReference: {fileID: 693753053}
+      objectReference: {fileID: 473833717}
     - target: {fileID: 9009429991839565868, guid: 472eafe6ca14a154d9b01c54ba4caed6,
         type: 3}
       propertyPath: objectsToDeactivate.Array.size
@@ -6035,7 +5940,7 @@ PrefabInstance:
     - target: {fileID: 1735935399728210781, guid: 3d13e8f759afe1847a7cfb09b5909564,
         type: 3}
       propertyPath: LightTorcheBatteriePerSlot
-      value: 60
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 1735935399728210781, guid: 3d13e8f759afe1847a7cfb09b5909564,
         type: 3}
@@ -6823,17 +6728,17 @@ PrefabInstance:
     - target: {fileID: 8613626443310512842, guid: 6af2abdc1d82fe34a89b5804f6e5bedf,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.31
+      value: 10.54
       objectReference: {fileID: 0}
     - target: {fileID: 8613626443310512842, guid: 6af2abdc1d82fe34a89b5804f6e5bedf,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.898
+      value: 12.01
       objectReference: {fileID: 0}
     - target: {fileID: 8613626443310512842, guid: 6af2abdc1d82fe34a89b5804f6e5bedf,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -113.63
+      value: -113.95
       objectReference: {fileID: 0}
     - target: {fileID: 8613626443310512842, guid: 6af2abdc1d82fe34a89b5804f6e5bedf,
         type: 3}
@@ -10630,6 +10535,12 @@ PrefabInstance:
       propertyPath: noteText
       value: 
       objectReference: {fileID: 1507431379}
+    - target: {fileID: 7230316140805296851, guid: 9de570ee21d5f12439680f2e360f4342,
+        type: 3}
+      propertyPath: realText
+      value: "i remember this day when my son run away, and we'v had to find out
+        where he's gonen at this moment i looked at the window and found him\n\t\t\t\tDad"
+      objectReference: {fileID: 0}
     - target: {fileID: 8002037164891537062, guid: 9de570ee21d5f12439680f2e360f4342,
         type: 3}
       propertyPath: m_Name
@@ -12260,7 +12171,6 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 793293839}
   - {fileID: 1750032856}
   - {fileID: 1691738586}
   - {fileID: 1844141659}

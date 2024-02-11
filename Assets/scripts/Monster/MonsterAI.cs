@@ -43,13 +43,15 @@ public class MonsterAI : MonoBehaviour
     }
     void dead()
     {
+        AudioManager.Instance.PlayOneShot(FmodEvents.Instance.Death, transform.position);
         ImageDeadAnimator.enabled = true;
-        AudioManager.Instance.PlayOneShot(FmodEvents.Instance.Death,transform.position);
+        ImageDeadAnimator.gameObject.SetActive(true);
         ImageDeadAnimator.Play("Dead_transition");
         screamer.SetActive(true);
         transform.GetChild(0).GetComponent<Renderer>().enabled = false;
         LightBatterieManager.instance.offLight();
         StartCoroutine(RestartGame());
+
     }
     IEnumerator RestartGame()
     {
@@ -63,9 +65,11 @@ public class MonsterAI : MonoBehaviour
         LightBatterieManager.instance.onLight();
         isChasingPlayer = false;
         StartCoroutine(PatrolWait());
+        ImageDeadAnimator.gameObject.SetActive(false);
         navMeshAgent.enabled = false;
         transform.position = startPos.position;
         navMeshAgent.enabled = true;
+
     }
     void FixedUpdate()
     {
@@ -131,7 +135,7 @@ public class MonsterAI : MonoBehaviour
 
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
-        if (distanceToPlayer < detectionRange)
+        if (distanceToPlayer < detectionRange && ControlPlayer.playerStat != ControlPlayer.PlayerStat.hiding)
         {
             endChassing = false;
             isChasingPlayer = true;
@@ -177,10 +181,6 @@ public class MonsterAI : MonoBehaviour
 
             }
         }
-        else
-        {
-            StartCoroutine(PatrolWait());
-        }
 
         if ((!endChassing && chaseTimer >= chaseDuration) || ControlPlayer.playerStat == ControlPlayer.PlayerStat.hiding)
         {
@@ -211,6 +211,5 @@ public class MonsterAI : MonoBehaviour
             monsterWalk.start();
         }
     }
-
 
 }

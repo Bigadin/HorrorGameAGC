@@ -16,7 +16,7 @@ public class KitchenEvent : GameEvent
     {
 
             GetComponent<Collider>().enabled = true;
-            LightBatterieManager.instance.offLight();
+            
             AudioManager.Instance.StopMusic();
             SetDramaMusicInstance(AudioManager.Instance.CreateInstance(FmodEvents.Instance.dramaSpeed2));
             musicDramaEventInstance.start();
@@ -26,6 +26,7 @@ public class KitchenEvent : GameEvent
             {
                 eventObject.evObjects.SetActive(true);
             }
+            LightBatterieManager.instance.offLight();
             StartCoroutine(eventDestroy());
         
 

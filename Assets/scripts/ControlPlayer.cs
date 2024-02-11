@@ -243,10 +243,10 @@ public class ControlPlayer : MonoBehaviour
             Cursor.visible = true;
 
             Camera.main.GetComponent<CinemachineBrain>().enabled = false;
-            Time.timeScale = 0f;
             pressE.SetActive(false);
             MainMenu.SetActive(true);
             this.enabled = false;
+            Time.timeScale = 0f;
         }
     }
 
