@@ -14,23 +14,17 @@ public class bebeEvent : GameEvent
     public override void ConcreteEvent()
     {
         
-
+        if (!isEventStart)
+        {
+            StartCoroutine(WaitbeforeStart());
+        }
        
 
     }
-    public void StartEvent(float time)
+    IEnumerator WaitbeforeStart()
     {
-        if (!isEventStart)
-        {
-            StartCoroutine(WaitbeforeStart(time));
-        }
-    }
-    IEnumerator WaitbeforeStart(float time)
-    {
-        print("BEBEBEBEBEBEBEBEBE ok");
-
-        yield return new WaitForSeconds(time);
-        print("BEBEBEBEBEBEBEBEBE officiel ok");
+        
+        yield return new WaitForSeconds(8);
         isEventStart = true;
         AudioManager.Instance.InitializeSound(FmodEvents.Instance.babyCry, note.gameObject.transform, 1f, 70f);
         note.gameObject.SetActive(true);
