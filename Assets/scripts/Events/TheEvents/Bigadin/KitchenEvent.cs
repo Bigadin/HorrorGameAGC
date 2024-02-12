@@ -11,6 +11,10 @@ public class KitchenEvent : GameEvent
     private Transform thunderPlace;
     private PLAYBACK_STATE musicDramaPlaybackState;
     private bool musicDramaPlaying = false;
+    [SerializeField]
+    private Transform knightPosition;
+    [SerializeField]
+    private Transform newKnightPosition;
 
     public override void ConcreteEvent()
     {
@@ -27,6 +31,7 @@ public class KitchenEvent : GameEvent
                 eventObject.evObjects.SetActive(true);
             }
             LightBatterieManager.instance.offLight();
+            knightPosition.position = newKnightPosition.position;
             StartCoroutine(eventDestroy());
         
 

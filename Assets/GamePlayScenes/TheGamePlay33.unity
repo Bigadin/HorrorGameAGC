@@ -3546,37 +3546,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &548467255
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 548467256}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &548467256
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 548467255}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.73797, y: 17.552, z: -113.65317}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &555272287 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5798482055552702330, guid: 472eafe6ca14a154d9b01c54ba4caed6,
@@ -11815,26 +11784,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3135463127757357764, guid: 9de570ee21d5f12439680f2e360f4342,
-        type: 3}
-      propertyPath: m_Name
-      value: note001
-      objectReference: {fileID: 0}
-    - target: {fileID: 3135463127757357764, guid: 9de570ee21d5f12439680f2e360f4342,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3495808615455892241, guid: 9de570ee21d5f12439680f2e360f4342,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6982505245968296904, guid: 9de570ee21d5f12439680f2e360f4342,
         type: 3}
-      propertyPath: launchOrder
-      value: 3
-      objectReference: {fileID: 0}
+      propertyPath: knightPosition
+      value: 
+      objectReference: {fileID: 986735582}
     - target: {fileID: 7230316140805296851, guid: 9de570ee21d5f12439680f2e360f4342,
         type: 3}
       propertyPath: paper
@@ -11845,21 +11799,10 @@ PrefabInstance:
       propertyPath: noteText
       value: 
       objectReference: {fileID: 1507431379}
-    - target: {fileID: 7230316140805296851, guid: 9de570ee21d5f12439680f2e360f4342,
-        type: 3}
-      propertyPath: realText
-      value: "i remember this day when my son run away, and we'v had to find out
-        where he's gonen at this moment i looked at the window and found him\n\t\t\t\tDad"
-      objectReference: {fileID: 0}
     - target: {fileID: 8002037164891537062, guid: 9de570ee21d5f12439680f2e360f4342,
         type: 3}
       propertyPath: m_Name
       value: Kitchen_Event
-      objectReference: {fileID: 0}
-    - target: {fileID: 9083433702055395784, guid: 9de570ee21d5f12439680f2e360f4342,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11874,6 +11817,41 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2057461362}
     m_Modifications:
+    - target: {fileID: 6344180354557413422, guid: b8e2b433ea1203f42a3d764292678920,
+        type: 3}
+      propertyPath: m_Range
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6344180354557413422, guid: b8e2b433ea1203f42a3d764292678920,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6344180354557413422, guid: b8e2b433ea1203f42a3d764292678920,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6344180354557413422, guid: b8e2b433ea1203f42a3d764292678920,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6344180354557413422, guid: b8e2b433ea1203f42a3d764292678920,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6344180354557413422, guid: b8e2b433ea1203f42a3d764292678920,
+        type: 3}
+      propertyPath: m_SpotAngle
+      value: 105.549866
+      objectReference: {fileID: 0}
+    - target: {fileID: 6344180354557413422, guid: b8e2b433ea1203f42a3d764292678920,
+        type: 3}
+      propertyPath: m_InnerSpotAngle
+      value: 27.756832
+      objectReference: {fileID: 0}
     - target: {fileID: 6709007010782521808, guid: b8e2b433ea1203f42a3d764292678920,
         type: 3}
       propertyPath: m_Name
@@ -13535,4 +13513,3 @@ SceneRoots:
   - {fileID: 495821619}
   - {fileID: 2391962}
   - {fileID: 1120627189}
-  - {fileID: 548467256}
