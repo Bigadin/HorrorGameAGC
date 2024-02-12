@@ -6213,6 +6213,12 @@ PrefabInstance:
       propertyPath: noteText
       value: 
       objectReference: {fileID: 1507431379}
+    - target: {fileID: 2392645040739366777, guid: d6acf08dadfbf3244bf68b09165f19e6,
+        type: 3}
+      propertyPath: realText
+      value: "Isaac is born finally! The childbirth didn't go well, but the priest
+        tells us he will guide us in this story.\n\t\t\t\tDad"
+      objectReference: {fileID: 0}
     - target: {fileID: 3373808884663771435, guid: d6acf08dadfbf3244bf68b09165f19e6,
         type: 3}
       propertyPath: m_LocalPosition.x
