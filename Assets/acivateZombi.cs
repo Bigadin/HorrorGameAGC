@@ -13,7 +13,7 @@ public class acivateZombi : GameEvent
         {
             zombi.SetActive(true); // dir sound t3 zombi ki iteih ------> doint forget delay 9isma yelha9 lerd
             transform.parent.GetComponent<DoorEvent>().EndEvent();
-            bebeEvent.StartEvent(70f);
+            bebeEvent.StartEvent(60f);
             AudioManager.Instance.PlayOneShot(FmodEvents.Instance.dramaSpeed2, transform.position);
         }
     }
