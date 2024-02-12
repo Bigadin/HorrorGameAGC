@@ -23,11 +23,24 @@ public class DoorEvent : GameEvent
     {
         StartCoroutine(DoorEventStart(time));
     }
+    bool callOnce;
     IEnumerator DoorEventStart(float time)
     {
         yield return new WaitForSeconds(time); // ki yedkhel la chambre isena 3s besh ybda event
-        IsEventStart = true;
-        allTheEventTriggers();
+        if(monster.GetComponent<MonsterAI>().deadPlayer == false)
+        {
+            IsEventStart = true;
+            allTheEventTriggers();
+        }
+        else
+        {
+            if (!callOnce)
+            {
+                StartCoroutine(DoorEventStart(4));
+                callOnce = true;
+            }
+        }
+
     }
     void allTheEventTriggers() // hna li kayen g3 3fayess t3 sound
     {

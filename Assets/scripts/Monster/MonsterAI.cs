@@ -165,7 +165,7 @@ public class MonsterAI : MonoBehaviour
         yield return new WaitForSeconds(2.5f);
         dr.CloseDoor();
     }
-    bool deadPlayer;
+    public bool deadPlayer;
     void ChasePlayer()
     {
         isWalking = true;

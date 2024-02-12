@@ -16,7 +16,8 @@ public class bebeEvent : GameEvent
 
     private void Awake()
     {
-        manager = GameObject.FindGameObjectWithTag("DialogueManager").GetComponent<Dialogue_Manager>(); 
+        manager = GameObject.FindGameObjectWithTag("DialogueManager").GetComponent<Dialogue_Manager>();
+
     }
     
 
@@ -32,18 +33,31 @@ public class bebeEvent : GameEvent
     {
         StartCoroutine(WaitbeforeStart(time));
     }
+    bool callOnce;
     IEnumerator WaitbeforeStart(float time)
     {
-
+        
         yield return new WaitForSeconds(time);
-        AudioManager.Instance.InitializeSound(FmodEvents.Instance.babyCry,note.transform,1f,75f);
-        manager.ShowThought("15");
-        isEventStart = true;
-        note.gameObject.SetActive(true);
-        foreach (Animator anim in LightAnim)
+        if(monster.GetComponent<MonsterAI>().deadPlayer == false)
         {
-            anim.Play("DoorEvent");
+            AudioManager.Instance.InitializeSound(FmodEvents.Instance.babyCry, note.transform, 1f, 75f);
+            manager.ShowThought("15");
+            isEventStart = true;
+            note.gameObject.SetActive(true);
+            foreach (Animator anim in LightAnim)
+            {
+                anim.Play("DoorEvent");
+            }
         }
+        else
+        {
+            if (!callOnce)
+            {
+                StartCoroutine(WaitbeforeStart(4));
+                callOnce = true;
+            }
+        }
+       
     }
     private void OnTriggerStay(Collider other)
     {
