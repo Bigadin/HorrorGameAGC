@@ -298,8 +298,10 @@ public class ControlPlayer : MonoBehaviour
 
         Quaternion rot = Quaternion.Euler(pd.rotation[0], pd.rotation[1], pd.rotation[2]);
         transform.rotation = rot;
+        scene = SceneManager.GetActiveScene().name;
+        if(scene != "TheGamePlay33")
+            inventory.SetGameObjects(pd.items);
 
-        inventory.SetGameObjects(pd.items);
         eventManager.SetEvents(pd.events);
 
         LoadNotif();

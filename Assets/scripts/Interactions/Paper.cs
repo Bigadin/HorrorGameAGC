@@ -28,6 +28,6 @@ public class Paper : MonoBehaviour, IInteractable
         paper.SetActive(true);
         noteText.text = realText;
         player.enabled = false;
-
+        Time.timeScale = 0.3f;
     }
 }

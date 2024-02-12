@@ -29,7 +29,7 @@ public class MonsterAI : MonoBehaviour
     [Header("Dead")]
     [SerializeField] Animator ImageDeadAnimator;
     [SerializeField] GameObject screamer;
-    [SerializeField] Transform startPos;
+    [SerializeField] Transform[] startPos;
 
     private PLAYBACK_STATE playbackstate1;
 
@@ -67,7 +67,7 @@ public class MonsterAI : MonoBehaviour
         StartCoroutine(PatrolWait());
         ImageDeadAnimator.gameObject.SetActive(false);
         navMeshAgent.enabled = false;
-        transform.position = startPos.position;
+        transform.position = startPos[Random.Range(0, 1)].position;
         navMeshAgent.enabled = true;
 
     }
@@ -172,15 +172,19 @@ public class MonsterAI : MonoBehaviour
         print("Im chassing");
 
         // You can add additional behavior for chasing the player here
-        if (Vector3.Distance(transform.position, player.position) <= criticalDistance && ControlPlayer.playerStat != ControlPlayer.PlayerStat.hiding)
+        if(Mathf.Abs(transform.position.y - player.transform.position.y) < 5)
         {
-            if (!deadPlayer)
+            if (Vector3.Distance(transform.position, player.position) <= criticalDistance && ControlPlayer.playerStat != ControlPlayer.PlayerStat.hiding)
             {
-                deadPlayer = true;
-                player_dead.Invoke();
+                if (!deadPlayer)
+                {
+                    deadPlayer = true;
+                    player_dead.Invoke();
 
+                }
             }
         }
+
 
         if ((!endChassing && chaseTimer >= chaseDuration) || ControlPlayer.playerStat == ControlPlayer.PlayerStat.hiding)
         {

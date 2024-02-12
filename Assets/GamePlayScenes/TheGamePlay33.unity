@@ -2714,6 +2714,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &548467255
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 548467256}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &548467256
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548467255}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -19.73797, y: 17.552, z: -113.65317}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &555272287 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5798482055552702330, guid: 472eafe6ca14a154d9b01c54ba4caed6,
@@ -5512,12 +5543,12 @@ PrefabInstance:
     - target: {fileID: 4550553003698610833, guid: 251fd58b3416cc246b9479f837369e7f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -113.61902
+      value: -113.61914
       objectReference: {fileID: 0}
     - target: {fileID: 4550553003698610833, guid: 251fd58b3416cc246b9479f837369e7f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 95.66901
+      value: 95.668945
       objectReference: {fileID: 0}
     - target: {fileID: 6815696838790156064, guid: 251fd58b3416cc246b9479f837369e7f,
         type: 3}
@@ -11637,7 +11668,7 @@ PrefabInstance:
     - target: {fileID: 4689998237749134552, guid: 9c9796728b411174ba22ae652096f209,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5018804623282102261, guid: 9c9796728b411174ba22ae652096f209,
         type: 3}
@@ -12350,7 +12381,7 @@ PrefabInstance:
     - target: {fileID: 8238867000517774560, guid: 3b246e0e2e8515549be5fc3e05e5443c,
         type: 3}
       propertyPath: state
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8238867000517774560, guid: 3b246e0e2e8515549be5fc3e05e5443c,
         type: 3}
@@ -12618,3 +12649,4 @@ SceneRoots:
   - {fileID: 495821619}
   - {fileID: 2391962}
   - {fileID: 1120627189}
+  - {fileID: 548467256}

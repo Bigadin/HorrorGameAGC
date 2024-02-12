@@ -14,13 +14,13 @@ public class DoorEvent : GameEvent
     public override void ConcreteEvent()
     {
         
-        if(!IsEventStart)
-        {
-            StartCoroutine(DoorEventStart());
-            
-        }
+       
     }
-    IEnumerator DoorEventStart()
+    public void StartEvent(float time)
+    {
+        StartCoroutine(DoorEventStart(time));
+    }
+    IEnumerator DoorEventStart(float time)
     {
         yield return new WaitForSeconds(timeBeforeStart); // ki yedkhel la chambre isena 3s besh ybda event
         IsEventStart = true;
