@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class KitchenEvent : GameEvent
 {
@@ -15,6 +16,11 @@ public class KitchenEvent : GameEvent
     private Transform knightPosition;
     [SerializeField]
     private Transform newKnightPosition;
+    GameObject player;
+    private void Start()
+    {
+        player = GameObject.Find("Player");
+    }
 
     public override void ConcreteEvent()
     {
@@ -22,6 +28,7 @@ public class KitchenEvent : GameEvent
             GetComponent<Collider>().enabled = true;
             
             AudioManager.Instance.StopMusic();
+           
             SetDramaMusicInstance(AudioManager.Instance.CreateInstance(FmodEvents.Instance.dramaSpeed2));
             musicDramaEventInstance.start();
             musicDramaPlaying = true;
@@ -32,6 +39,7 @@ public class KitchenEvent : GameEvent
             }
             LightBatterieManager.instance.offLight();
             knightPosition.position = newKnightPosition.position;
+            player.GetComponent<ControlPlayer>().canMove = false;
             StartCoroutine(eventDestroy());
         
 
@@ -54,6 +62,8 @@ public class KitchenEvent : GameEvent
         }
         //play sound
         GetComponent<Collider>().enabled = false;
+        player.GetComponent<ControlPlayer>().canMove = true;
+
         LightBatterieManager.instance.onLight();
 
     }
