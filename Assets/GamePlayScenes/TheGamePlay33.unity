@@ -733,7 +733,7 @@ Transform:
   m_GameObject: {fileID: 124420525}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.98, y: 13.49, z: -66.5}
+  m_LocalPosition: {x: -10.93, y: 11.22, z: -66.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6302,6 +6302,12 @@ PrefabInstance:
       propertyPath: noteText
       value: 
       objectReference: {fileID: 1507431379}
+    - target: {fileID: 1952392958605140370, guid: d6acf08dadfbf3244bf68b09165f19e6,
+        type: 3}
+      propertyPath: realText
+      value: "I don't know what mom's doing with Isaac?\n I hope she knows what she's
+        doing.\n\t\t\t\tMarie"
+      objectReference: {fileID: 0}
     - target: {fileID: 2392645040739366777, guid: d6acf08dadfbf3244bf68b09165f19e6,
         type: 3}
       propertyPath: paper
@@ -6388,6 +6394,12 @@ PrefabInstance:
       propertyPath: noteText
       value: 
       objectReference: {fileID: 1507431379}
+    - target: {fileID: 3461032963805792615, guid: d6acf08dadfbf3244bf68b09165f19e6,
+        type: 3}
+      propertyPath: realText
+      value: "Isaac is not acting normally; he doesn't want to eat, and his eyes...
+        What's happening to his eyes?\n\t\t\t\tDad\n"
+      objectReference: {fileID: 0}
     - target: {fileID: 5017624193653305336, guid: d6acf08dadfbf3244bf68b09165f19e6,
         type: 3}
       propertyPath: paper
@@ -6408,6 +6420,12 @@ PrefabInstance:
       propertyPath: noteText
       value: 
       objectReference: {fileID: 1507431379}
+    - target: {fileID: 5378288814502354349, guid: d6acf08dadfbf3244bf68b09165f19e6,
+        type: 3}
+      propertyPath: realText
+      value: "I love you, my Isaac , my angel. Let me guide you to heaven. Let me
+        guide you to heaven. Let me guide you to heaven...\n\t\t\t\tMom"
+      objectReference: {fileID: 0}
     - target: {fileID: 6189424951692242237, guid: d6acf08dadfbf3244bf68b09165f19e6,
         type: 3}
       propertyPath: paper
@@ -12694,7 +12712,7 @@ PrefabInstance:
     - target: {fileID: 2643793462098211950, guid: 9c9796728b411174ba22ae652096f209,
         type: 3}
       propertyPath: startPos.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2643793462098211950, guid: 9c9796728b411174ba22ae652096f209,
         type: 3}
@@ -12705,7 +12723,7 @@ PrefabInstance:
         type: 3}
       propertyPath: startPos.Array.data[0]
       value: 
-      objectReference: {fileID: 92764783}
+      objectReference: {fileID: 124420526}
     - target: {fileID: 2643793462098211950, guid: 9c9796728b411174ba22ae652096f209,
         type: 3}
       propertyPath: startPos.Array.data[1]
@@ -12844,7 +12862,7 @@ PrefabInstance:
     - target: {fileID: 4689998237749134552, guid: 9c9796728b411174ba22ae652096f209,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5018804623282102261, guid: 9c9796728b411174ba22ae652096f209,
         type: 3}
@@ -16336,7 +16354,7 @@ PrefabInstance:
     - target: {fileID: 8238867000517774560, guid: 3b246e0e2e8515549be5fc3e05e5443c,
         type: 3}
       propertyPath: state
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8238867000517774560, guid: 3b246e0e2e8515549be5fc3e05e5443c,
         type: 3}

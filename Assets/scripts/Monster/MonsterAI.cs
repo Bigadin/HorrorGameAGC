@@ -67,7 +67,7 @@ public class MonsterAI : MonoBehaviour
         StartCoroutine(PatrolWait());
         ImageDeadAnimator.gameObject.SetActive(false);
         navMeshAgent.enabled = false;
-        transform.position = startPos[Random.Range(0, 1)].position;
+        transform.position = startPos[0].position;
         navMeshAgent.enabled = true;
 
     }
