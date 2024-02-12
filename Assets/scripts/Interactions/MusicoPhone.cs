@@ -27,6 +27,7 @@ public class MusicoPhone : MonoBehaviour, IInteractable
             note.SetActive(true);
             key.SetActive(true);
             this.enabled = false;
+            canActivate = false;
         }
        
     }

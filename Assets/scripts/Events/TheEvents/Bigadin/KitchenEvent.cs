@@ -17,9 +17,9 @@ public class KitchenEvent : GameEvent
     [SerializeField]
     private Transform newKnightPosition;
     GameObject player;
-    private void Start()
+    private void Awake()
     {
-        player = GameObject.Find("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     public override void ConcreteEvent()
@@ -39,6 +39,7 @@ public class KitchenEvent : GameEvent
             }
             LightBatterieManager.instance.offLight();
             knightPosition.position = newKnightPosition.position;
+            knightPosition.eulerAngles= newKnightPosition.eulerAngles;
             player.GetComponent<ControlPlayer>().canMove = false;
             StartCoroutine(eventDestroy());
         
