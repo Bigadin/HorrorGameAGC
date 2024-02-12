@@ -1,20 +1,20 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class StartGame : MonoBehaviour
 {
     [SerializeField] GameObject LoadSceneAnim;
-    [SerializeField] GameObject pressEIndicator;
+    [SerializeField]
+    private TextMeshProUGUI eText;
     
     private void OnTriggerStay(Collider other)
     {
+
         if (other.tag == "Player")
         {
-            pressEIndicator.SetActive(true);
+            
 
             if (Input.GetKeyDown(KeyCode.E))
             {
@@ -26,10 +26,19 @@ public class StartGame : MonoBehaviour
             }
         }
     }
-    
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            eText.text = "Enter Manor -E-";
+        }
+        
+    }
+
     private void OnTriggerExit(Collider other)
     {
-        pressEIndicator.GetComponent<TextMeshProUGUI>().text = "Enter Manor -E-";
+        eText.text = "";
     }
     IEnumerator EnterHouse()
     {

@@ -37,6 +37,7 @@ public class UnPause : MonoBehaviour
             obj.SetActive(false);
         }
     }
+    
 
     void Update()
     {
@@ -53,6 +54,7 @@ public class UnPause : MonoBehaviour
             pressE.SetActive(true);
             DeactivateAllObjects();
 
+            if(transform.GetChild(1).gameObject.activeInHierarchy)
             this.gameObject.SetActive(false);
             player.enabled = true;
             

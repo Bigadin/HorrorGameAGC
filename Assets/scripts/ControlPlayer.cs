@@ -3,7 +3,6 @@ using FMOD.Studio;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
-using System.Collections.Generic;
 
 public class ControlPlayer : MonoBehaviour
 {
@@ -299,12 +298,17 @@ public class ControlPlayer : MonoBehaviour
         Quaternion rot = Quaternion.Euler(pd.rotation[0], pd.rotation[1], pd.rotation[2]);
         transform.rotation = rot;
         scene = SceneManager.GetActiveScene().name;
-        if(scene != "TheGamePlay33")
+        if (scene != "TheGamePlay33")
             inventory.SetGameObjects(pd.items);
-
         eventManager.SetEvents(pd.events);
 
         LoadNotif();
         //Add new data here...
+    }
+    public void LoadMainMenu()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        SceneManager.LoadScene(0);
     }
 }

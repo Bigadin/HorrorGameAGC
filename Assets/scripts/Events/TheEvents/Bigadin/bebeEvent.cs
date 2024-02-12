@@ -1,21 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMOD.Studio;
 
 public class bebeEvent : GameEvent
 {
 
-     public Door roomDoor;
-     public Door bibRoom;
-    [SerializeField]  NoteTrigger note;
-     public Animator[] LightAnim;
+    public Door roomDoor;
+    public Door bibRoom;
+    [SerializeField] NoteTrigger note;
+    public Animator[] LightAnim;
+    private Dialogue_Manager manager;
+    [SerializeField]
+    private GameObject monster;
 
-    private  bool isEventStart = false;
+    private void Awake()
+    {
+        manager = GameObject.FindGameObjectWithTag("DialogueManager").GetComponent<Dialogue_Manager>(); 
+    }
+    
+
+    private bool isEventStart = false;
     public override void ConcreteEvent()
     {
-        
-       
-       
+
+
+
 
     }
     public void StartEvent(float time)
@@ -24,10 +34,11 @@ public class bebeEvent : GameEvent
     }
     IEnumerator WaitbeforeStart(float time)
     {
-        
+
         yield return new WaitForSeconds(time);
+        AudioManager.Instance.InitializeSound(FmodEvents.Instance.babyCry,note.transform,1f,75f);
+        manager.ShowThought("15");
         isEventStart = true;
-        AudioManager.Instance.InitializeSound(FmodEvents.Instance.babyCry, note.gameObject.transform, 1f, 70f);
         note.gameObject.SetActive(true);
         foreach (Animator anim in LightAnim)
         {
@@ -40,6 +51,7 @@ public class bebeEvent : GameEvent
         {
             if (isEventStart)
             {
+                monster.SetActive(false);
                 roomDoor.CloseDoor();
                 roomDoor.setdoorStat(Door.DoorState.Locked);
                 
@@ -52,6 +64,7 @@ public class bebeEvent : GameEvent
     {
       
         yield return new WaitForSeconds(5);
+        AudioManager.Instance.StopSound();
         
         roomDoor.setdoorStat(Door.DoorState.Unlocked);
         bibRoom.setdoorStat(Door.DoorState.Unlocked);
@@ -59,5 +72,6 @@ public class bebeEvent : GameEvent
         LightAnim[0].enabled = false;
         LightAnim[1].enabled = false;
         AudioManager.Instance.RelaunchMusic();
+        monster.SetActive(true);
     }
 }
