@@ -79,13 +79,13 @@ public class bebeEvent : GameEvent
       
         yield return new WaitForSeconds(5);
         AudioManager.Instance.StopSound();
-        
+        monster.SetActive(true);
         roomDoor.setdoorStat(Door.DoorState.Unlocked);
         bibRoom.setdoorStat(Door.DoorState.Unlocked);
         bibRoom.openDoor();
         LightAnim[0].enabled = false;
         LightAnim[1].enabled = false;
         AudioManager.Instance.RelaunchMusic();
-        monster.SetActive(true);
+        
     }
 }

@@ -77,9 +77,9 @@ public class DoorEvent : GameEvent
 
     public void EndEvent() // hadi ki yekhlass el event go check zombiSpown child t3 had el objet
     {
+        monster.SetActive(true);
         roomDoor.setdoorStat(Door.DoorState.Unlocked);
         roomDoor.openDoor();
-        monster.SetActive(true);
         
     }
 }
