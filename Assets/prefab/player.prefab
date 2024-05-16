@@ -53,16 +53,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70346fff779ab5d4eb134e298c028118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkingSpeed: 5
-  runningSpeed: 8
+  walkingSpeed: 8
+  runningSpeed: 10
   jumpSpeed: 10
   gravity: 20
-  lookSpeed: 2
+  lookSpeed: 3
   lookXLimit: 45
   playerCamera: {fileID: 1569871480508923588}
   CM_cam: {fileID: 3225850098271529396}
   flashlightAnimator: {fileID: 3999210475268988930}
+  inventory: {fileID: 0}
+  scene: 
   MainMenu: {fileID: 0}
+  saveNotif: {fileID: 0}
+  loadNotif: {fileID: 0}
+  pressE: {fileID: 0}
+  eventManager: {fileID: 0}
   canMove: 1
 --- !u!143 &7924056505019148662
 CharacterController:
@@ -330,6 +336,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -486,6 +494,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -984,8 +994,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5470379913011289729}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0017453283, y: -0, z: -0, w: 0.99999845}
-  m_LocalPosition: {x: 0, y: 1.7000002, z: 0}
+  m_LocalRotation: {x: -0.000101958954, y: -0.9982907, z: -0.0017423478, w: 0.05841811}
+  m_LocalPosition: {x: -21.515495, y: 2.3250003, z: -81.95204}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1117,12 +1127,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    quality: 3
-    frameInfluence: 0.1
-    jitterScale: 1
-    mipBias: 0
-    varianceClampScale: 0.9
-    contrastAdaptiveSharpening: 0
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!114 &7819010958427656256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1683,12 +1693,11 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8991644788369118901}
   m_Enabled: 1
-  serializedVersion: 10
+  serializedVersion: 11
   m_Type: 0
-  m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 150
-  m_Range: 30
+  m_Intensity: 200
+  m_Range: 50
   m_SpotAngle: 68.030846
   m_InnerSpotAngle: 39.41086
   m_CookieSize: 10
@@ -1762,7 +1771,7 @@ MonoBehaviour:
   m_SoftShadowQuality: 0
 --- !u!95 &7069847702279424661
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1776,6 +1785,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -1894,7 +1904,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &3999210475268988930
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1908,6 +1918,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
